@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S/4HANA 架构概览 - SAP 实战知识库</title>
+<meta name="description" content="S/4HANA 三层架构详解：HANA 内存数据库、简化的应用数据模型、Fiori 表现层。理解这套架构，才能明白 ECC 的很多做法为什么变了。">
+<link rel="canonical" href="https://sap.haice.top/s4hana/s4hana-architecture/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="S/4HANA 架构概览 - SAP 实战知识库">
+<meta property="og:description" content="S/4HANA 三层架构详解：HANA 内存数据库、简化的应用数据模型、Fiori 表现层。理解这套架构，才能明白 ECC 的很多做法为什么变了。">
+<meta property="og:url" content="https://sap.haice.top/s4hana/s4hana-architecture/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"S/4HANA 架构概览","description":"S/4HANA 三层架构详解：HANA 内存数据库、简化的应用数据模型、Fiori 表现层。理解这套架构，才能明白 ECC 的很多做法为什么变了。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/s4hana/">S/4HANA</a></li><li aria-current="page">S/4HANA 架构概览</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a><span class="example-badge">示例内容</span></div>
+<h1>S/4HANA 架构概览</h1>
+<p class="article-desc">S/4HANA 三层架构详解：HANA 内存数据库、简化的应用数据模型、Fiori 表现层。理解这套架构，才能明白 ECC 的很多做法为什么变了。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/%E6%9E%B6%E6%9E%84/">#架构</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-三层结构">三层结构</a></li><li class="toc-l2"><a href="#h-数据模型简化的三个典型例子">数据模型简化的三个典型例子</a></li><li class="toc-l2"><a href="#h-cds-view-新架构下的数据消费方式">CDS View：新架构下的数据消费方式</a></li><li class="toc-l2"><a href="#h-部署架构选项">部署架构选项</a></li><li class="toc-l2"><a href="#h-嵌入式组件">嵌入式组件</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-s-4hana-必须跑在-hana-上吗-能用-oracle-吗">Q：S/4HANA 必须跑在 HANA 上吗？能用 Oracle 吗？</a></li><li class="toc-l3"><a href="#h-q-oltp-和-olap-在同一数据库上不会互相影响吗">Q：OLTP 和 OLAP 在同一数据库上不会互相影响吗？</a></li><li class="toc-l3"><a href="#h-q-版本升级频繁吗">Q：版本升级频繁吗？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>S/4HANA 架构 = <strong>HANA 内存数据库做计算</strong> + <strong>简化的应用数据模型</strong> + <strong>Fiori 做界面</strong>。和 ECC 最大的不同是：计算下沉到数据库层，大量应用层的汇总、索引逻辑被砍掉，所以系统更快、表更少。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：架构图不用背。记住一个判断方法：凡是 ECC 里&quot;为了跑得快而建的表&quot;（汇总表、索引表、冗余表），在 S/4 里基本都被干掉了，改由 HANA 实时计算。这就是理解 80% 架构差异的钥匙。</p>
+</div><h2 id="h-三层结构">三层结构</h2>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>技术</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据与计算层</td>
+<td>SAP HANA</td>
+<td>内存列式存储，计算下沉，OLTP 和 OLAP 跑在同一份数据上</td>
+</tr>
+<tr>
+<td>应用层</td>
+<td>S/4HANA 应用</td>
+<td>简化的数据模型、业务逻辑；嵌入 EWM、TM、PP/DS 等组件</td>
+</tr>
+<tr>
+<td>表现层</td>
+<td>Fiori / SAP GUI</td>
+<td>Fiori Launchpad 为主入口，角色导向；GUI 继续可用</td>
+</tr>
+</tbody></table>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>用户操作</strong><span>Fiori App / SAP GUI</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>应用逻辑</strong><span>S/4HANA 业务逻辑、CDS View</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>内存计算</strong><span>HANA 列存、实时聚合</span></div></div></div>
+<h2 id="h-数据模型简化的三个典型例子">数据模型简化的三个典型例子</h2>
+<ol>
+<li><strong>财务：Universal Journal</strong> —— 经典总账的多表结构合并为 ACDOCA 单一凭证行表，财务对账逻辑大变。</li>
+<li><strong>物料：MATDOC</strong> —— 物料凭证统一表，替代 MKPF/MSEG 分离结构，库存报表直接读一张表。</li>
+<li><strong>主数据：Business Partner</strong> —— 供应商、客户主数据统一对象，ECC 里两套表映射到 BUT000 系列。</li>
+</ol>
+<h2 id="h-cds-view-新架构下的数据消费方式">CDS View：新架构下的数据消费方式</h2>
+<ul>
+<li>CDS（Core Data Services）View 是 S/4 推荐的数据读取方式，替代直接读物理表。</li>
+<li>报表、Fiori App、接口都建议走 CDS View，升级时 SAP 保证其兼容性。</li>
+<li>自开发 ABAP 尽量用已发布的 CDS View，不要直读 ACDOCA 这类底层表——底层表结构 SAP 可能调整。</li>
+</ul>
+<h2 id="h-部署架构选项">部署架构选项</h2>
+<table>
+<thead>
+<tr>
+<th>部署方式</th>
+<th>说明</th>
+<th>适合</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>On-Premise</td>
+<td>本地部署，自运维</td>
+<td>深度定制、已有数据中心</td>
+</tr>
+<tr>
+<td>Private Cloud</td>
+<td>私有云（SAP 代运维）</td>
+<td>想减运维但要保留定制</td>
+</tr>
+<tr>
+<td>Public Cloud</td>
+<td>公有云 SaaS，Fit-to-Standard</td>
+<td>标准化流程、快速上线</td>
+</tr>
+</tbody></table>
+<div class="admonition note"><div class="admonition-title">说明</div><div class="admonition-body"><p>注意：公有云版本采用&quot;定期升级 + 标准流程优先&quot;模式，定制空间小。选型时先定部署方式，再谈流程差异，否则 Fit-to-Standard 会谈得很痛苦。</p>
+</div><h2 id="h-嵌入式组件">嵌入式组件</h2>
+<p>S/4HANA 把过去独立的产品<strong>嵌入</strong>进来，开箱即用：</p>
+<ul>
+<li><strong>EWM 嵌入式</strong> —— 基础仓储管理功能直接在 S/4 里，不用单独装 EWM 系统。</li>
+<li><strong>TM 嵌入式</strong> —— 运输管理基础功能。</li>
+<li><strong>PP/DS</strong> —— 高级计划排产嵌入（替代 APO 的部分场景）。</li>
+</ul>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-s-4hana-必须跑在-hana-上吗-能用-oracle-吗">Q：S/4HANA 必须跑在 HANA 上吗？能用 Oracle 吗？</h3>
+<p>A：必须 HANA，不能用其他数据库。这是硬性要求，也是很多差异的根源。</p>
+<h3 id="h-q-oltp-和-olap-在同一数据库上不会互相影响吗">Q：OLTP 和 OLAP 在同一数据库上不会互相影响吗？</h3>
+<p>A：HANA 的列式存储 + 内存计算就是为这个设计的：交易和分析读同一份实时数据，不需要 nightly ETL。这是 S/4 实时报表的技术基础。</p>
+<h3 id="h-q-版本升级频繁吗">Q：版本升级频繁吗？</h3>
+<p>A：On-Premise 每年一个大版本，公有云升级更频繁。项目计划里要预留升级测试窗口。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>架构评审时先问三个问题：部署方式定了没？哪些嵌入式组件在范围内？接口走什么方式（OData/API/IDoc）？这三个决定了后续 60% 的技术方案。</li>
+<li>跟 Basis 团队早沟通 HANA 的 sizing——内存不够，MRP Live 再快也跑不起来。</li>
+<li>自开发规范里加一条：<strong>禁止直读简化掉的表</strong>，统一走 CDS View，否则每次升级都是灾难。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/s4hana/what-is-s4hana/">S/4HANA 是什么</a></li>
+<li><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></li>
+<li><a href="/s4hana/fiori-intro/">Fiori 简介：新一代用户体验</a></li>
+<li><a href="/s4hana/s4hana-migration/">S/4HANA Migration：迁移路径与策略</a></li>
+</ul>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-三层结构">三层结构</a></li><li class="toc-l2"><a href="#h-数据模型简化的三个典型例子">数据模型简化的三个典型例子</a></li><li class="toc-l2"><a href="#h-cds-view-新架构下的数据消费方式">CDS View：新架构下的数据消费方式</a></li><li class="toc-l2"><a href="#h-部署架构选项">部署架构选项</a></li><li class="toc-l2"><a href="#h-嵌入式组件">嵌入式组件</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-s-4hana-必须跑在-hana-上吗-能用-oracle-吗">Q：S/4HANA 必须跑在 HANA 上吗？能用 Oracle 吗？</a></li><li class="toc-l3"><a href="#h-q-oltp-和-olap-在同一数据库上不会互相影响吗">Q：OLTP 和 OLAP 在同一数据库上不会互相影响吗？</a></li><li class="toc-l3"><a href="#h-q-版本升级频繁吗">Q：版本升级频繁吗？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/business-partner/">Business Partner（业务伙伴）</a></h3>
+<p class="post-excerpt">S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></h3>
+<p class="post-excerpt">从数据库、数据模型、主数据、财务、用户界面五个维度，对比 ECC 与 S/4HANA 的本质区别，帮 ECC 顾问快速定位需要补齐的差异点。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/ECC/">#ECC</a><a class="mini-tag" href="/tag/%E9%80%89%E5%9E%8B/">#选型</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/fiori-intro/">Fiori 简介：新一代用户体验</a></h3>
+<p class="post-excerpt">Fiori 是 S/4HANA 的主操作界面：Launchpad 统一入口、三种 App 类型、角色导向设计。讲清 Fiori 与 SAP GUI 的关系和 MM 常用 App。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/Fiori/">#Fiori</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/material-ledger/">Material Ledger（物料分类账）</a></h3>
+<p class="post-excerpt">物料分类账在 S/4HANA 中强制启用，带来实际成本核算与多币种评估。讲清 ML 对 MM 和财务的真实影响，以及项目上线的关键点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

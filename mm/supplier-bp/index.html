@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplier / Business Partner（供应商主数据） - SAP 实战知识库</title>
+<meta name="description" content="ECC 的供应商主数据与 S/4HANA 的 Business Partner 到底什么关系？讲清 BP 角色、组织级别视图与 XK01/BP 实战要点。">
+<link rel="canonical" href="https://sap.haice.top/mm/supplier-bp/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Supplier / Business Partner（供应商主数据） - SAP 实战知识库">
+<meta property="og:description" content="ECC 的供应商主数据与 S/4HANA 的 Business Partner 到底什么关系？讲清 BP 角色、组织级别视图与 XK01/BP 实战要点。">
+<meta property="og:url" content="https://sap.haice.top/mm/supplier-bp/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Supplier / Business Partner（供应商主数据）","description":"ECC 的供应商主数据与 S/4HANA 的 Business Partner 到底什么关系？讲清 BP 角色、组织级别视图与 XK01/BP 实战要点。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/mm/">SAP MM</a></li><li aria-current="page">Supplier / Business Partner（供应商主数据）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a><span class="example-badge">示例内容</span></div>
+<h1>Supplier / Business Partner（供应商主数据）</h1>
+<p class="article-desc">ECC 的供应商主数据与 S/4HANA 的 Business Partner 到底什么关系？讲清 BP 角色、组织级别视图与 XK01/BP 实战要点。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 5 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-ecc-vs-s-4hana-供应商主数据对比">ECC vs S/4HANA：供应商主数据对比</a></li><li class="toc-l2"><a href="#h-bp-的核心概念">BP 的核心概念</a></li><li class="toc-l3"><a href="#h-业务伙伴类别">业务伙伴类别</a></li><li class="toc-l3"><a href="#h-供应商相关的-bp-角色">供应商相关的 BP 角色</a></li><li class="toc-l3"><a href="#h-组织级别视图-延续-ecc-逻辑">组织级别视图（延续 ECC 逻辑）</a></li><li class="toc-l2"><a href="#h-关键字段说明">关键字段说明</a></li><li class="toc-l2"><a href="#h-实战操作要点">实战操作要点</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-一个供应商多个工厂供货-要建多个-bp-吗">Q：一个供应商多个工厂供货，要建多个 BP 吗？</a></li><li class="toc-l3"><a href="#h-q-ecc-升级到-s-4-供应商主数据要手工重建吗">Q：ECC 升级到 S/4，供应商主数据要手工重建吗？</a></li><li class="toc-l3"><a href="#h-q-一次性供应商怎么处理">Q：一次性供应商怎么处理？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p><strong>供应商主数据记录的是&quot;我们向谁买东西&quot;</strong>：名称地址、付款条件、采购组织相关设置。ECC 里用 <code>XK01/XK02/XK03</code> 维护；S/4HANA 里供应商和客户统一为 <strong>Business Partner（BP）</strong>，用事务代码 <code>BP</code> 按&quot;角色&quot;维护——这是 S/4 转型中每个 MM 顾问必须跨过的概念。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：记住这个对应关系——<strong>ECC 的&quot;供应商&quot;= S/4 的&quot;BP + 供应商角色（FLVN01）&quot;</strong>。底层数据模型变了，但业务含义没变：还是那个送货、开票、收钱的对象。</p>
+</div><h2 id="h-ecc-vs-s-4hana-供应商主数据对比">ECC vs S/4HANA：供应商主数据对比</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>ECC</th>
+<th>S/4HANA</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>事务代码</td>
+<td>XK01 / XK02 / XK03</td>
+<td>BP（统一）</td>
+</tr>
+<tr>
+<td>数据模型</td>
+<td>供应商主表 LFA1 等</td>
+<td>Business Partner（BUT000 等）</td>
+</tr>
+<tr>
+<td>客户/供应商</td>
+<td>两套独立主数据</td>
+<td>同一套 BP，按角色区分</td>
+</tr>
+<tr>
+<td>组织级别</td>
+<td>一般数据 / 公司代码 / 采购组织</td>
+<td>BP 一般数据 + 公司代码角色 + 采购组织角色</td>
+</tr>
+</tbody></table>
+<h2 id="h-bp-的核心概念">BP 的核心概念</h2>
+<h3 id="h-业务伙伴类别">业务伙伴类别</h3>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Person（个人）</td>
+<td>自然人</td>
+</tr>
+<tr>
+<td>Organization（组织）</td>
+<td>公司、机构——供应商通常用这个</td>
+</tr>
+<tr>
+<td>Group（一组）</td>
+<td>一组 BP 的集合</td>
+</tr>
+</tbody></table>
+<h3 id="h-供应商相关的-bp-角色">供应商相关的 BP 角色</h3>
+<table>
+<thead>
+<tr>
+<th>角色代码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FLVN00</td>
+<td>业务伙伴（通用）</td>
+</tr>
+<tr>
+<td>FLVN01</td>
+<td>供应商（采购侧）</td>
+</tr>
+<tr>
+<td>FLVN02</td>
+<td>供应商（公司代码层，财务侧）</td>
+</tr>
+</tbody></table>
+<p>一个供应商 BP 通常同时拥有 FLVN01（采购组织视图：采购组、合作伙伴）和 FLVN02（公司代码视图：统驭科目、付款条件）。</p>
+<h3 id="h-组织级别视图-延续-ecc-逻辑">组织级别视图（延续 ECC 逻辑）</h3>
+<table>
+<thead>
+<tr>
+<th>视图层级</th>
+<th>维护内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BP 一般数据</td>
+<td>名称、地址、税号、银行信息</td>
+</tr>
+<tr>
+<td>公司代码视图</td>
+<td>统驭科目、付款条件、付款方式、冻结标识</td>
+</tr>
+<tr>
+<td>采购组织视图</td>
+<td>采购组、计划交货时间、确认控制、合作伙伴（订单地址/发票方）</td>
+</tr>
+</tbody></table>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>常见坑：<strong>只建了 BP 一般数据、没扩展采购组织视图，就跑去下 PO</strong>，系统会报&quot;供应商在采购组织 XXXX 下未维护&quot;。排错第一步永远是：用 BP 打开看角色和组织视图是否完整，而不是怀疑 PO 配置。</p>
+</div><h2 id="h-关键字段说明">关键字段说明</h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>视图</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>统驭科目（Reconciliation Account）</td>
+<td>公司代码</td>
+<td>供应商往来的总账统驭科目，由 FI 设定</td>
+</tr>
+<tr>
+<td>付款条件（Payment Terms）</td>
+<td>公司代码</td>
+<td>如 30 天净额、2% 现金折扣，影响应付账款</td>
+</tr>
+<tr>
+<td>付款方式</td>
+<td>公司代码</td>
+<td>支票、电汇等</td>
+</tr>
+<tr>
+<td>采购组</td>
+<td>采购组织</td>
+<td>负责该供应商的采购员/组</td>
+</tr>
+<tr>
+<td>计划交货时间</td>
+<td>采购组织</td>
+<td>默认交货提前期，会带入 PO</td>
+</tr>
+<tr>
+<td>合作伙伴（Partner Functions）</td>
+<td>采购组织</td>
+<td>订单地址、发票开具方、供货方是否同一主体</td>
+</tr>
+<tr>
+<td>冻结标识</td>
+<td>公司代码/采购组织</td>
+<td>冻结后不能下 PO 或不能付款</td>
+</tr>
+</tbody></table>
+<h2 id="h-实战操作要点">实战操作要点</h2>
+<p><strong>BP 创建（S/4）</strong>：<code>BP</code> → 新建组织 → 选择 BP 类别 → 维护地址 → 添加角色 FLVN01 → 选择采购组织 → 维护采购视图 → 添加角色 FLVN02 → 选择公司代码 → 维护财务视图 → 保存。编号可内配（系统给号）或外配。</p>
+<p><strong>XK01 创建（ECC）</strong>：逻辑相同，只是界面按&quot;一般/公司代码/采购组织&quot;三段式组织。</p>
+<ul class="checklist"><li><label><input type="checkbox"> <span>BP 角色 FLVN01 / FLVN02 是否都已分配</span></label></li><li><label><input type="checkbox"> <span>公司代码视图：统驭科目、付款条件是否维护</span></label></li><li><label><input type="checkbox"> <span>采购组织视图：采购组是否维护</span></label></li><li><label><input type="checkbox"> <span>需要的采购组织是否都已扩展</span></label></li><li><label><input type="checkbox"> <span>税号、银行信息是否完整（影响付款）</span></label></li><li><label><input type="checkbox"> <span>是否存在重复供应商（名称相似、税号相同）</span></label></li></ul>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：上线前做一次<strong>供应商主数据去重</strong>：按税号、名称模糊匹配查重复。重复供应商是应付账款对账的噩梦，付款付错对象追回来极其痛苦。宁可上线前多花一周清洗。</p>
+</div><h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-一个供应商多个工厂供货-要建多个-bp-吗">Q：一个供应商多个工厂供货，要建多个 BP 吗？</h3>
+<p>A：不需要。一个 BP 可以扩展到多个采购组织/公司代码。如果是&quot;同一供应商、不同开票主体&quot;，才需要分别建 BP（因为公司代码视图的统驭科目、税号不同）。</p>
+<h3 id="h-q-ecc-升级到-s-4-供应商主数据要手工重建吗">Q：ECC 升级到 S/4，供应商主数据要手工重建吗？</h3>
+<p>A：不需要。S/4 迁移有专门的 BP 转换工具（CVI，Customer Vendor Integration），把 ECC 的供应商/客户主数据同步生成为 BP。但 CVI 的同步方向、编号映射需要在迁移前设计好，这是 S/4 迁移的重点任务之一。</p>
+<h3 id="h-q-一次性供应商怎么处理">Q：一次性供应商怎么处理？</h3>
+<p>A：用一次性供应商（One-time Vendor）功能：建一个通用的&quot;一次性供应商&quot;主数据（如 CPD），下 PO 时在&quot;地址&quot;页签手工输入本次的供应商地址。适合零星、小额、不值得建档的采购。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>付款条件是 MM 和 FI 的<strong>共同字段</strong>：采购谈下来的账期，最终体现在 BP 公司代码视图的付款条件里。MM 顾问要懂它，因为它直接影响 MIRO 发票校验和 F110 自动付款。</li>
+<li>供应商的&quot;合作伙伴功能&quot;（如下单地址≠发票地址）在跨国采购中很常见，PO 打印、发票校验都依赖它，蓝图阶段就要问清楚业务场景。</li>
+<li>银行信息（IBAN/账号）变更是<strong>高风险操作</strong>：建议走审批流程并留痕，实务中这是财务诈骗的高发点。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/mm/material-master/">Material Master（物料主数据）</a></li>
+<li><a href="/mm/mm-enterprise-structure/">Enterprise Structure（企业结构）</a></li>
+<li><a href="/mm/purchase-order/">Purchase Order（采购订单）</a></li>
+</ul>
+</div>
+<div class="tcode-row"><span>相关 T-code：</span><a class="tcode-chip" href="/tools/#tcode">BP</a><a class="tcode-chip" href="/tools/#tcode">XK01</a></div>
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-ecc-vs-s-4hana-供应商主数据对比">ECC vs S/4HANA：供应商主数据对比</a></li><li class="toc-l2"><a href="#h-bp-的核心概念">BP 的核心概念</a></li><li class="toc-l3"><a href="#h-业务伙伴类别">业务伙伴类别</a></li><li class="toc-l3"><a href="#h-供应商相关的-bp-角色">供应商相关的 BP 角色</a></li><li class="toc-l3"><a href="#h-组织级别视图-延续-ecc-逻辑">组织级别视图（延续 ECC 逻辑）</a></li><li class="toc-l2"><a href="#h-关键字段说明">关键字段说明</a></li><li class="toc-l2"><a href="#h-实战操作要点">实战操作要点</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-一个供应商多个工厂供货-要建多个-bp-吗">Q：一个供应商多个工厂供货，要建多个 BP 吗？</a></li><li class="toc-l3"><a href="#h-q-ecc-升级到-s-4-供应商主数据要手工重建吗">Q：ECC 升级到 S/4，供应商主数据要手工重建吗？</a></li><li class="toc-l3"><a href="#h-q-一次性供应商怎么处理">Q：一次性供应商怎么处理？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/material-master/">Material Master（物料主数据）</a></h3>
+<p class="post-excerpt">物料主数据是 MM 的地基：视图、组织级别、物料类型、编号范围一次讲清，并给出 MM01/MM02/MM03 的实战操作要点。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/goods-receipt/">Goods Receipt（收货）</a></h3>
+<p class="post-excerpt">MIGO 收货是库存增加的起点：移动类型 101/102/103/105 一次讲清，收货自动记账逻辑，以及收货冲销的实战处理。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E5%BA%93%E5%AD%98/">#库存</a><a class="mini-tag" href="/tag/P2P/">#P2P</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/invoice-verification/">Invoice Verification（发票校验）</a></h3>
+<p class="post-excerpt">MIRO 发票校验是 P2P 的收官环节：三单匹配逻辑、价格/数量容差、差异处理，以及发票校验与 FI 自动付款的衔接。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/P2P/">#P2P</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/mm-enterprise-structure/">Enterprise Structure（企业结构）</a></h3>
+<p class="post-excerpt">公司代码、工厂、库存地点、采购组织、采购组到底是什么关系？本文讲清 MM 企业结构的核心组织单元、层级关系与实战配置要点。</p>
+<div class="post-meta-bottom"><span>📖 约 5 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E9%85%8D%E7%BD%AE/">#配置</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

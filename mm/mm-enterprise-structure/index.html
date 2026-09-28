@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Structure（企业结构） - SAP 实战知识库</title>
+<meta name="description" content="公司代码、工厂、库存地点、采购组织、采购组到底是什么关系？本文讲清 MM 企业结构的核心组织单元、层级关系与实战配置要点。">
+<link rel="canonical" href="https://sap.haice.top/mm/mm-enterprise-structure/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Enterprise Structure（企业结构） - SAP 实战知识库">
+<meta property="og:description" content="公司代码、工厂、库存地点、采购组织、采购组到底是什么关系？本文讲清 MM 企业结构的核心组织单元、层级关系与实战配置要点。">
+<meta property="og:url" content="https://sap.haice.top/mm/mm-enterprise-structure/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Enterprise Structure（企业结构）","description":"公司代码、工厂、库存地点、采购组织、采购组到底是什么关系？本文讲清 MM 企业结构的核心组织单元、层级关系与实战配置要点。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/mm/">SAP MM</a></li><li aria-current="page">Enterprise Structure（企业结构）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a><span class="example-badge">示例内容</span></div>
+<h1>Enterprise Structure（企业结构）</h1>
+<p class="article-desc">公司代码、工厂、库存地点、采购组织、采购组到底是什么关系？本文讲清 MM 企业结构的核心组织单元、层级关系与实战配置要点。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 5 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E9%85%8D%E7%BD%AE/">#配置</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-mm-核心组织单元">MM 核心组织单元</a></li><li class="toc-l2"><a href="#h-层级与分配关系">层级与分配关系</a></li><li class="toc-l2"><a href="#h-主数据的组织级别">主数据的组织级别</a></li><li class="toc-l2"><a href="#h-实战配置清单">实战配置清单</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-工厂和公司代码到底什么区别">Q：工厂和公司代码到底什么区别？</a></li><li class="toc-l3"><a href="#h-q-采购组织可以跨公司代码采购吗">Q：采购组织可以跨公司代码采购吗？</a></li><li class="toc-l3"><a href="#h-q-s-4hana-里企业结构有变化吗">Q：S/4HANA 里企业结构有变化吗？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p><strong>企业结构（Enterprise Structure）是 SAP 系统的组织骨架</strong>：它定义了&quot;公司在系统里长什么样&quot;——哪个是法人实体（公司代码）、哪里生产/收货（工厂）、货放在哪个库（库存地点）、谁负责买（采购组织/采购组）。所有 MM 主数据和业务单据都挂在这些组织单元上。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：画图是理解企业结构的最好方法。拿一张白纸，从上到下画出 Client → 公司代码 → 工厂 → 库存地点，旁边再画采购组织 → 采购组，然后把物料主数据、供应商主数据的&quot;组织级别&quot;标注上去，结构关系立刻清晰。</p>
+</div><h2 id="h-mm-核心组织单元">MM 核心组织单元</h2>
+<table>
+<thead>
+<tr>
+<th>组织单元</th>
+<th>英文</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>集团</td>
+<td>Client</td>
+<td>系统最高层级，数据物理隔离单位</td>
+<td>800</td>
+</tr>
+<tr>
+<td>公司代码</td>
+<td>Company Code</td>
+<td>独立核算的法人实体，对外报税、出财务报表</td>
+<td>CN01（中国公司）</td>
+</tr>
+<tr>
+<td>工厂</td>
+<td>Plant</td>
+<td>生产、收货、计划、库存管理的核心组织单元</td>
+<td>1000（上海工厂）</td>
+</tr>
+<tr>
+<td>库存地点</td>
+<td>Storage Location</td>
+<td>工厂下的细分仓库，库存数量管理到这一层</td>
+<td>0001（原材料库）</td>
+</tr>
+<tr>
+<td>采购组织</td>
+<td>Purchasing Organization</td>
+<td>负责采购的组织，可跨公司代码采购</td>
+<td>CNPO（中国采购组织）</td>
+</tr>
+<tr>
+<td>采购组</td>
+<td>Purchasing Group</td>
+<td>采购员/采购小组，不是一个组织层级，是&quot;人&quot;的分组</td>
+<td>001（张三组）</td>
+</tr>
+</tbody></table>
+<h2 id="h-层级与分配关系">层级与分配关系</h2>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>Client（集团）</strong><span>一个系统 / 一套主数据基础</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>Company Code（公司代码）</strong><span>法人实体，财务核算单位</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>Plant（工厂）</strong><span>归属一个公司代码，物流核心</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>Storage Location（库存地点）</strong><span>归属一个工厂，库存数量层</span></div></div></div>
+<p>采购侧是另一条线：</p>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>Purchasing Organization（采购组织）</strong><span>可分配给一个或多个公司代码 / 工厂</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>Purchasing Group（采购组）</strong><span>归属采购组织，是采购员分组</span></div></div></div>
+<p>关键分配关系（配置在 SPRO → 企业结构中完成）：</p>
+<table>
+<thead>
+<tr>
+<th>分配</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>工厂 → 公司代码</td>
+<td>一个工厂只能属于一个公司代码</td>
+</tr>
+<tr>
+<td>库存地点 → 工厂</td>
+<td>一个库存地点只能属于一个工厂</td>
+</tr>
+<tr>
+<td>采购组织 → 公司代码</td>
+<td>决定采购组织能为哪些公司代码采购</td>
+</tr>
+<tr>
+<td>采购组织 → 工厂</td>
+<td>决定采购组织能为哪些工厂采购（参考性/标准采购组织）</td>
+</tr>
+<tr>
+<td>采购组 → 采购组织</td>
+<td>采购员归属哪个采购组织</td>
+</tr>
+</tbody></table>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>常见坑：<strong>采购组织和公司代码的分配决定了跨公司采购是否可行</strong>。如果工厂 A 的采购订单想用采购组织 B 下，必须先在企业结构里把 B 分配给 A 所在的公司代码/工厂。很多&quot;PO 保存报错&quot;的根因其实是分配没做，而不是 PO 本身的问题。</p>
+</div><h2 id="h-主数据的组织级别">主数据的组织级别</h2>
+<p>这是新人最容易混淆的点：主数据的不同&quot;视图&quot;维护在不同组织层级。</p>
+<table>
+<thead>
+<tr>
+<th>主数据</th>
+<th>组织级别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>物料主数据-基本视图</td>
+<td>Client</td>
+<td>全集团共用，如物料描述、基本计量单位</td>
+</tr>
+<tr>
+<td>物料主数据-采购视图</td>
+<td>工厂</td>
+<td>每个工厂可不同，如采购组、计划交货时间</td>
+</tr>
+<tr>
+<td>物料主数据-会计视图</td>
+<td>工厂（+公司代码估价）</td>
+<td>移动平均价/标准价，按工厂或公司代码估价</td>
+</tr>
+<tr>
+<td>供应商主数据-一般数据</td>
+<td>Client</td>
+<td>名称、地址、税号</td>
+</tr>
+<tr>
+<td>供应商主数据-公司代码视图</td>
+<td>公司代码</td>
+<td>统驭科目、付款条件、付款方式</td>
+</tr>
+<tr>
+<td>供应商主数据-采购组织视图</td>
+<td>采购组织</td>
+<td>采购组、计划交货时间、合作伙伴角色</td>
+</tr>
+</tbody></table>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：用户报&quot;物料/供应商找不到&quot;时，先问一句：<strong>&quot;你在哪个组织级别下维护/查找的？&quot;</strong> 十有八九是组织级别不对——比如只在工厂 1000 扩展了采购视图，却在工厂 2000 下单。</p>
+</div><h2 id="h-实战配置清单">实战配置清单</h2>
+<ul class="checklist"><li><label><input type="checkbox"> <span>定义公司代码（含国家/货币/语言/会计科目表）</span></label></li><li><label><input type="checkbox"> <span>定义工厂</span></label></li><li><label><input type="checkbox"> <span>工厂分配给公司代码</span></label></li><li><label><input type="checkbox"> <span>定义库存地点并分配给工厂</span></label></li><li><label><input type="checkbox"> <span>定义采购组织（标准/参考）</span></label></li><li><label><input type="checkbox"> <span>采购组织分配给公司代码</span></label></li><li><label><input type="checkbox"> <span>采购组织分配给工厂</span></label></li><li><label><input type="checkbox"> <span>定义采购组并分配给采购组织</span></label></li><li><label><input type="checkbox"> <span>定义工厂的地址信息（用于单据打印）</span></label></li></ul>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-工厂和公司代码到底什么区别">Q：工厂和公司代码到底什么区别？</h3>
+<p>A：公司代码是<strong>财务视角</strong>的法人实体（对外报税、出报表）；工厂是<strong>物流视角</strong>的地点（收货、生产、库存）。一个公司代码可以下挂多个工厂，但一个工厂只能属于一个公司代码。MM 业务单据（PO、GR）主要在&quot;工厂&quot;层跑，自动记账时才落到公司代码。</p>
+<h3 id="h-q-采购组织可以跨公司代码采购吗">Q：采购组织可以跨公司代码采购吗？</h3>
+<p>A：可以，这正是采购组织设计的价值：集中采购。一个采购组织可以分配给多个公司代码，为它们统一采购。但要注意跨公司采购涉及公司间结算（Intercompany Billing），FI 侧需要配套配置。</p>
+<h3 id="h-q-s-4hana-里企业结构有变化吗">Q：S/4HANA 里企业结构有变化吗？</h3>
+<p>A：基本概念没有变化。主要是主数据层面：供应商/客户统一为 Business Partner，组织级别的维护逻辑延续 ECC。企业结构的配置路径仍在 SPRO。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>项目初期<strong>企业结构蓝图一定要冻结得早</strong>：公司代码、工厂清单一旦确定，后续主数据收集、权限、报表都依赖它。蓝图阶段反复改工厂清单是灾难之源。</li>
+<li>工厂编码规则建议<strong>见名知意</strong>：如用城市/国家缩写+序号。见过太多项目用 1000、1001 这种纯数字，三年后没人记得哪个是哪个。</li>
+<li>库存地点不要建得过细：库存地点是库存数量的管理层级，建 50 个库存地点意味着盘点、报表、权限都要乘以 50。按<strong>物理仓库/管理责任</strong>划分，而不是按货架。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/mm/mm-overview/">SAP MM 整体架构</a></li>
+<li><a href="/mm/material-master/">Material Master（物料主数据）</a></li>
+<li><a href="/mm/supplier-bp/">Supplier / Business Partner（供应商主数据）</a></li>
+</ul>
+</div>
+<div class="tcode-row"><span>相关 T-code：</span><a class="tcode-chip" href="/tools/#tcode">SPRO</a></div>
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-mm-核心组织单元">MM 核心组织单元</a></li><li class="toc-l2"><a href="#h-层级与分配关系">层级与分配关系</a></li><li class="toc-l2"><a href="#h-主数据的组织级别">主数据的组织级别</a></li><li class="toc-l2"><a href="#h-实战配置清单">实战配置清单</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-工厂和公司代码到底什么区别">Q：工厂和公司代码到底什么区别？</a></li><li class="toc-l3"><a href="#h-q-采购组织可以跨公司代码采购吗">Q：采购组织可以跨公司代码采购吗？</a></li><li class="toc-l3"><a href="#h-q-s-4hana-里企业结构有变化吗">Q：S/4HANA 里企业结构有变化吗？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/goods-receipt/">Goods Receipt（收货）</a></h3>
+<p class="post-excerpt">MIGO 收货是库存增加的起点：移动类型 101/102/103/105 一次讲清，收货自动记账逻辑，以及收货冲销的实战处理。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E5%BA%93%E5%AD%98/">#库存</a><a class="mini-tag" href="/tag/P2P/">#P2P</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/invoice-verification/">Invoice Verification（发票校验）</a></h3>
+<p class="post-excerpt">MIRO 发票校验是 P2P 的收官环节：三单匹配逻辑、价格/数量容差、差异处理，以及发票校验与 FI 自动付款的衔接。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/P2P/">#P2P</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/material-master/">Material Master（物料主数据）</a></h3>
+<p class="post-excerpt">物料主数据是 MM 的地基：视图、组织级别、物料类型、编号范围一次讲清，并给出 MM01/MM02/MM03 的实战操作要点。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/mm-overview/">SAP MM 整体架构</a></h3>
+<p class="post-excerpt">一句话讲清 SAP MM 模块：管采购、管库存、管发票校验的材料管理核心模块，以及它在整个 SAP 系统中的位置和集成关系。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E5%9F%BA%E7%A1%80/">#基础</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

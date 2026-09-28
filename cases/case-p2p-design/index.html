@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>案例：制造企业 P2P 流程设计（示例） - SAP 实战知识库</title>
+<meta name="description" content="虚构示例：某制造企业 B 公司的 P2P（采购到付款）流程设计——从采购申请到付款的全流程、关键控制点与 MM-FI 集成设计。">
+<link rel="canonical" href="https://sap.haice.top/cases/case-p2p-design/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="案例：制造企业 P2P 流程设计（示例） - SAP 实战知识库">
+<meta property="og:description" content="虚构示例：某制造企业 B 公司的 P2P（采购到付款）流程设计——从采购申请到付款的全流程、关键控制点与 MM-FI 集成设计。">
+<meta property="og:url" content="https://sap.haice.top/cases/case-p2p-design/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"案例：制造企业 P2P 流程设计（示例）","description":"虚构示例：某制造企业 B 公司的 P2P（采购到付款）流程设计——从采购申请到付款的全流程、关键控制点与 MM-FI 集成设计。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/cases/">实战案例</a></li><li aria-current="page">案例：制造企业 P2P 流程设计（示例）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#166534" href="/kb/cases/">实战案例</a><span class="example-badge">示例内容</span></div>
+<h1>案例：制造企业 P2P 流程设计（示例）</h1>
+<p class="article-desc">虚构示例：某制造企业 B 公司的 P2P（采购到付款）流程设计——从采购申请到付款的全流程、关键控制点与 MM-FI 集成设计。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/%E6%A1%88%E4%BE%8B/">#案例</a><a class="mini-tag" href="/tag/P2P/">#P2P</a><a class="mini-tag" href="/tag/MM/">#MM</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-案例背景-虚构">案例背景（虚构）</a></li><li class="toc-l2"><a href="#h-p2p-全流程设计">P2P 全流程设计</a></li><li class="toc-l2"><a href="#h-关键控制点设计">关键控制点设计</a></li><li class="toc-l2"><a href="#h-mm-fi-集成点">MM-FI 集成点</a></li><li class="toc-l2"><a href="#h-例外流程-最容易被遗漏的部分">例外流程（最容易被遗漏的部分）</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-审批流用-sap-标准还是工作流开发">Q：审批流用 SAP 标准还是工作流开发？</a></li><li class="toc-l3"><a href="#h-q-供应商协同-门户-要不要做">Q：供应商协同（门户）要不要做？</a></li><li class="toc-l3"><a href="#h-q-p2p-和-s-4-有什么关系">Q：P2P 和 S/4 有什么关系？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+<div class="admonition warning"><div class="admonition-title">声明</div><div class="admonition-body"><p>以下案例经过脱敏 / 虚构处理，不包含真实客户名称、内部数据、账号、密钥或未公开项目资料。</p></div></div>
+<div class="article-body"><blockquote>
+<p>本案例为<strong>虚构示例</strong>，用于说明制造企业 P2P 流程设计的典型方法，不涉及任何真实客户信息。</p>
+</blockquote>
+<h2 id="h-案例背景-虚构">案例背景（虚构）</h2>
+<p>B 公司是一家<strong>虚构的</strong>汽车零部件制造商，采购特点：<strong>原材料品种多、交期敏感、供应商上百家</strong>（均为虚构设定）。原流程痛点：采购申请靠 Excel、审批靠邮件、收货和发票对不上，月末对账耗时一周。</p>
+<p>项目目标：用 SAP MM + FI 标准功能重建 P2P 流程，<strong>审批线上化、收货发票自动匹配、月末 3 天内关账</strong>。</p>
+<h2 id="h-p2p-全流程设计">P2P 全流程设计</h2>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>購買依頼(PR)</strong><span>需求部门提申请，ME51N</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>承認</strong><span>按金额分级审批（5万以下/50万以下/以上三级，虚构）</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>引合・見積</strong><span>询报价（大额采购）</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>発注(PO)</strong><span>ME21N 下达采购订单</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">5</span><div class="flow-text"><strong>入荷(GR)</strong><span>MIGO 收货，101 移动类型</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">6</span><div class="flow-text"><strong>請求書照合(IR)</strong><span>MIRO 发票校验</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">7</span><div class="flow-text"><strong>FI 記帳</strong><span>自动过账应付</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">8</span><div class="flow-text"><strong>支払</strong><span>F110 自动付款</span></div></div></div>
+<h2 id="h-关键控制点设计">关键控制点设计</h2>
+<table>
+<thead>
+<tr>
+<th>控制点</th>
+<th>设计</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PR 审批策略</td>
+<td>按金额+成本中心分级</td>
+<td>防止越权采购</td>
+</tr>
+<tr>
+<td>货源清单</td>
+<td>关键物料维护货源</td>
+<td>保证供应商合规</td>
+</tr>
+<tr>
+<td>收货容差</td>
+<td>超量 ±5%（虚构）</td>
+<td>防止随意多收</td>
+</tr>
+<tr>
+<td>发票校验容差</td>
+<td>价格/数量双容差</td>
+<td>自动匹配，减少人工</td>
+</tr>
+<tr>
+<td>三单匹配</td>
+<td>PO–GR–IR 自动勾稽</td>
+<td>付款前核对</td>
+</tr>
+</tbody></table>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：P2P 设计的核心矛盾是&quot;效率 vs 内控&quot;。给客户的建议是：<strong>小额低风险走自动化、大额高风险走审批</strong>。一刀切的严审批会把业务逼回线下 Excel。</p>
+</div><h2 id="h-mm-fi-集成点">MM-FI 集成点</h2>
+<table>
+<thead>
+<tr>
+<th>业务动作</th>
+<th>MM 侧</th>
+<th>FI 侧（自动）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>收货（GR）</td>
+<td>MIGO 101</td>
+<td>借：库存 / 贷：GR/IR</td>
+</tr>
+<tr>
+<td>发票校验（IR）</td>
+<td>MIRO</td>
+<td>借：GR/IR / 贷：应付账款</td>
+</tr>
+<tr>
+<td>付款</td>
+<td>-</td>
+<td>F110，借：应付 / 贷：银行</td>
+</tr>
+<tr>
+<td>差异处理</td>
+<td>价格差异</td>
+<td>自动记入价格差异科目</td>
+</tr>
+</tbody></table>
+<p>自动记账科目配置（OBYC）是 MM-FI 集成的核心，设计时要和 FI 顾问<strong>逐个科目对</strong>，这是上线后对账不出问题的根本保障。</p>
+<h2 id="h-例外流程-最容易被遗漏的部分">例外流程（最容易被遗漏的部分）</h2>
+<ul>
+<li><strong>退货</strong> —— MIGO 122 / 161，冲销逻辑要和供应商对账单一致。</li>
+<li><strong>免费收货</strong> —— 541 等移动类型，不产生会计凭证，注意和关账的关系。</li>
+<li><strong>发票价格差异</strong> —— 超容差走审批，不超自动过账。</li>
+<li><strong>月末暂估</strong> —— 未到发票的收货做暂估，这是 3 天关账的关键。</li>
+</ul>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>注意：P2P 项目上线翻车，十有八九翻在<strong>例外流程</strong>和<strong>期初数据</strong>上。正常流程 UAT 一遍就过，但退货、差异、暂估这些场景如果没测，上线第一个月末就会爆发。测试用例里例外场景至少占三成。</p>
+</div><h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-审批流用-sap-标准还是工作流开发">Q：审批流用 SAP 标准还是工作流开发？</h3>
+<p>A：优先标准审批策略（Release Strategy）。复杂的跨部门会签再考虑 Workflow 或 Fiori My Inbox。标准方案的上限比很多人想象的高。</p>
+<h3 id="h-q-供应商协同-门户-要不要做">Q：供应商协同（门户）要不要做？</h3>
+<p>A：看供应商的信息化水平。本示例中供应商多为中小企业，第一阶段不做门户，用邮件+Excel 对账单过渡，二期再评估。</p>
+<h3 id="h-q-p2p-和-s-4-有什么关系">Q：P2P 和 S/4 有什么关系？</h3>
+<p>A：流程逻辑相通。S/4 下注意 Business Partner（供应商主数据）、Fiori 审批界面（My Inbox）、集中采购等新能力，设计时预留。</p>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/japan/fit-gap/">Fit &amp; Gap 分析</a></li>
+<li><a href="/japan/basic-design/">基本設計（基本设计）</a></li>
+<li><a href="/cases/case-ecc-to-s4hana-mm/">案例：ECC → S/4HANA MM 迁移（示例）</a></li>
+<li><a href="/mm/purchase-order/">采购订单（示例）</a></li>
+</ul>
+<blockquote>
+<p>再次声明：本案例为虚构示例，所有公司名称与数据均为示意，不含真实客户信息。</p>
+</blockquote>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-案例背景-虚构">案例背景（虚构）</a></li><li class="toc-l2"><a href="#h-p2p-全流程设计">P2P 全流程设计</a></li><li class="toc-l2"><a href="#h-关键控制点设计">关键控制点设计</a></li><li class="toc-l2"><a href="#h-mm-fi-集成点">MM-FI 集成点</a></li><li class="toc-l2"><a href="#h-例外流程-最容易被遗漏的部分">例外流程（最容易被遗漏的部分）</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-审批流用-sap-标准还是工作流开发">Q：审批流用 SAP 标准还是工作流开发？</a></li><li class="toc-l3"><a href="#h-q-供应商协同-门户-要不要做">Q：供应商协同（门户）要不要做？</a></li><li class="toc-l3"><a href="#h-q-p2p-和-s-4-有什么关系">Q：P2P 和 S/4 有什么关系？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#166534" href="/kb/cases/">实战案例</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/cases/case-ecc-to-s4hana-mm/">案例：ECC → S/4HANA MM 迁移（示例）</a></h3>
+<p class="post-excerpt">虚构示例：某制造企业 A 公司从 ECC 迁移到 S/4HANA，MM 模块的完整迁移思路——范围、关键决策、数据迁移与风险对策。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%A1%88%E4%BE%8B/">#案例</a><a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/goods-receipt/">Goods Receipt（收货）</a></h3>
+<p class="post-excerpt">MIGO 收货是库存增加的起点：移动类型 101/102/103/105 一次讲清，收货自动记账逻辑，以及收货冲销的实战处理。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E5%BA%93%E5%AD%98/">#库存</a><a class="mini-tag" href="/tag/P2P/">#P2P</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/invoice-verification/">Invoice Verification（发票校验）</a></h3>
+<p class="post-excerpt">MIRO 发票校验是 P2P 的收官环节：三单匹配逻辑、价格/数量容差、差异处理，以及发票校验与 FI 自动付款的衔接。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/P2P/">#P2P</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/p2p-process/">P2P 完整流程</a></h3>
+<p class="post-excerpt">P2P（从采购到付款）是 MM 最核心的端到端流程：从采购申请到付款的 7 个环节、每个环节的单据与系统动作，一次完整串起来。</p>
+<div class="post-meta-bottom"><span>📖 约 5 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/P2P/">#P2P</a><a class="mini-tag" href="/tag/%E6%B5%81%E7%A8%8B/">#流程</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

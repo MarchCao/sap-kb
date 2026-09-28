@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAT：受入テスト（验收测试） - SAP 实战知识库</title>
+<meta name="description" content="日本 SAP 项目的 UAT（受入テスト）为什么总出问题？讲清 UAT 的定位、测试计划写法、缺陷管理流程和让验收一次通过的准备工作。">
+<link rel="canonical" href="https://sap.haice.top/japan/japan-uat/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="UAT：受入テスト（验收测试） - SAP 实战知识库">
+<meta property="og:description" content="日本 SAP 项目的 UAT（受入テスト）为什么总出问题？讲清 UAT 的定位、测试计划写法、缺陷管理流程和让验收一次通过的准备工作。">
+<meta property="og:url" content="https://sap.haice.top/japan/japan-uat/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"UAT：受入テスト（验收测试）","description":"日本 SAP 项目的 UAT（受入テスト）为什么总出问题？讲清 UAT 的定位、测试计划写法、缺陷管理流程和让验收一次通过的准备工作。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li aria-current="page">UAT：受入テスト（验收测试）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a><span class="example-badge">示例内容</span></div>
+<h1>UAT：受入テスト（验收测试）</h1>
+<p class="article-desc">日本 SAP 项目的 UAT（受入テスト）为什么总出问题？讲清 UAT 的定位、测试计划写法、缺陷管理流程和让验收一次通过的准备工作。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/UAT/">#UAT</a><a class="mini-tag" href="/tag/%E6%B5%8B%E8%AF%95/">#测试</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-日本-sap-项目的测试阶段划分">日本 SAP 项目的测试阶段划分</a></li><li class="toc-l2"><a href="#h-uat-准备的-5-件事">UAT 准备的 5 件事</a></li><li class="toc-l2"><a href="#h-缺陷-障害-不具合-分级示例">缺陷（障害/不具合）分级示例</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-uat-发现大量缺陷-客户拒绝签字怎么办">Q：UAT 发现大量缺陷，客户拒绝签字怎么办？</a></li><li class="toc-l3"><a href="#h-q-uat-测试数据用真实数据吗">Q：UAT 测试数据用真实数据吗？</a></li><li class="toc-l3"><a href="#h-q-uat-需要多少轮">Q：UAT 需要多少轮？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>受入テスト（うけいれテスト），即 UAT（用户验收测试），是日本 SAP 项目中<strong>由客户业务部门主导</strong>的测试阶段：用真实业务场景验证系统&quot;能不能用&quot;。UAT 通过并签字，是系统上线（切替）的前置条件。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：UAT 测的不是功能对不对（那是結合テスト的事），而是&quot;业务能不能跑通&quot;。UAT 前一定要先问客户要 5-10 个最真实的业务场景——比如&quot;月底紧急采购&quot;、&quot;供应商送货差异处理&quot;，照着这些准备，UAT 通过率完全不同。</p>
+</div><h2 id="h-日本-sap-项目的测试阶段划分">日本 SAP 项目的测试阶段划分</h2>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>日语</th>
+<th>执行者</th>
+<th>目的</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>单元测试</td>
+<td>単体テスト</td>
+<td>开发顾问</td>
+<td>程序/配置单元正确</td>
+</tr>
+<tr>
+<td>集成测试</td>
+<td>結合テスト</td>
+<td>顾问团队</td>
+<td>流程端到端跑通</td>
+</tr>
+<tr>
+<td>用户验收测试</td>
+<td>受入テスト（UAT）</td>
+<td>客户业务部门</td>
+<td>真实业务场景可用</td>
+</tr>
+<tr>
+<td>性能测试</td>
+<td>性能テスト</td>
+<td>顾问 + Basis</td>
+<td>大数据量/并发下可用</td>
+</tr>
+</tbody></table>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>単体テスト</strong><span>开发自测</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>結合テスト</strong><span>顾问按 To-Be 流程全场景测试</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>UAT 準備</strong><span>测试计划、测试用例、数据、环境、培训</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>受入テスト</strong><span>客户业务部门执行</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">5</span><div class="flow-text"><strong>障害対応</strong><span>缺陷修复 + 回归测试</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">6</span><div class="flow-text"><strong>受入承認</strong><span>客户签字，具备上线条件</span></div></div></div>
+<h2 id="h-uat-准备的-5-件事">UAT 准备的 5 件事</h2>
+<ol>
+<li><strong>テスト計画書</strong> —— 范围、 schedule、角色分工、通过标准（合否基準），先和客户对齐。</li>
+<li><strong>テストケース</strong> —— 按基本設計書的功能编号编写，每个用例写清前置条件、操作步骤、期望结果。</li>
+<li><strong>テストデータ</strong> —— 主数据、期初数据准备好，和生产环境越接近越好。</li>
+<li><strong>操作培训</strong> —— UAT 前给业务部门做操作说明，否则大量&quot;缺陷&quot;其实是&quot;不会用&quot;。</li>
+<li><strong>缺陷管理流程</strong> —— 用什么工具记录、缺陷分级、响应 SLA，提前讲清楚。</li>
+</ol>
+<h2 id="h-缺陷-障害-不具合-分级示例">缺陷（障害/不具合）分级示例</h2>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>定义</th>
+<th>例子</th>
+<th>对应</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>致命</td>
+<td>业务无法继续</td>
+<td>采购订单无法保存</td>
+<td>必须修复才能 UAT 通过</td>
+</tr>
+<tr>
+<td>严重</td>
+<td>有变通方案但影响大</td>
+<td>报表数据错误</td>
+<td>原则上上线前修复</td>
+</tr>
+<tr>
+<td>一般</td>
+<td>轻微问题</td>
+<td>画面显示错位</td>
+<td>可延期到上线后改修</td>
+</tr>
+<tr>
+<td>建议</td>
+<td>改善提案</td>
+<td>操作步骤可简化</td>
+<td>记录为将来課題</td>
+</tr>
+</tbody></table>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>注意：UAT 阶段最常见的纠纷是&quot;这是缺陷还是新需求&quot;。判定标准只有一个：<strong>基本設計書里有没有</strong>。有，就是缺陷，顾问修；没有，就是新需求，走変更管理。UAT 启动会上先把这条规则和客户对齐，能省掉一半扯皮。</p>
+</div><h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-uat-发现大量缺陷-客户拒绝签字怎么办">Q：UAT 发现大量缺陷，客户拒绝签字怎么办？</h3>
+<p>A：先分类：真缺陷抓紧修；&quot;不会用&quot;类加强培训；新需求类走变更。把剩余缺陷清单、修复计划、回归测试安排书面给客户，用计划换签字——日本客户接受&quot;有计划的风险&quot;，不接受&quot;没交代的问题&quot;。</p>
+<h3 id="h-q-uat-测试数据用真实数据吗">Q：UAT 测试数据用真实数据吗？</h3>
+<p>A：用<strong>脱敏后的真实数据</strong>或接近真实的模拟数据。全用假数据（如&quot;测试物料 001&quot;）会导致 UAT 通过、上线翻车——真实业务的脏数据才是真正的考验。</p>
+<h3 id="h-q-uat-需要多少轮">Q：UAT 需要多少轮？</h3>
+<p>A：一般 1-2 轮。第一轮找问题，第二轮回归验证。如果第三轮还有大量新缺陷，说明結合テスト没做扎实，要复盘而不是继续堆轮次。</p>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/japan/basic-design/">基本設計（基本设计）</a></li>
+<li><a href="/japan/japan-cutover/">Cutover：切替（上线切换）</a></li>
+<li><a href="/japan/japan-sap-intro/">日本 SAP 项目是什么</a></li>
+<li><a href="/s4hana/business-partner/">Business Partner（示例）</a></li>
+</ul>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-日本-sap-项目的测试阶段划分">日本 SAP 项目的测试阶段划分</a></li><li class="toc-l2"><a href="#h-uat-准备的-5-件事">UAT 准备的 5 件事</a></li><li class="toc-l2"><a href="#h-缺陷-障害-不具合-分级示例">缺陷（障害/不具合）分级示例</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-uat-发现大量缺陷-客户拒绝签字怎么办">Q：UAT 发现大量缺陷，客户拒绝签字怎么办？</a></li><li class="toc-l3"><a href="#h-q-uat-测试数据用真实数据吗">Q：UAT 测试数据用真实数据吗？</a></li><li class="toc-l3"><a href="#h-q-uat-需要多少轮">Q：UAT 需要多少轮？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/basic-design/">基本設計（基本设计）</a></h3>
+<p class="post-excerpt">日本 SAP 项目的基本設計阶段输出什么？讲清基本設計書的结构、和詳細設計的分界，以及评审一次通过的写作要点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E5%9F%BA%E6%9C%AC%E8%A8%AD%E8%A8%88/">#基本設計</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/fit-gap/">Fit &amp; Gap 分析</a></h3>
+<p class="post-excerpt">Fit &amp; Gap 是日本 SAP 项目需求阶段的核心方法：哪些需求用 SAP 标准功能满足，哪些需要开发？讲清判定标准、分析方法和输出模板。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/Fit%26Gap/">#Fit&amp;Gap</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/japan-cutover/">Cutover：切替（上线切换）</a></h3>
+<p class="post-excerpt">日本 SAP 项目的切替（上线切换）是最紧张的一周：讲清切替计划的结构、リハーサル（预演）的价值和 MM 顾问在切换周的具体工作。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E5%88%87%E6%9B%BF/">#切替</a><a class="mini-tag" href="/tag/%E4%B8%8A%E7%BA%BF/">#上线</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/japan-sap-intro/">日本 SAP 项目是什么</a></h3>
+<p class="post-excerpt">日本 SAP 项目和国内项目有什么本质区别？从项目流程、角色分工、沟通方式和日语要求四个维度讲清楚，让你第一次接触就有底。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E9%A1%B9%E7%9B%AE/">#项目</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

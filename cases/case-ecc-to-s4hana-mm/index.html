@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>案例：ECC → S/4HANA MM 迁移（示例） - SAP 实战知识库</title>
+<meta name="description" content="虚构示例：某制造企业 A 公司从 ECC 迁移到 S/4HANA，MM 模块的完整迁移思路——范围、关键决策、数据迁移与风险对策。">
+<link rel="canonical" href="https://sap.haice.top/cases/case-ecc-to-s4hana-mm/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="案例：ECC → S/4HANA MM 迁移（示例） - SAP 实战知识库">
+<meta property="og:description" content="虚构示例：某制造企业 A 公司从 ECC 迁移到 S/4HANA，MM 模块的完整迁移思路——范围、关键决策、数据迁移与风险对策。">
+<meta property="og:url" content="https://sap.haice.top/cases/case-ecc-to-s4hana-mm/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"案例：ECC → S/4HANA MM 迁移（示例）","description":"虚构示例：某制造企业 A 公司从 ECC 迁移到 S/4HANA，MM 模块的完整迁移思路——范围、关键决策、数据迁移与风险对策。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/cases/">实战案例</a></li><li aria-current="page">案例：ECC → S/4HANA MM 迁移（示例）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#166534" href="/kb/cases/">实战案例</a><span class="example-badge">示例内容</span></div>
+<h1>案例：ECC → S/4HANA MM 迁移（示例）</h1>
+<p class="article-desc">虚构示例：某制造企业 A 公司从 ECC 迁移到 S/4HANA，MM 模块的完整迁移思路——范围、关键决策、数据迁移与风险对策。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/%E6%A1%88%E4%BE%8B/">#案例</a><a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/Migration/">#Migration</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-案例背景-虚构">案例背景（虚构）</a></li><li class="toc-l2"><a href="#h-关键决策">关键决策</a></li><li class="toc-l3"><a href="#h-决策-1-brownfield-还是-greenfield">决策 1：Brownfield 还是 Greenfield？</a></li><li class="toc-l3"><a href="#h-决策-2-mm-相关的简化项-simplification-处理">决策 2：MM 相关的简化项（Simplification）处理</a></li><li class="toc-l2"><a href="#h-数据迁移策略">数据迁移策略</a></li><li class="toc-l2"><a href="#h-风险与对策">风险与对策</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-mm-迁移一般需要几轮测试">Q：MM 迁移一般需要几轮测试？</a></li><li class="toc-l3"><a href="#h-q-历史数据要迁多少年">Q：历史数据要迁多少年？</a></li><li class="toc-l3"><a href="#h-q-ecc-的自开发报表怎么办">Q：ECC 的自开发报表怎么办？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+<div class="admonition warning"><div class="admonition-title">声明</div><div class="admonition-body"><p>以下案例经过脱敏 / 虚构处理，不包含真实客户名称、内部数据、账号、密钥或未公开项目资料。</p></div></div>
+<div class="article-body"><blockquote>
+<p>本案例为<strong>虚构示例</strong>，用于说明 ECC → S/4HANA MM 迁移的典型思路与方法，不涉及任何真实客户信息。</p>
+</blockquote>
+<h2 id="h-案例背景-虚构">案例背景（虚构）</h2>
+<p>A 公司是一家<strong>虚构的</strong>离散制造企业，年营收约 50 亿元（虚构数字），使用 ECC 6.0 已超过 10 年，MM 模块覆盖采购、库存、发票校验全流程。因 ECC 维护窗口临近，决定迁移到 S/4HANA On-Premise，MM 为首批迁移模块之一。</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容（均为虚构）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>迁移方式</td>
+<td>Brownfield（系统转换）</td>
+</tr>
+<tr>
+<td>范围</td>
+<td>MM 全模块 + 与 FI 的集成点</td>
+</tr>
+<tr>
+<td>数据量</td>
+<td>物料主数据约 8 万条（虚构），未清采购订单约 1.2 万张（虚构）</td>
+</tr>
+<tr>
+<td>周期</td>
+<td>约 8 个月（含 3 轮测试）</td>
+</tr>
+</tbody></table>
+<h2 id="h-关键决策">关键决策</h2>
+<h3 id="h-决策-1-brownfield-还是-greenfield">决策 1：Brownfield 还是 Greenfield？</h3>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Brownfield（系统转换）</td>
+<td>保留历史数据和配置，上线快</td>
+<td>历史包袱带入新系统</td>
+</tr>
+<tr>
+<td>Greenfield（全新实施）</td>
+<td>流程重新优化，最干净</td>
+<td>周期长，数据迁移量大</td>
+</tr>
+</tbody></table>
+<p>A 公司选择 Brownfield：ECC 流程相对规范，管理层希望<strong>先迁过去、再逐步优化</strong>。这是大多数 ECC 老客户的务实选择。</p>
+<h3 id="h-决策-2-mm-相关的简化项-simplification-处理">决策 2：MM 相关的简化项（Simplification）处理</h3>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>Simplification List 检查</strong><span>用官方清单筛出与 MM 相关的差异项</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>影响评估</strong><span>Business Partner、物料分类账、MRP Live 等逐项评估</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>对策制定</strong><span>每个差异项定：转换工具处理 / 手工调整 / 流程变更</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>测试验证</strong><span>在沙盒转换后逐项验证</span></div></div></div>
+<p>MM 迁移中最需要关注的几项（通用知识，非本案例独有）：</p>
+<ol>
+<li><strong>供应商主数据 → Business Partner</strong> —— 转换工具自动转，但字段映射要提前检查。</li>
+<li><strong>物料分类账强制启用</strong> —— 实际成本相关配置变化，影响 FI 集成。</li>
+<li><strong>MRP 切到 MRP Live</strong> —— 事务代码和作业方式变化，要给计划员培训。</li>
+</ol>
+<h2 id="h-数据迁移策略">数据迁移策略</h2>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>策略</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>物料主数据</td>
+<td>转换工具</td>
+<td>检查视图完整性</td>
+</tr>
+<tr>
+<td>供应商主数据</td>
+<td>转换工具 → BP</td>
+<td>重点验证 BP 角色</td>
+</tr>
+<tr>
+<td>库存余额</td>
+<td>期末导入</td>
+<td>与财务对账</td>
+</tr>
+<tr>
+<td>未清采购订单</td>
+<td>迁移工具</td>
+<td>收货/开票状态带入</td>
+</tr>
+<tr>
+<td>历史凭证</td>
+<td>按需</td>
+<td>Brownfield 保留，按归档策略处理</td>
+</tr>
+</tbody></table>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：数据迁移做三遍——第一遍在沙盒验证工具和映射，第二遍在测试系统带业务验证，第三遍才是生产切换。每一遍的差异清单都要留档，这是上线后对账的依据。</p>
+</div><h2 id="h-风险与对策">风险与对策</h2>
+<table>
+<thead>
+<tr>
+<th>风险</th>
+<th>对策</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BP 转换后字段缺失</td>
+<td>提前做字段映射检查，抽样验证</td>
+</tr>
+<tr>
+<td>自开发程序不兼容</td>
+<td>用 ATC / 简化项检查提前扫描，逐个整改</td>
+</tr>
+<tr>
+<td>业务部门抵触新界面</td>
+<td>Fiori 培训提前做，UAT 用真实场景</td>
+</tr>
+<tr>
+<td>切换窗口不够</td>
+<td>做リハーサル（预演）精确计时</td>
+</tr>
+</tbody></table>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>注意：Brownfield 最大的坑是&quot;以为只是技术升级&quot;。S/4 的数据模型变化（如 BP、物料分类账）会<strong>实质影响业务操作和财务对账</strong>，必须当半个业务项目来做，而不是纯技术项目。</p>
+</div><h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-mm-迁移一般需要几轮测试">Q：MM 迁移一般需要几轮测试？</h3>
+<p>A：本示例安排 3 轮：单元/集成测试、UAT、切换预演。轮次不是关键，<strong>每轮的进入/退出标准</strong>才是。</p>
+<h3 id="h-q-历史数据要迁多少年">Q：历史数据要迁多少年？</h3>
+<p>A：未清项全迁，已清项按法务和审计要求（虚构案例中定的 3 年）。这是要和财务、法务共同决策的事项。</p>
+<h3 id="h-q-ecc-的自开发报表怎么办">Q：ECC 的自开发报表怎么办？</h3>
+<p>A：先分类：S/4 标准 Fiori 报表能替代的就替代；不能的评估改造成本。原则是<strong>能标不自研</strong>。</p>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/s4hana/what-is-s4hana/">S/4HANA 是什么</a></li>
+<li><a href="/japan/japan-cutover/">Cutover：切替（上线切换）</a></li>
+<li><a href="/cases/case-p2p-design/">案例：制造企业 P2P 流程设计（示例）</a></li>
+</ul>
+<blockquote>
+<p>再次声明：本案例为虚构示例，所有公司名称与数据均为示意，不含真实客户信息。</p>
+</blockquote>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-案例背景-虚构">案例背景（虚构）</a></li><li class="toc-l2"><a href="#h-关键决策">关键决策</a></li><li class="toc-l3"><a href="#h-决策-1-brownfield-还是-greenfield">决策 1：Brownfield 还是 Greenfield？</a></li><li class="toc-l3"><a href="#h-决策-2-mm-相关的简化项-simplification-处理">决策 2：MM 相关的简化项（Simplification）处理</a></li><li class="toc-l2"><a href="#h-数据迁移策略">数据迁移策略</a></li><li class="toc-l2"><a href="#h-风险与对策">风险与对策</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-mm-迁移一般需要几轮测试">Q：MM 迁移一般需要几轮测试？</a></li><li class="toc-l3"><a href="#h-q-历史数据要迁多少年">Q：历史数据要迁多少年？</a></li><li class="toc-l3"><a href="#h-q-ecc-的自开发报表怎么办">Q：ECC 的自开发报表怎么办？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#166534" href="/kb/cases/">实战案例</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/cases/case-p2p-design/">案例：制造企业 P2P 流程设计（示例）</a></h3>
+<p class="post-excerpt">虚构示例：某制造企业 B 公司的 P2P（采购到付款）流程设计——从采购申请到付款的全流程、关键控制点与 MM-FI 集成设计。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%A1%88%E4%BE%8B/">#案例</a><a class="mini-tag" href="/tag/P2P/">#P2P</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/business-partner/">Business Partner（业务伙伴）</a></h3>
+<p class="post-excerpt">S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/material-ledger/">Material Ledger（物料分类账）</a></h3>
+<p class="post-excerpt">物料分类账在 S/4HANA 中强制启用，带来实际成本核算与多币种评估。讲清 ML 对 MM 和财务的真实影响，以及项目上线的关键点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/s4hana-migration/">S/4HANA Migration：迁移路径与策略</a></h3>
+<p class="post-excerpt">S/4HANA 三种迁移路径详解：Greenfield 全新实施、Brownfield 系统转换、选择性数据迁移。含决策对比表、核心步骤与选型 checklist。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/Migration/">#Migration</a><a class="mini-tag" href="/tag/%E9%A1%B9%E7%9B%AE/">#项目</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
