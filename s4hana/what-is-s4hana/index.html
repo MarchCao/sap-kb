@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S/4HANA 是什么 - SAP 实战知识库</title>
+<meta name="description" content="一句话理解 S/4HANA：SAP 基于 HANA 内存数据库的新一代 ERP，它和 ECC 到底有什么本质区别？本文从实战角度讲清楚。">
+<link rel="canonical" href="https://sap.haice.top/s4hana/what-is-s4hana/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="S/4HANA 是什么 - SAP 实战知识库">
+<meta property="og:description" content="一句话理解 S/4HANA：SAP 基于 HANA 内存数据库的新一代 ERP，它和 ECC 到底有什么本质区别？本文从实战角度讲清楚。">
+<meta property="og:url" content="https://sap.haice.top/s4hana/what-is-s4hana/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"S/4HANA 是什么","description":"一句话理解 S/4HANA：SAP 基于 HANA 内存数据库的新一代 ERP，它和 ECC 到底有什么本质区别？本文从实战角度讲清楚。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/s4hana/">S/4HANA</a></li><li aria-current="page">S/4HANA 是什么</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a><span class="example-badge">示例内容</span></div>
+<h1>S/4HANA 是什么</h1>
+<p class="article-desc">一句话理解 S/4HANA：SAP 基于 HANA 内存数据库的新一代 ERP，它和 ECC 到底有什么本质区别？本文从实战角度讲清楚。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 2 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/%E5%9F%BA%E7%A1%80/">#基础</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-为什么-sap-要推-s-4hana">为什么 SAP 要推 S/4HANA</a></li><li class="toc-l2"><a href="#h-ecc-顾问最需要适应的-5-个变化">ECC 顾问最需要适应的 5 个变化</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-现在学-ecc-还有意义吗">Q：现在学 ECC 还有意义吗？</a></li><li class="toc-l3"><a href="#h-q-s-4hana-是云还是本地部署">Q：S/4HANA 是云还是本地部署？</a></li><li class="toc-l3"><a href="#h-q-转-s-4-需要重新考证吗">Q：转 S/4 需要重新考证吗？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>S/4HANA 是 SAP 的新一代 ERP 套件，<strong>只能运行在 SAP HANA 内存数据库上</strong>。它不是 ECC 的一个&quot;升级包&quot;，而是一次重新设计：数据模型被大幅简化（比如物料分类账、业务伙伴），用户界面全面转向 Fiori。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：跟客户或新人解释时，不要背定义。用一句话——&quot;S/4HANA = HANA 数据库 + 简化的数据模型 + Fiori 界面&quot;，对方立刻有画面。</p>
+</div><h2 id="h-为什么-sap-要推-s-4hana">为什么 SAP 要推 S/4HANA</h2>
+<table>
+<thead>
+<tr>
+<th>原因</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ECC 维护窗口</td>
+<td>ECC 主流维护已进入倒计时，企业必须规划转型</td>
+</tr>
+<tr>
+<td>内存计算</td>
+<td>HANA 让 MRP、报表从&quot;跑批一夜&quot;变成&quot;实时&quot;</td>
+</tr>
+<tr>
+<td>简化</td>
+<td>大量汇总表、索引表被取消，数据模型更干净</td>
+</tr>
+<tr>
+<td>Fiori</td>
+<td>统一、移动友好的新一代操作界面</td>
+</tr>
+</tbody></table>
+<h2 id="h-ecc-顾问最需要适应的-5-个变化">ECC 顾问最需要适应的 5 个变化</h2>
+<ol>
+<li><strong>数据库只能是 HANA</strong> —— 不能再跑在 Oracle / SQL Server 上。</li>
+<li><strong>Business Partner 取代供应商 / 客户主数据</strong> —— 主数据概念统一，事务代码变为 <code>BP</code>。</li>
+<li><strong>物料分类账（Material Ledger）强制启用</strong> —— 实际成本核算方式变化。</li>
+<li><strong>MRP Live</strong> —— 基于 HANA 的新 MRP，事务代码 <code>MD01N</code>。</li>
+<li><strong>Fiori 成为主界面</strong> —— SAP GUI 还在，但新功能优先 Fiori。</li>
+</ol>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>ECC 项目经验</strong><span>业务流程理解、配置思路、排错方法论</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>S/4HANA 增量学习</strong><span>简化清单、BP、ML、Fiori、迁移</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>项目实战</strong><span>Fit-to-Standard、迁移、切换</span></div></div></div>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-现在学-ecc-还有意义吗">Q：现在学 ECC 还有意义吗？</h3>
+<p>A：有。业务流程、配置逻辑、项目方法在 S/4HANA 里大部分是延续的。ECC 经验是学 S/4 的地基，缺的是&quot;差异部分&quot;，而不是从零开始。</p>
+<h3 id="h-q-s-4hana-是云还是本地部署">Q：S/4HANA 是云还是本地部署？</h3>
+<p>A：两种都有：S/4HANA Cloud（公有云 / 私有云）和 S/4HANA On-Premise（本地部署）。选型是项目初期的关键决策之一。</p>
+<h3 id="h-q-转-s-4-需要重新考证吗">Q：转 S/4 需要重新考证吗？</h3>
+<p>A：SAP 的认证体系跟着产品走，S/4 相关认证是加分项，但项目经验永远比证书更有说服力。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>给客户讲 S/4 价值时，<strong>不要只谈技术</strong>，要谈业务影响：关账更快、库存更准、MRP 从天级变分钟级。</li>
+<li>brownfield（系统转换）还是 greenfield（全新实施），是每个 S/4 项目的第一个大决策，直接影响预算和周期。</li>
+<li>先读官方的 <strong>Simplification List</strong>，它是 ECC → S/4 所有差异的权威清单。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></li>
+<li><a href="/s4hana/s4hana-architecture/">S/4HANA 架构概览</a></li>
+<li><a href="/s4hana/s4hana-migration/">S/4HANA Migration 概览</a></li>
+</ul>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-为什么-sap-要推-s-4hana">为什么 SAP 要推 S/4HANA</a></li><li class="toc-l2"><a href="#h-ecc-顾问最需要适应的-5-个变化">ECC 顾问最需要适应的 5 个变化</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-现在学-ecc-还有意义吗">Q：现在学 ECC 还有意义吗？</a></li><li class="toc-l3"><a href="#h-q-s-4hana-是云还是本地部署">Q：S/4HANA 是云还是本地部署？</a></li><li class="toc-l3"><a href="#h-q-转-s-4-需要重新考证吗">Q：转 S/4 需要重新考证吗？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+</main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
