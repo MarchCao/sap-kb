@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S/4HANA Migration：迁移路径与策略 - SAP 实战知识库</title>
+<meta name="description" content="S/4HANA 三种迁移路径详解：Greenfield 全新实施、Brownfield 系统转换、选择性数据迁移。含决策对比表、核心步骤与选型 checklist。">
+<link rel="canonical" href="https://sap.haice.top/s4hana/s4hana-migration/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="S/4HANA Migration：迁移路径与策略 - SAP 实战知识库">
+<meta property="og:description" content="S/4HANA 三种迁移路径详解：Greenfield 全新实施、Brownfield 系统转换、选择性数据迁移。含决策对比表、核心步骤与选型 checklist。">
+<meta property="og:url" content="https://sap.haice.top/s4hana/s4hana-migration/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"S/4HANA Migration：迁移路径与策略","description":"S/4HANA 三种迁移路径详解：Greenfield 全新实施、Brownfield 系统转换、选择性数据迁移。含决策对比表、核心步骤与选型 checklist。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/s4hana/">S/4HANA</a></li><li aria-current="page">S/4HANA Migration：迁移路径与策略</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a><span class="example-badge">示例内容</span></div>
+<h1>S/4HANA Migration：迁移路径与策略</h1>
+<p class="article-desc">S/4HANA 三种迁移路径详解：Greenfield 全新实施、Brownfield 系统转换、选择性数据迁移。含决策对比表、核心步骤与选型 checklist。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/Migration/">#Migration</a><a class="mini-tag" href="/tag/%E9%A1%B9%E7%9B%AE/">#项目</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-三种路径对比">三种路径对比</a></li><li class="toc-l2"><a href="#h-迁移的核心步骤">迁移的核心步骤</a></li><li class="toc-l2"><a href="#h-关键工具">关键工具</a></li><li class="toc-l2"><a href="#h-项目-checklist-选型阶段">项目 Checklist（选型阶段）</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-brownfield-是不是就不用做蓝图了">Q：Brownfield 是不是就不用做蓝图了？</a></li><li class="toc-l3"><a href="#h-q-历史数据要迁多少年">Q：历史数据要迁多少年？</a></li><li class="toc-l3"><a href="#h-q-切换-cutover-一般要停机多久">Q：切换（Cutover）一般要停机多久？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>S/4HANA 迁移只有三条路：<strong>Greenfield</strong>（全新实施，老系统只迁必要数据）、<strong>Brownfield</strong>（系统转换，老系统整体升级）、<strong>选择性迁移</strong>（介于两者之间，按需迁）。选哪条路是 S/4 项目的第一个大决策，直接决定预算、周期和风险。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：选型讨论容易陷入技术细节。拉回来的方法就一个问题——&quot;老系统的流程和数据，有多少是值得搬到新系统的？&quot;答案超过七成，倾向 Brownfield；不到三成，倾向 Greenfield。</p>
+</div><h2 id="h-三种路径对比">三种路径对比</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>Greenfield（全新实施）</th>
+<th>Brownfield（系统转换）</th>
+<th>选择性数据迁移</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>本质</td>
+<td>重新实施</td>
+<td>技术升级 + 数据转换</td>
+<td>按需迁移</td>
+</tr>
+<tr>
+<td>老系统</td>
+<td>只迁主数据 + 期初余额</td>
+<td>整体转换（含历史数据）</td>
+<td>选迁部分公司代码/数据</td>
+</tr>
+<tr>
+<td>流程</td>
+<td>按标准流程重建</td>
+<td>保留现有流程</td>
+<td>混合</td>
+</tr>
+<tr>
+<td>周期</td>
+<td>长</td>
+<td>相对短</td>
+<td>中等</td>
+</tr>
+<tr>
+<td>定制</td>
+<td>可彻底清理历史包袱</td>
+<td>历史定制大部分保留</td>
+<td>选择性保留</td>
+</tr>
+<tr>
+<td>适合</td>
+<td>流程要重构、老系统包袱重</td>
+<td>流程稳定、主要想升级技术</td>
+<td>集团分拆、部分公司先行</td>
+</tr>
+</tbody></table>
+<h2 id="h-迁移的核心步骤">迁移的核心步骤</h2>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>准备</strong><span>Readiness Check、Simplification List 差异分析</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>规划</strong><span>路径决策、Mock 迁移计划、停机窗口</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>Mock 迁移</strong><span>至少 2-3 轮，计时、排错</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>数据迁移</strong><span>主数据、期初余额、未清项</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">5</span><div class="flow-text"><strong>测试</strong><span>单元、集成、UAT（含月结演练）</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">6</span><div class="flow-text"><strong>切换</strong><span>Cutover、Hypercare</span></div></div></div>
+<h2 id="h-关键工具">关键工具</h2>
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Simplification List</td>
+<td>ECC → S/4 差异权威清单，差异分析起点</td>
+</tr>
+<tr>
+<td>Readiness Check</td>
+<td>老系统升级准备度检查</td>
+</tr>
+<tr>
+<td>Maintenance Planner</td>
+<td>升级路径、补丁规划</td>
+</tr>
+<tr>
+<td>SUM + DMO</td>
+<td>系统转换的技术工具</td>
+</tr>
+<tr>
+<td>迁移 Cockpit（LTMC）</td>
+<td>主数据、期初数据迁移</td>
+</tr>
+</tbody></table>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>注意：Mock 迁移至少做两轮，第一轮一定超时、一定报错。Mock 的目的就是暴露问题——切换当天的剧本，是在 Mock 里一轮一轮打磨出来的，不是写出来的。</p>
+</div><h2 id="h-项目-checklist-选型阶段">项目 Checklist（选型阶段）</h2>
+<ul class="checklist"><li><label><input type="checkbox"> <span>迁移路径决策（Greenfield / Brownfield / 选择性）</span></label></li><li><label><input type="checkbox"> <span>Simplification List 差异分析完成（按模块）</span></label></li><li><label><input type="checkbox"> <span>自开发代码检查（Custom Code Analyzer）</span></label></li><li><label><input type="checkbox"> <span>主数据清洗计划（BP、CVI 编号规则）</span></label></li><li><label><input type="checkbox"> <span>Mock 迁移轮次、停机窗口确认</span></label></li><li><label><input type="checkbox"> <span>历史数据保留策略（搬多少年）</span></label></li><li><label><input type="checkbox"> <span>切换剧本、回退方案</span></label></li></ul>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-brownfield-是不是就不用做蓝图了">Q：Brownfield 是不是就不用做蓝图了？</h3>
+<p>A：要做，但重点不同。Brownfield 的蓝图重点是&quot;差异点&quot;（Fit-to-Standard 找 Gap），而不是从零设计流程。省掉的是流程重建，不是方案设计。</p>
+<h3 id="h-q-历史数据要迁多少年">Q：历史数据要迁多少年？</h3>
+<p>A：没有标准答案，看审计和业务需求。常见做法：未清项全迁，已清项迁 1-2 年汇总。迁太多，转换时间和存储成本直线上升。</p>
+<h3 id="h-q-切换-cutover-一般要停机多久">Q：切换（Cutover）一般要停机多久？</h3>
+<p>A：看数据量和路径，短则一个周末，长则数天。停机窗口是 Mock 迁移计时的结果，不是拍脑袋定的——这就是为什么 Mock 要计时。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>选型阶段就把 Basis 拉进来，技术可行性（版本、补丁、HANA sizing）不过关，功能方案写得再漂亮也是废纸。</li>
+<li>数据迁移的负责人<strong>必须是业务 + IT 双人制</strong>，纯 IT 迁的数据，业务一定不认。</li>
+<li>Hypercare 的支持团队要在切换前就位，别等用户报错了才组建——切换后第一周的问题量是平时的数倍。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></li>
+<li><a href="/s4hana/business-partner/">Business Partner（业务伙伴）</a></li>
+<li><a href="/cases/case-ecc-to-s4hana-mm/">ECC → S/4HANA MM 转型案例</a></li>
+<li><a href="/japan/japan-cutover/">日本项目 Cutover</a></li>
+</ul>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-三种路径对比">三种路径对比</a></li><li class="toc-l2"><a href="#h-迁移的核心步骤">迁移的核心步骤</a></li><li class="toc-l2"><a href="#h-关键工具">关键工具</a></li><li class="toc-l2"><a href="#h-项目-checklist-选型阶段">项目 Checklist（选型阶段）</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-brownfield-是不是就不用做蓝图了">Q：Brownfield 是不是就不用做蓝图了？</a></li><li class="toc-l3"><a href="#h-q-历史数据要迁多少年">Q：历史数据要迁多少年？</a></li><li class="toc-l3"><a href="#h-q-切换-cutover-一般要停机多久">Q：切换（Cutover）一般要停机多久？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/business-partner/">Business Partner（业务伙伴）</a></h3>
+<p class="post-excerpt">S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></h3>
+<p class="post-excerpt">从数据库、数据模型、主数据、财务、用户界面五个维度，对比 ECC 与 S/4HANA 的本质区别，帮 ECC 顾问快速定位需要补齐的差异点。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/ECC/">#ECC</a><a class="mini-tag" href="/tag/%E9%80%89%E5%9E%8B/">#选型</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/fiori-intro/">Fiori 简介：新一代用户体验</a></h3>
+<p class="post-excerpt">Fiori 是 S/4HANA 的主操作界面：Launchpad 统一入口、三种 App 类型、角色导向设计。讲清 Fiori 与 SAP GUI 的关系和 MM 常用 App。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/Fiori/">#Fiori</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/material-ledger/">Material Ledger（物料分类账）</a></h3>
+<p class="post-excerpt">物料分类账在 S/4HANA 中强制启用，带来实际成本核算与多币种评估。讲清 ML 对 MM 和财务的真实影响，以及项目上线的关键点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAP MM 整体架构 - SAP 实战知识库</title>
+<meta name="description" content="一句话讲清 SAP MM 模块：管采购、管库存、管发票校验的材料管理核心模块，以及它在整个 SAP 系统中的位置和集成关系。">
+<link rel="canonical" href="https://sap.haice.top/mm/mm-overview/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SAP MM 整体架构 - SAP 实战知识库">
+<meta property="og:description" content="一句话讲清 SAP MM 模块：管采购、管库存、管发票校验的材料管理核心模块，以及它在整个 SAP 系统中的位置和集成关系。">
+<meta property="og:url" content="https://sap.haice.top/mm/mm-overview/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"SAP MM 整体架构","description":"一句话讲清 SAP MM 模块：管采购、管库存、管发票校验的材料管理核心模块，以及它在整个 SAP 系统中的位置和集成关系。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/mm/">SAP MM</a></li><li aria-current="page">SAP MM 整体架构</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a><span class="example-badge">示例内容</span></div>
+<h1>SAP MM 整体架构</h1>
+<p class="article-desc">一句话讲清 SAP MM 模块：管采购、管库存、管发票校验的材料管理核心模块，以及它在整个 SAP 系统中的位置和集成关系。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 4 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E5%9F%BA%E7%A1%80/">#基础</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-mm-在-sap-系统中的位置">MM 在 SAP 系统中的位置</a></li><li class="toc-l2"><a href="#h-mm-的主要子功能">MM 的主要子功能</a></li><li class="toc-l2"><a href="#h-学习-mm-的建议顺序">学习 MM 的建议顺序</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-mm-和-p2p-是什么关系">Q：MM 和 P2P 是什么关系？</a></li><li class="toc-l3"><a href="#h-q-学-mm-需要先学-fi-吗">Q：学 MM 需要先学 FI 吗？</a></li><li class="toc-l3"><a href="#h-q-s-4hana-里-mm-变化大吗">Q：S/4HANA 里 MM 变化大吗？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p><strong>SAP MM（Materials Management，物料管理）是 SAP ERP 中负责&quot;买东西、管库存、核发票&quot;的核心模块</strong>。几乎所有制造、贸易、零售企业的采购与仓储业务都跑在 MM 里：从采购申请、采购订单、收货入库，到发票校验、库存盘点。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：跟新人解释 MM 时记住一句话——<strong>&quot;MM 管的是物料从&#39;买&#39;到&#39;用&#39;的全过程&quot;</strong>。采购（买）、库存管理（存）、发票校验（付），这是 MM 的三条主线，抓住这三条就抓住了 MM 的骨架。</p>
+</div><h2 id="h-mm-在-sap-系统中的位置">MM 在 SAP 系统中的位置</h2>
+<p>MM 不是孤立模块，它处在物流链的中心位置，上下游都深度集成：</p>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>SD（销售）</strong><span>销售订单产生需求</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>传递给 MM / PP</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>PP（生产计划）</strong><span>生产订单、MRP 产生采购需求</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>MM（物料管理）</strong><span>采购、收货、库存、发票校验</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">5</span><div class="flow-text"><strong>FI（财务）</strong><span>收货/发票自动产生会计凭证</span></div></div></div>
+<table>
+<thead>
+<tr>
+<th>集成模块</th>
+<th>集成点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FI</td>
+<td>收货、发票校验</td>
+<td>MIGO 收货自动记账（借库存、贷 GR/IR），MIRO 发票校验清 GR/IR</td>
+</tr>
+<tr>
+<td>PP</td>
+<td>生产领料、MRP</td>
+<td>生产订单发料（261）、完工入库（101），MRP 跑出采购申请</td>
+</tr>
+<tr>
+<td>SD</td>
+<td>销售发货、第三方订单</td>
+<td>发货（601）扣减库存，第三方采购订单直接发给客户</td>
+</tr>
+<tr>
+<td>QM</td>
+<td>质检库存</td>
+<td>收货进质检库存，检验合格后转非限制使用</td>
+</tr>
+<tr>
+<td>WM/EWM</td>
+<td>仓储管理</td>
+<td>库存地点层面的上下架、库位管理</td>
+</tr>
+</tbody></table>
+<h2 id="h-mm-的主要子功能">MM 的主要子功能</h2>
+<table>
+<thead>
+<tr>
+<th>子功能</th>
+<th>核心内容</th>
+<th>常用事务代码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>采购（Purchasing）</td>
+<td>采购申请、货源确定、采购订单、框架协议</td>
+<td>ME51N、ME21N、ME31K</td>
+</tr>
+<tr>
+<td>库存管理（Inventory Management）</td>
+<td>收货、发货、转储、盘点</td>
+<td>MIGO、MB52、MI01</td>
+</tr>
+<tr>
+<td>发票校验（Invoice Verification）</td>
+<td>发票录入、三单匹配、差异处理</td>
+<td>MIRO、MRBR</td>
+</tr>
+<tr>
+<td>物料主数据</td>
+<td>物料的创建与维护</td>
+<td>MM01、MM02、MM03</td>
+</tr>
+<tr>
+<td>供应商主数据</td>
+<td>供应商/BP 的创建与维护</td>
+<td>BP、XK01</td>
+</tr>
+<tr>
+<td>物料需求计划（MRP）</td>
+<td>跑出计划订单与采购申请</td>
+<td>MD01N、MD04</td>
+</tr>
+<tr>
+<td>外协加工</td>
+<td>提供组件给供应商、收货结算</td>
+<td>ME21N（外协）、MIGO</td>
+</tr>
+</tbody></table>
+<h2 id="h-学习-mm-的建议顺序">学习 MM 的建议顺序</h2>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>企业结构</strong><span>先理解公司代码、工厂、库存地点、采购组织</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>主数据</strong><span>物料主数据、供应商主数据是地基</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>采购流程</strong><span>PR</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>PO 的完整链条</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">5</span><div class="flow-text"><strong>库存管理</strong><span>收货、发货、移动类型</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">6</span><div class="flow-text"><strong>发票校验与 FI 集成</strong><span>MIRO 与自动记账</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">7</span><div class="flow-text"><strong>MRP 与特殊流程</strong><span>外协、寄售、第三方</span></div></div></div>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>常见坑：很多新人一上来就钻 PO 界面的几十个字段，却说不清&quot;公司代码和工厂是什么关系&quot;。<strong>MM 的所有业务都建立在企业结构之上</strong>，结构没搞懂，后面的配置和排错都会云里雾里。先啃企业结构，再碰业务单据。</p>
+</div><h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-mm-和-p2p-是什么关系">Q：MM 和 P2P 是什么关系？</h3>
+<p>A：P2P（Procure to Pay，从采购到付款）是一条<strong>端到端业务流程</strong>，横跨 MM 和 FI：采购申请 → 采购订单 → 收货 → 发票校验 → 付款。MM 是承载 P2P 流程的主要模块，但付款环节在 FI/AP。可以把 MM 理解为&quot;模块&quot;，P2P 理解为&quot;流程&quot;。</p>
+<h3 id="h-q-学-mm-需要先学-fi-吗">Q：学 MM 需要先学 FI 吗？</h3>
+<p>A：不需要精通 FI，但必须理解基本借贷逻辑和&quot;自动记账&quot;的概念。MM 的收货、发票校验都会自动产生 FI 凭证，排错时经常要能看懂凭证分录。建议同步学习 FI 集成基础。</p>
+<h3 id="h-q-s-4hana-里-mm-变化大吗">Q：S/4HANA 里 MM 变化大吗？</h3>
+<p>A：核心流程变化不大，但有几个关键差异：供应商/客户主数据统一为 Business Partner（事务代码 <code>BP</code>）、物料分类账强制启用、MRP 变为 MRP Live、界面转向 Fiori。MM 的业务知识可以平滑迁移。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>MM 顾问的核心竞争力不在&quot;会点哪个按钮&quot;，而在<strong>理解业务</strong>：为什么要有采购申请？收货为什么分 101/103？发票为什么要做三单匹配？每个设计背后都是内控和业务逻辑。</li>
+<li>排错时养成习惯：<strong>先看单据流（Document Flow）</strong>。从 PO 能看到关联的 PR、GR、发票，一条链看下来，问题出在哪一段一目了然。</li>
+<li>MM 的配置大多在 SPRO → 物料管理下，前期多花时间熟悉配置树，后期效率翻倍。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/mm/mm-enterprise-structure/">Enterprise Structure（企业结构）</a></li>
+<li><a href="/mm/material-master/">Material Master（物料主数据）</a></li>
+<li><a href="/mm/p2p-process/">P2P 完整流程</a></li>
+<li><a href="/s4hana/what-is-s4hana/">S/4HANA 是什么</a></li>
+</ul>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-mm-在-sap-系统中的位置">MM 在 SAP 系统中的位置</a></li><li class="toc-l2"><a href="#h-mm-的主要子功能">MM 的主要子功能</a></li><li class="toc-l2"><a href="#h-学习-mm-的建议顺序">学习 MM 的建议顺序</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-mm-和-p2p-是什么关系">Q：MM 和 P2P 是什么关系？</a></li><li class="toc-l3"><a href="#h-q-学-mm-需要先学-fi-吗">Q：学 MM 需要先学 FI 吗？</a></li><li class="toc-l3"><a href="#h-q-s-4hana-里-mm-变化大吗">Q：S/4HANA 里 MM 变化大吗？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/goods-receipt/">Goods Receipt（收货）</a></h3>
+<p class="post-excerpt">MIGO 收货是库存增加的起点：移动类型 101/102/103/105 一次讲清，收货自动记账逻辑，以及收货冲销的实战处理。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E5%BA%93%E5%AD%98/">#库存</a><a class="mini-tag" href="/tag/P2P/">#P2P</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/invoice-verification/">Invoice Verification（发票校验）</a></h3>
+<p class="post-excerpt">MIRO 发票校验是 P2P 的收官环节：三单匹配逻辑、价格/数量容差、差异处理，以及发票校验与 FI 自动付款的衔接。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/P2P/">#P2P</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/material-master/">Material Master（物料主数据）</a></h3>
+<p class="post-excerpt">物料主数据是 MM 的地基：视图、组织级别、物料类型、编号范围一次讲清，并给出 MM01/MM02/MM03 的实战操作要点。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/mm-enterprise-structure/">Enterprise Structure（企业结构）</a></h3>
+<p class="post-excerpt">公司代码、工厂、库存地点、采购组织、采购组到底是什么关系？本文讲清 MM 企业结构的核心组织单元、层级关系与实战配置要点。</p>
+<div class="post-meta-bottom"><span>📖 约 5 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E9%85%8D%E7%BD%AE/">#配置</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

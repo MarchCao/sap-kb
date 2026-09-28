@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cutover：切替（上线切换） - SAP 实战知识库</title>
+<meta name="description" content="日本 SAP 项目的切替（上线切换）是最紧张的一周：讲清切替计划的结构、リハーサル（预演）的价值和 MM 顾问在切换周的具体工作。">
+<link rel="canonical" href="https://sap.haice.top/japan/japan-cutover/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cutover：切替（上线切换） - SAP 实战知识库">
+<meta property="og:description" content="日本 SAP 项目的切替（上线切换）是最紧张的一周：讲清切替计划的结构、リハーサル（预演）的价值和 MM 顾问在切换周的具体工作。">
+<meta property="og:url" content="https://sap.haice.top/japan/japan-cutover/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Cutover：切替（上线切换）","description":"日本 SAP 项目的切替（上线切换）是最紧张的一周：讲清切替计划的结构、リハーサル（预演）的价值和 MM 顾问在切换周的具体工作。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li aria-current="page">Cutover：切替（上线切换）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a><span class="example-badge">示例内容</span></div>
+<h1>Cutover：切替（上线切换）</h1>
+<p class="article-desc">日本 SAP 项目的切替（上线切换）是最紧张的一周：讲清切替计划的结构、リハーサル（预演）的价值和 MM 顾问在切换周的具体工作。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E5%88%87%E6%9B%BF/">#切替</a><a class="mini-tag" href="/tag/%E4%B8%8A%E7%BA%BF/">#上线</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-切替的典型时间线-示例">切替的典型时间线（示例）</a></li><li class="toc-l2"><a href="#h-mm-顾问在切替中的主要工作">MM 顾问在切替中的主要工作</a></li><li class="toc-l2"><a href="#h-预演-为什么必须做">リハーサル（预演）：为什么必须做</a></li><li class="toc-l2"><a href="#h-切替计划书的关键要素">切替计划书的关键要素</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-切替一般选在什么时候">Q：切替一般选在什么时候？</a></li><li class="toc-l3"><a href="#h-q-数据对不上-比如库存金额差异-怎么办">Q：数据对不上（比如库存金额差异）怎么办？</a></li><li class="toc-l3"><a href="#h-q-上线后出问题谁负责">Q：上线后出问题谁负责？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>切替（きりかえ），即 Cutover，是把系统从旧环境切换到 SAP 生产环境的<strong>整体作业</strong>：停旧系统、导数据、做期初、开新系统。日本项目对切替的要求是&quot;<strong>按计划书分秒不差地执行</strong>&quot;，而做到这一点的秘诀叫 リハーサル（预演）。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：切替计划书要细到&quot;几点几分、谁、做什么、做完怎么确认&quot;。MM 顾问的那几页，至少包括：物料主数据导入、库存期初导入、未清采购订单导入，每一步的事务代码、文件名、校验方法和回退条件。</p>
+</div><h2 id="h-切替的典型时间线-示例">切替的典型时间线（示例）</h2>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>切替 4 周前</strong><span>切替計画書定稿，客户批准</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>切替 2 周前</strong><span>リハーサル（预演）：按计划书完整跑一遍，计时</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>切替 1 周前</strong><span>预演问题修正，计划书更新，最终版冻结</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>切替当日</strong><span>旧系统停止</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">5</span><div class="flow-text"><strong>数据抽取</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">6</span><div class="flow-text"><strong>数据导入</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">7</span><div class="flow-text"><strong>期初校验</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">8</span><div class="flow-text"><strong>切替翌日</strong><span>业务部门验证</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">9</span><div class="flow-text"><strong>试运行</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">10</span><div class="flow-text"><strong>正式稼働（上线）</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">11</span><div class="flow-text"><strong>上线后 1-3 个月</strong><span>ハイパーケア（上线初期重点支持）</span></div></div></div>
+<h2 id="h-mm-顾问在切替中的主要工作">MM 顾问在切替中的主要工作</h2>
+<table>
+<thead>
+<tr>
+<th>作业</th>
+<th>内容</th>
+<th>常用事务/工具</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>物料主数据导入</td>
+<td>成品/半成品/原材料主数据</td>
+<td>LSMW / LTMC / 手工</td>
+</tr>
+<tr>
+<td>供应商主数据导入</td>
+<td>Business Partner（含供应商角色）</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>库存期初导入</td>
+<td>各工厂/库存地点期初库存</td>
+<td>MIGO（511 移动类型）或导入程序</td>
+</tr>
+<tr>
+<td>未清采购订单导入</td>
+<td>未收货/未开票的 PO</td>
+<td>ME21N / 批量导入</td>
+</tr>
+<tr>
+<td>期初校验</td>
+<td>库存金额与财务对账</td>
+<td>MB5B、MB5L 等报表</td>
+</tr>
+<tr>
+<td>切换后验证</td>
+<td>首单采购订单全流程试跑</td>
+<td>ME21N → MIGO → MIRO</td>
+</tr>
+</tbody></table>
+<h2 id="h-预演-为什么必须做">リハーサル（预演）：为什么必须做</h2>
+<ol>
+<li><strong>计时</strong> —— 每个步骤真实耗时是多少？计划的时间窗口够不够？</li>
+<li><strong>找坑</strong> —— 权限不够、文件格式不对、程序报错，预演时暴露比当天暴露好一万倍。</li>
+<li><strong>练配合</strong> —— Basis、开发、业务顾问、客户，多方按计划书协同走一遍。</li>
+<li><strong>定回退线</strong> —— 哪个步骤失败就触发回退（ロールバック），预演时就要明确。</li>
+</ol>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>注意：切替当天最大的风险不是技术，而是&quot;计划外的人工干预&quot;。严格执行计划书：任何人想加一步、改个顺序，必须经过切替指挥（切替リーダー）批准。MM 数据一旦导错，返工是以小时计的。</p>
+</div><h2 id="h-切替计划书的关键要素">切替计划书的关键要素</h2>
+<ul class="checklist"><li><label><input type="checkbox"> <span>切替计划书检查</span></label></li><li><label><input type="checkbox"> <span>[ ] 每个作业有明确的开始/结束时间</span></label></li><li><label><input type="checkbox"> <span>[ ] 每个作业有负责人和确认人（双人制）</span></label></li><li><label><input type="checkbox"> <span>[ ] 每个数据导入作业有校验方法（件数、金额核对）</span></label></li><li><label><input type="checkbox"> <span>[ ] 明确回退条件和回退步骤</span></label></li><li><label><input type="checkbox"> <span>[ ] 有联络体制图（出问题找谁、电话多少）</span></label></li><li><label><input type="checkbox"> <span>[ ] 预演发现的问题已全部关闭或有对策</span></label></li></ul>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-切替一般选在什么时候">Q：切替一般选在什么时候？</h3>
+<p>A：多选在<strong>周末或长假</strong>，利用业务停摆窗口。日本企业常见的是周六凌晨开始、周一早上业务验证。</p>
+<h3 id="h-q-数据对不上-比如库存金额差异-怎么办">Q：数据对不上（比如库存金额差异）怎么办？</h3>
+<p>A：先定位是抽取问题、转换问题还是导入问题。切替计划书里要预留&quot;差异调查时间&quot;。小额差异经客户批准可做调整分录，大额差异必须找到原因。</p>
+<h3 id="h-q-上线后出问题谁负责">Q：上线后出问题谁负责？</h3>
+<p>A：上线后进入ハイパーケア（Hypercare）期，一般 1-3 个月，项目团队重点支持，缺陷免费修复。之后转入保守・運用（运维），按运维合同处理。</p>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/japan/japan-uat/">UAT：受入テスト（验收测试）</a></li>
+<li><a href="/japan/sap-japanese-basics/">SAP 日语基础</a></li>
+<li><a href="/japan/japan-sap-intro/">日本 SAP 项目是什么</a></li>
+</ul>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-切替的典型时间线-示例">切替的典型时间线（示例）</a></li><li class="toc-l2"><a href="#h-mm-顾问在切替中的主要工作">MM 顾问在切替中的主要工作</a></li><li class="toc-l2"><a href="#h-预演-为什么必须做">リハーサル（预演）：为什么必须做</a></li><li class="toc-l2"><a href="#h-切替计划书的关键要素">切替计划书的关键要素</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-切替一般选在什么时候">Q：切替一般选在什么时候？</a></li><li class="toc-l3"><a href="#h-q-数据对不上-比如库存金额差异-怎么办">Q：数据对不上（比如库存金额差异）怎么办？</a></li><li class="toc-l3"><a href="#h-q-上线后出问题谁负责">Q：上线后出问题谁负责？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/basic-design/">基本設計（基本设计）</a></h3>
+<p class="post-excerpt">日本 SAP 项目的基本設計阶段输出什么？讲清基本設計書的结构、和詳細設計的分界，以及评审一次通过的写作要点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E5%9F%BA%E6%9C%AC%E8%A8%AD%E8%A8%88/">#基本設計</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/fit-gap/">Fit &amp; Gap 分析</a></h3>
+<p class="post-excerpt">Fit &amp; Gap 是日本 SAP 项目需求阶段的核心方法：哪些需求用 SAP 标准功能满足，哪些需要开发？讲清判定标准、分析方法和输出模板。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/Fit%26Gap/">#Fit&amp;Gap</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/japan-sap-intro/">日本 SAP 项目是什么</a></h3>
+<p class="post-excerpt">日本 SAP 项目和国内项目有什么本质区别？从项目流程、角色分工、沟通方式和日语要求四个维度讲清楚，让你第一次接触就有底。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E9%A1%B9%E7%9B%AE/">#项目</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/japan-uat/">UAT：受入テスト（验收测试）</a></h3>
+<p class="post-excerpt">日本 SAP 项目的 UAT（受入テスト）为什么总出问题？讲清 UAT 的定位、测试计划写法、缺陷管理流程和让验收一次通过的准备工作。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/UAT/">#UAT</a><a class="mini-tag" href="/tag/%E6%B5%8B%E8%AF%95/">#测试</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

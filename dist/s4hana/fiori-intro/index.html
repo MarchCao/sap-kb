@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiori 简介：新一代用户体验 - SAP 实战知识库</title>
+<meta name="description" content="Fiori 是 S/4HANA 的主操作界面：Launchpad 统一入口、三种 App 类型、角色导向设计。讲清 Fiori 与 SAP GUI 的关系和 MM 常用 App。">
+<link rel="canonical" href="https://sap.haice.top/s4hana/fiori-intro/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Fiori 简介：新一代用户体验 - SAP 实战知识库">
+<meta property="og:description" content="Fiori 是 S/4HANA 的主操作界面：Launchpad 统一入口、三种 App 类型、角色导向设计。讲清 Fiori 与 SAP GUI 的关系和 MM 常用 App。">
+<meta property="og:url" content="https://sap.haice.top/s4hana/fiori-intro/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Fiori 简介：新一代用户体验","description":"Fiori 是 S/4HANA 的主操作界面：Launchpad 统一入口、三种 App 类型、角色导向设计。讲清 Fiori 与 SAP GUI 的关系和 MM 常用 App。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/s4hana/">S/4HANA</a></li><li aria-current="page">Fiori 简介：新一代用户体验</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a><span class="example-badge">示例内容</span></div>
+<h1>Fiori 简介：新一代用户体验</h1>
+<p class="article-desc">Fiori 是 S/4HANA 的主操作界面：Launchpad 统一入口、三种 App 类型、角色导向设计。讲清 Fiori 与 SAP GUI 的关系和 MM 常用 App。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/Fiori/">#Fiori</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-fiori-的三层构成">Fiori 的三层构成</a></li><li class="toc-l2"><a href="#h-三种-app-类型">三种 App 类型</a></li><li class="toc-l2"><a href="#h-和-sap-gui-的关系-共存-不是替代">和 SAP GUI 的关系：共存，不是替代</a></li><li class="toc-l2"><a href="#h-fiori-上线的三个技术要点">Fiori 上线的三个技术要点</a></li><li class="toc-l2"><a href="#h-mm-常用-fiori-app-举例">MM 常用 Fiori App 举例</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-fiori-是不是必须的-只用-gui-行不行">Q：Fiori 是不是必须的？只用 GUI 行不行？</a></li><li class="toc-l3"><a href="#h-q-fiori-打开报错-白屏-一般先查什么">Q：Fiori 打开报错/白屏，一般先查什么？</a></li><li class="toc-l3"><a href="#h-q-老用户抵触-fiori-怎么办">Q：老用户抵触 Fiori 怎么办？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>Fiori 是 S/4HANA 的<strong>新一代用户界面</strong>：基于角色的 App 集合，跑在浏览器/移动端，替代 SAP GUI 成为日常操作主入口。但注意——<strong>Fiori 没有杀死 GUI</strong>，两者长期共存，复杂后台操作很多还在 GUI 里。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：跟用户培训时一句话讲清关系——&quot;Fiori 是日常办事大厅，GUI 是后台机房。天天用的单据走 Fiori，疑难杂症才进 GUI。&quot;用户立刻不纠结了。</p>
+</div><h2 id="h-fiori-的三层构成">Fiori 的三层构成</h2>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>Fiori Launchpad</strong><span>统一入口、磁贴、搜索</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>App</strong><span>事务型 / 分析型 / 概览页</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>OData 服务 + CDS View</strong><span>数据来源</span></div></div></div>
+<h2 id="h-三种-app-类型">三种 App 类型</h2>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>用途</th>
+<th>MM 例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Transactional（事务型）</td>
+<td>建单、改单、审批等操作</td>
+<td>创建采购订单、收货过账</td>
+</tr>
+<tr>
+<td>Analytical（分析型）</td>
+<td>报表、KPI、钻取分析</td>
+<td>采购支出分析、库存周转</td>
+</tr>
+<tr>
+<td>Factsheet（概览页）</td>
+<td>主数据的 360 度视图</td>
+<td>物料、供应商概览页</td>
+</tr>
+</tbody></table>
+<h2 id="h-和-sap-gui-的关系-共存-不是替代">和 SAP GUI 的关系：共存，不是替代</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>推荐入口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>日常建单、审批、查报表</td>
+<td>Fiori</td>
+</tr>
+<tr>
+<td>复杂后台配置（SPRO）</td>
+<td>SAP GUI</td>
+</tr>
+<tr>
+<td>深度排错、Debug</td>
+<td>SAP GUI</td>
+</tr>
+<tr>
+<td>移动端、外出审批</td>
+<td>Fiori（响应式）</td>
+</tr>
+</tbody></table>
+<div class="admonition note"><div class="admonition-title">说明</div><div class="admonition-body"><p>注意：SAP 的新功能优先在 Fiori 上发布。有些 S/4 新特性在 GUI 里根本没有，规划用户培训时要按角色区分入口。</p>
+</div><h2 id="h-fiori-上线的三个技术要点">Fiori 上线的三个技术要点</h2>
+<ol>
+<li><strong>权限模型变了</strong> —— 不再是 PFCG 角色直接给 T-Code，而是 Catalog（目录）→ Group（组）→ Role（角色）→ 用户。权限测试要重新做。</li>
+<li><strong>OData 服务要激活</strong> —— 每个 App 背后有 OData 服务，前台报 404，八成是后台服务没激活或权限没给。</li>
+<li><strong>Launchpad 定制</strong> —— 按角色配首页磁贴，别把几百个 App 全扔给用户，培训成本会爆炸。</li>
+</ol>
+<h2 id="h-mm-常用-fiori-app-举例">MM 常用 Fiori App 举例</h2>
+<ul>
+<li>采购订单相关：创建、查看、审批采购订单</li>
+<li>收货：过账收货（MIGO 的 Fiori 版）</li>
+<li>库存：库存概览、MD04 库存/需求清单</li>
+<li>分析：采购订单价值分析、供应商评估</li>
+</ul>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-fiori-是不是必须的-只用-gui-行不行">Q：Fiori 是不是必须的？只用 GUI 行不行？</h3>
+<p>A：技术上很多操作 GUI 还能做，但 S/4 的新功能、移动场景、用户体验都押在 Fiori 上。项目上建议把 Fiori 作为主入口规划，GUI 作为补充。</p>
+<h3 id="h-q-fiori-打开报错-白屏-一般先查什么">Q：Fiori 打开报错/白屏，一般先查什么？</h3>
+<p>A：按这个顺序：浏览器缓存 → OData 服务是否激活 → 权限（Catalog/Role）→ 后台网关连接。八成问题出在前两项。</p>
+<h3 id="h-q-老用户抵触-fiori-怎么办">Q：老用户抵触 Fiori 怎么办？</h3>
+<p>A：常见。办法：关键用户先试点、首页只放他每天用的 5-8 个磁贴、保留 GUI 入口做过渡。别搞&quot;一刀切&quot;。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>Fiori 权限测试<strong>必须纳入集成测试</strong>，别等到 UAT 才发现用户打不开 App——返工的全是项目经理的头发。</li>
+<li>每个 App 先去 Fiori Apps Library 查它的前置条件（OData 服务、业务角色），比报错了再查快十倍。</li>
+<li>移动端场景（仓库、车间）提前确认网络和设备，Fiori 在手机浏览器下的表现要实测。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/s4hana/s4hana-architecture/">S/4HANA 架构概览</a></li>
+<li><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></li>
+<li><a href="/mm/goods-receipt/">收货（Goods Receipt）</a></li>
+<li><a href="/mm/purchase-order/">采购订单（Purchase Order）</a></li>
+</ul>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-fiori-的三层构成">Fiori 的三层构成</a></li><li class="toc-l2"><a href="#h-三种-app-类型">三种 App 类型</a></li><li class="toc-l2"><a href="#h-和-sap-gui-的关系-共存-不是替代">和 SAP GUI 的关系：共存，不是替代</a></li><li class="toc-l2"><a href="#h-fiori-上线的三个技术要点">Fiori 上线的三个技术要点</a></li><li class="toc-l2"><a href="#h-mm-常用-fiori-app-举例">MM 常用 Fiori App 举例</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-fiori-是不是必须的-只用-gui-行不行">Q：Fiori 是不是必须的？只用 GUI 行不行？</a></li><li class="toc-l3"><a href="#h-q-fiori-打开报错-白屏-一般先查什么">Q：Fiori 打开报错/白屏，一般先查什么？</a></li><li class="toc-l3"><a href="#h-q-老用户抵触-fiori-怎么办">Q：老用户抵触 Fiori 怎么办？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/business-partner/">Business Partner（业务伙伴）</a></h3>
+<p class="post-excerpt">S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></h3>
+<p class="post-excerpt">从数据库、数据模型、主数据、财务、用户界面五个维度，对比 ECC 与 S/4HANA 的本质区别，帮 ECC 顾问快速定位需要补齐的差异点。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/ECC/">#ECC</a><a class="mini-tag" href="/tag/%E9%80%89%E5%9E%8B/">#选型</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/material-ledger/">Material Ledger（物料分类账）</a></h3>
+<p class="post-excerpt">物料分类账在 S/4HANA 中强制启用，带来实际成本核算与多币种评估。讲清 ML 对 MM 和财务的真实影响，以及项目上线的关键点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/mrp-live/">MRP Live</a></h3>
+<p class="post-excerpt">MRP Live 是 S/4HANA 基于 HANA 的新一代 MRP（MD01N）。讲清它与经典 MRP 的区别、提速原理、适用边界，以及结果不对时的排错思路。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/MRP/">#MRP</a><a class="mini-tag" href="/tag/PP/">#PP</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

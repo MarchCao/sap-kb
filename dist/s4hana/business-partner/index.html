@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Partner（业务伙伴） - SAP 实战知识库</title>
+<meta name="description" content="S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。">
+<link rel="canonical" href="https://sap.haice.top/s4hana/business-partner/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Business Partner（业务伙伴） - SAP 实战知识库">
+<meta property="og:description" content="S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。">
+<meta property="og:url" content="https://sap.haice.top/s4hana/business-partner/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Business Partner（业务伙伴）","description":"S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/s4hana/">S/4HANA</a></li><li aria-current="page">Business Partner（业务伙伴）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a><span class="example-badge">示例内容</span></div>
+<h1>Business Partner（业务伙伴）</h1>
+<p class="article-desc">S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a><a class="mini-tag" href="/tag/MM/">#MM</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-为什么要有-bp">为什么要有 BP</a></li><li class="toc-l2"><a href="#h-三个核心概念">三个核心概念</a></li><li class="toc-l2"><a href="#h-cvi-客户-供应商集成">CVI：客户/供应商集成</a></li><li class="toc-l2"><a href="#h-mm-顾问的-bp-实操要点">MM 顾问的 BP 实操要点</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-xk01-xd01-在-s-4hana-里还能用吗">Q：XK01/XD01 在 S/4HANA 里还能用吗？</a></li><li class="toc-l3"><a href="#h-q-一个-bp-能同时是客户和供应商吗">Q：一个 BP 能同时是客户和供应商吗？</a></li><li class="toc-l3"><a href="#h-q-bp-主数据和权限有什么关系">Q：BP 主数据和权限有什么关系？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>Business Partner（BP）是 S/4HANA 里<strong>统一的主数据对象</strong>：供应商、客户不再是两套独立主数据，而是一个 BP 挂不同&quot;角色&quot;（供应商角色、客户角色）。事务代码统一为 <code>BP</code>。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：给 ECC 老顾问讲 BP，用一句话——&quot;以前 XK01 建供应商、XD01 建客户，现在都在 BP 里建，区别只是勾的角色不同。&quot;概念瞬间落地。</p>
+</div><h2 id="h-为什么要有-bp">为什么要有 BP</h2>
+<table>
+<thead>
+<tr>
+<th>ECC 的痛点</th>
+<th>S/4HANA 的 BP 方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>供应商、客户两套表，同一家公司既是客户又是供应商时数据割裂</td>
+<td>一个 BP 可同时挂客户角色和供应商角色，数据统一</td>
+</tr>
+<tr>
+<td>主数据字段、校验规则各搞各的</td>
+<td>统一的数据模型和校验</td>
+</tr>
+<tr>
+<td>集团层面的主数据治理困难</td>
+<td>BP 支持层级、关系管理</td>
+</tr>
+</tbody></table>
+<h2 id="h-三个核心概念">三个核心概念</h2>
+<ol>
+<li><strong>BP 本体</strong> —— 一个编号（如 1000001），代表一个商业实体。</li>
+<li><strong>BP 分类</strong> —— 组织（公司）、个人（自然人）、组。</li>
+<li><strong>BP 角色</strong> —— 同一个 BP 可以是&quot;供应商&quot;、&quot;客户&quot;等角色。MM 最常用的是供应商相关角色（如 FLBPD）。</li>
+</ol>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>创建 BP 编号</strong><span>分类：组织</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>分配角色</strong><span>供应商角色、客户财务角色等</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>维护视图数据</strong><span>采购组织视图、公司代码视图</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>可用</strong><span>建采购订单、收货、开票</span></div></div></div>
+<h2 id="h-cvi-客户-供应商集成">CVI：客户/供应商集成</h2>
+<ul>
+<li>CVI（Customer Vendor Integration）是 BP 和传统客户/供应商对象之间的<strong>同步框架</strong>。</li>
+<li>S/4HANA 里建供应商，本质是建 BP + 通过 CVI 同步生成供应商视图。</li>
+<li>迁移项目里，老系统的供应商/客户主数据通过 CVI 批量转成 BP。</li>
+</ul>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>注意：CVI 的编号规则映射（BP 编号 vs 供应商编号是否一致）是主数据方案的关键决策，迁移前必须定死，定错后期改的代价极大。</p>
+</div><h2 id="h-mm-顾问的-bp-实操要点">MM 顾问的 BP 实操要点</h2>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>事务代码 / 路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>维护 BP</td>
+<td><code>BP</code></td>
+</tr>
+<tr>
+<td>BP 角色定义</td>
+<td><code>BUPT</code></td>
+</tr>
+<tr>
+<td>CVI 配置检查</td>
+<td>SPRO → CVI 相关节点</td>
+</tr>
+<tr>
+<td>主数据批量迁移</td>
+<td>迁移 Cockpit（LTMC）</td>
+</tr>
+</tbody></table>
+<ul>
+<li>采购组织视图、公司代码视图的数据都在 BP 的角色里维护，找数据先找对角色。</li>
+<li>供应商的&quot;采购组织级&quot;字段（如采购组）和&quot;公司代码级&quot;字段（如付款条件）分属不同视图，别混在一起找。</li>
+</ul>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-xk01-xd01-在-s-4hana-里还能用吗">Q：XK01/XD01 在 S/4HANA 里还能用吗？</h3>
+<p>A：标准 S/4 里这两个事务代码已被 BP 取代。看到还能用的往往是兼容视图，项目上统一要求用户走 <code>BP</code>。</p>
+<h3 id="h-q-一个-bp-能同时是客户和供应商吗">Q：一个 BP 能同时是客户和供应商吗？</h3>
+<p>A：能。挂两个角色即可，这是 BP 统一模型的核心好处之一，ECC 时代要维护两套主数据。</p>
+<h3 id="h-q-bp-主数据和权限有什么关系">Q：BP 主数据和权限有什么关系？</h3>
+<p>A：BP 有视图级的权限控制概念，敏感字段（如银行信息）要结合权限角色设计，别让所有采购员都能看全。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>主数据治理先行：BP 上线前先把<strong>重复供应商</strong>清理掉，&quot;同一家供应商三个编号&quot;是每个老系统的通病，不洗就迁等于把垃圾搬进新家。</li>
+<li>BP 编号规则、命名规范、必填字段，在项目蓝图阶段就冻结，开发和迁移都依赖它。</li>
+<li>给最终用户培训 BP 时，直接演示&quot;建一个供应商&quot;的完整流程，比讲概念管用十倍。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/s4hana/what-is-s4hana/">S/4HANA 是什么</a></li>
+<li><a href="/mm/supplier-bp/">供应商 / Business Partner</a></li>
+<li><a href="/mm/purchase-order/">采购订单（Purchase Order）</a></li>
+<li><a href="/cases/case-ecc-to-s4hana-mm/">ECC → S/4HANA MM 转型案例</a></li>
+</ul>
+</div>
+<div class="tcode-row"><span>相关 T-code：</span><a class="tcode-chip" href="/tools/#tcode">BP</a></div>
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-为什么要有-bp">为什么要有 BP</a></li><li class="toc-l2"><a href="#h-三个核心概念">三个核心概念</a></li><li class="toc-l2"><a href="#h-cvi-客户-供应商集成">CVI：客户/供应商集成</a></li><li class="toc-l2"><a href="#h-mm-顾问的-bp-实操要点">MM 顾问的 BP 实操要点</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-xk01-xd01-在-s-4hana-里还能用吗">Q：XK01/XD01 在 S/4HANA 里还能用吗？</a></li><li class="toc-l3"><a href="#h-q-一个-bp-能同时是客户和供应商吗">Q：一个 BP 能同时是客户和供应商吗？</a></li><li class="toc-l3"><a href="#h-q-bp-主数据和权限有什么关系">Q：BP 主数据和权限有什么关系？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/material-ledger/">Material Ledger（物料分类账）</a></h3>
+<p class="post-excerpt">物料分类账在 S/4HANA 中强制启用，带来实际成本核算与多币种评估。讲清 ML 对 MM 和财务的真实影响，以及项目上线的关键点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></h3>
+<p class="post-excerpt">从数据库、数据模型、主数据、财务、用户界面五个维度，对比 ECC 与 S/4HANA 的本质区别，帮 ECC 顾问快速定位需要补齐的差异点。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/ECC/">#ECC</a><a class="mini-tag" href="/tag/%E9%80%89%E5%9E%8B/">#选型</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/fiori-intro/">Fiori 简介：新一代用户体验</a></h3>
+<p class="post-excerpt">Fiori 是 S/4HANA 的主操作界面：Launchpad 统一入口、三种 App 类型、角色导向设计。讲清 Fiori 与 SAP GUI 的关系和 MM 常用 App。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/Fiori/">#Fiori</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/mrp-live/">MRP Live</a></h3>
+<p class="post-excerpt">MRP Live 是 S/4HANA 基于 HANA 的新一代 MRP（MD01N）。讲清它与经典 MRP 的区别、提速原理、适用边界，以及结果不对时的排错思路。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/MRP/">#MRP</a><a class="mini-tag" href="/tag/PP/">#PP</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

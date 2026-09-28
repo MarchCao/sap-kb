@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基本設計（基本设计） - SAP 实战知识库</title>
+<meta name="description" content="日本 SAP 项目的基本設計阶段输出什么？讲清基本設計書的结构、和詳細設計的分界，以及评审一次通过的写作要点。">
+<link rel="canonical" href="https://sap.haice.top/japan/basic-design/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="基本設計（基本设计） - SAP 实战知识库">
+<meta property="og:description" content="日本 SAP 项目的基本設計阶段输出什么？讲清基本設計書的结构、和詳細設計的分界，以及评审一次通过的写作要点。">
+<meta property="og:url" content="https://sap.haice.top/japan/basic-design/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"基本設計（基本设计）","description":"日本 SAP 项目的基本設計阶段输出什么？讲清基本設計書的结构、和詳細設計的分界，以及评审一次通过的写作要点。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li aria-current="page">基本設計（基本设计）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a><span class="example-badge">示例内容</span></div>
+<h1>基本設計（基本设计）</h1>
+<p class="article-desc">日本 SAP 项目的基本設計阶段输出什么？讲清基本設計書的结构、和詳細設計的分界，以及评审一次通过的写作要点。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E5%9F%BA%E6%9C%AC%E8%A8%AD%E8%A8%88/">#基本設計</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-基本設計-vs-詳細設計-分界线">基本設計 vs 詳細設計：分界线</a></li><li class="toc-l2"><a href="#h-基本設計書的典型结构-mm-示例">基本設計書的典型结构（MM 示例）</a></li><li class="toc-l2"><a href="#h-写作的-4-个要点">写作的 4 个要点</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-基本設計書要写多细">Q：基本設計書要写多细？</a></li><li class="toc-l3"><a href="#h-q-客户总说-quot-你们是专家-你们定-quot-怎么办">Q：客户总说&amp;quot;你们是专家，你们定&amp;quot;，怎么办？</a></li><li class="toc-l3"><a href="#h-q-基本設計阶段发现需求漏了怎么办">Q：基本設計阶段发现需求漏了怎么办？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>基本設計（きほんせっけい）是日本 SAP 项目的<strong>方案设计阶段</strong>：基于要件定義書和 Fit &amp; Gap 的结论，把&quot;系统要建成什么样&quot;完整地设计出来。它的核心产出《基本設計書》是开发、测试、上线全过程的&quot;施工图纸&quot;。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：基本設計書的读者不只是顾问，还有客户业务部门和未来运维团队。写的时候假设读者&quot;懂业务但不懂 SAP 配置&quot;，业务语言和系统语言要对应上，每张流程图都要有文字说明。</p>
+</div><h2 id="h-基本設計-vs-詳細設計-分界线">基本設計 vs 詳細設計：分界线</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>基本設計</th>
+<th>詳細設計</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>视角</td>
+<td>业务 + 系统功能</td>
+<td>程序 / 技术实现</td>
+</tr>
+<tr>
+<td>读者</td>
+<td>客户业务部门、顾问</td>
+<td>ABAP 开发、Basis</td>
+</tr>
+<tr>
+<td>MM 例子</td>
+<td>采购流程、审批策略、容差配置设计</td>
+<td>增强点的程序规格书（明細書）</td>
+</tr>
+<tr>
+<td>典型文档</td>
+<td>基本設計書</td>
+<td>プログラム仕様書、テーブル設計書</td>
+</tr>
+</tbody></table>
+<p>一句话：基本設計回答&quot;<strong>做什么</strong>&quot;，詳細設計回答&quot;<strong>怎么做</strong>&quot;。</p>
+<h2 id="h-基本設計書的典型结构-mm-示例">基本設計書的典型结构（MM 示例）</h2>
+<ol>
+<li><strong>業務フロー</strong> —— To-Be 采购流程图（PR → PO → 收货 → 发票校验 → 付款）</li>
+<li><strong>機能一覧</strong> —— 功能清单，对应 Fit &amp; Gap 的每一条</li>
+<li><strong>組織構造</strong> —— 公司代码、采购组织、工厂、库存地点设计</li>
+<li><strong>マスタ設計</strong> —— 物料主数据、业务伙伴（供应商）视图与字段规则</li>
+<li><strong>機能設計</strong> —— 每个功能的画面、项目、逻辑说明</li>
+<li><strong>帳票設計</strong> —— 采购订单打印格式等单据设计</li>
+<li><strong>インターフェース設計</strong> —— 与 WMS、财务外围系统的接口一览</li>
+<li><strong>権限設計</strong> —— 角色与事务代码对应表</li>
+<li><strong>移行方針</strong> —— 主数据/未清数据迁移方针（概要）</li>
+<li><strong>テスト方針</strong> —— 测试阶段划分与范围</li>
+</ol>
+<h2 id="h-写作的-4-个要点">写作的 4 个要点</h2>
+<ol>
+<li><strong>编号体系</strong> —— 每个功能、每张画面都有唯一编号（如 MM-001），测试用例和缺陷管理都引用它。这是日本项目文档最实用的习惯。</li>
+<li><strong>As-Is → To-Be 对应</strong> —— 每个 To-Be 流程标注它替代了哪个 As-Is 环节，客户评审时一目了然。</li>
+<li><strong>未定事项清单</strong> —— 暂时定不下来的写进&quot;保留事項（ペンディング）&quot;并标注解决期限，不要含糊过去。</li>
+<li><strong>用語统一</strong> —— 全文术语一致（比如统一用&quot;購買依頼&quot;还是&quot;PR&quot;），附用語集（Glossary）。</li>
+</ol>
+<ul class="checklist"><li><label><input type="checkbox"> <span>基本設計書评审前自查</span></label></li><li><label><input type="checkbox"> <span>[ ] 所有功能都有唯一编号</span></label></li><li><label><input type="checkbox"> <span>[ ] 每个 Gap 都有对应的設計章节</span></label></li><li><label><input type="checkbox"> <span>[ ] 流程图与文字描述一致</span></label></li><li><label><input type="checkbox"> <span>[ ] 未定事项有明确的解决期限和责任人</span></label></li><li><label><input type="checkbox"> <span>[ ] 与要件定義書的需求逐条可追溯</span></label></li><li><label><input type="checkbox"> <span>[ ] 客户业务部门能看懂业务部分的描述</span></label></li></ul>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-基本設計書要写多细">Q：基本設計書要写多细？</h3>
+<p>A：细到&quot;开发/配置顾问能照着做出来，测试顾问能照着测出来&quot;。检验标准：换一个人接手，靠文档能继续干。</p>
+<h3 id="h-q-客户总说-quot-你们是专家-你们定-quot-怎么办">Q：客户总说&quot;你们是专家，你们定&quot;，怎么办？</h3>
+<p>A：这是陷阱。设计方案必须客户确认，<strong>决策权在客户</strong>。可以给推荐方案（推奨案）并说明理由，但签字的是客户——上线后出问题，&quot;当时是你们定的&quot;是最难反驳的指责。</p>
+<h3 id="h-q-基本設計阶段发现需求漏了怎么办">Q：基本設計阶段发现需求漏了怎么办？</h3>
+<p>A：走変更管理：评估影响（工数/进度/费用）→ 客户确认 → 更新要件定義書和基本設計書。不要私下&quot;顺手做了&quot;。</p>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/japan/requirements-definition/">要件定義（需求定义）</a></li>
+<li><a href="/japan/fit-gap/">Fit &amp; Gap 分析</a></li>
+<li><a href="/japan/japan-uat/">UAT：受入テスト（验收测试）</a></li>
+<li><a href="/mm/purchase-order/">采购订单（示例）</a></li>
+</ul>
+</div>
+
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-基本設計-vs-詳細設計-分界线">基本設計 vs 詳細設計：分界线</a></li><li class="toc-l2"><a href="#h-基本設計書的典型结构-mm-示例">基本設計書的典型结构（MM 示例）</a></li><li class="toc-l2"><a href="#h-写作的-4-个要点">写作的 4 个要点</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-基本設計書要写多细">Q：基本設計書要写多细？</a></li><li class="toc-l3"><a href="#h-q-客户总说-quot-你们是专家-你们定-quot-怎么办">Q：客户总说&amp;quot;你们是专家，你们定&amp;quot;，怎么办？</a></li><li class="toc-l3"><a href="#h-q-基本設計阶段发现需求漏了怎么办">Q：基本設計阶段发现需求漏了怎么办？</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/fit-gap/">Fit &amp; Gap 分析</a></h3>
+<p class="post-excerpt">Fit &amp; Gap 是日本 SAP 项目需求阶段的核心方法：哪些需求用 SAP 标准功能满足，哪些需要开发？讲清判定标准、分析方法和输出模板。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/Fit%26Gap/">#Fit&amp;Gap</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/japan-cutover/">Cutover：切替（上线切换）</a></h3>
+<p class="post-excerpt">日本 SAP 项目的切替（上线切换）是最紧张的一周：讲清切替计划的结构、リハーサル（预演）的价值和 MM 顾问在切换周的具体工作。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E5%88%87%E6%9B%BF/">#切替</a><a class="mini-tag" href="/tag/%E4%B8%8A%E7%BA%BF/">#上线</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/japan-sap-intro/">日本 SAP 项目是什么</a></h3>
+<p class="post-excerpt">日本 SAP 项目和国内项目有什么本质区别？从项目流程、角色分工、沟通方式和日语要求四个维度讲清楚，让你第一次接触就有底。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/%E9%A1%B9%E7%9B%AE/">#项目</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#b91c1c" href="/kb/japan/">日本 SAP</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/japan/japan-uat/">UAT：受入テスト（验收测试）</a></h3>
+<p class="post-excerpt">日本 SAP 项目的 UAT（受入テスト）为什么总出问题？讲清 UAT 的定位、测试计划写法、缺陷管理流程和让验收一次通过的准备工作。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/%E6%97%A5%E6%9C%ACSAP/">#日本SAP</a><a class="mini-tag" href="/tag/UAT/">#UAT</a><a class="mini-tag" href="/tag/%E6%B5%8B%E8%AF%95/">#测试</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

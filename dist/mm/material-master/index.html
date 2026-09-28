@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material Master（物料主数据） - SAP 实战知识库</title>
+<meta name="description" content="物料主数据是 MM 的地基：视图、组织级别、物料类型、编号范围一次讲清，并给出 MM01/MM02/MM03 的实战操作要点。">
+<link rel="canonical" href="https://sap.haice.top/mm/material-master/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Material Master（物料主数据） - SAP 实战知识库">
+<meta property="og:description" content="物料主数据是 MM 的地基：视图、组织级别、物料类型、编号范围一次讲清，并给出 MM01/MM02/MM03 的实战操作要点。">
+<meta property="og:url" content="https://sap.haice.top/mm/material-master/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Material Master（物料主数据）","description":"物料主数据是 MM 的地基：视图、组织级别、物料类型、编号范围一次讲清，并给出 MM01/MM02/MM03 的实战操作要点。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/mm/">SAP MM</a></li><li aria-current="page">Material Master（物料主数据）</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a><span class="example-badge">示例内容</span></div>
+<h1>Material Master（物料主数据）</h1>
+<p class="article-desc">物料主数据是 MM 的地基：视图、组织级别、物料类型、编号范围一次讲清，并给出 MM01/MM02/MM03 的实战操作要点。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 4 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-核心概念">核心概念</a></li><li class="toc-l3"><a href="#h-视图-view">视图（View）</a></li><li class="toc-l3"><a href="#h-组织级别">组织级别</a></li><li class="toc-l3"><a href="#h-物料类型-material-type">物料类型（Material Type）</a></li><li class="toc-l2"><a href="#h-关键字段说明">关键字段说明</a></li><li class="toc-l2"><a href="#h-实战操作要点">实战操作要点</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-物料建错了组织级别怎么办">Q：物料建错了组织级别怎么办？</a></li><li class="toc-l3"><a href="#h-q-为什么-mm02-里有些字段是灰的改不了">Q：为什么 MM02 里有些字段是灰的改不了？</a></li><li class="toc-l3"><a href="#h-q-s-4hana-里物料主数据有什么变化">Q：S/4HANA 里物料主数据有什么变化？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p><strong>物料主数据（Material Master）是 SAP 里对&quot;东西&quot;的统一描述</strong>：一个物料编码背后，挂着采购、库存、生产、销售、财务需要的所有属性。它按&quot;视图&quot;组织、按&quot;组织级别&quot;维护，是 MM 所有业务的地基——主数据错了，后面单据全错。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：把物料主数据想象成&quot;一份档案&quot;，不同部门填写不同页：采购填采购视图、仓库填仓储视图、财务填会计视图。MM01 创建时选视图 = 决定哪些部门&quot;填写档案&quot;。</p>
+</div><h2 id="h-核心概念">核心概念</h2>
+<h3 id="h-视图-view">视图（View）</h3>
+<table>
+<thead>
+<tr>
+<th>视图</th>
+<th>维护内容</th>
+<th>主要使用方</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本数据</td>
+<td>描述、基本计量单位、物料组</td>
+<td>全员</td>
+</tr>
+<tr>
+<td>采购</td>
+<td>采购组、计划交货时间、自动 PO 标识</td>
+<td>采购</td>
+</tr>
+<tr>
+<td>MRP</td>
+<td>MRP 类型、批量、计划策略</td>
+<td>计划</td>
+</tr>
+<tr>
+<td>仓储/库存管理</td>
+<td>库存地点相关、批次管理标识</td>
+<td>仓库</td>
+</tr>
+<tr>
+<td>会计</td>
+<td>价格控制（S/V）、移动平均价/标准价</td>
+<td>财务</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>成本核算相关</td>
+<td>CO</td>
+</tr>
+</tbody></table>
+<h3 id="h-组织级别">组织级别</h3>
+<ul>
+<li><strong>Client 层</strong>：基本数据视图，全集团共用。</li>
+<li><strong>工厂层</strong>：采购、MRP、仓储、会计视图，每个工厂可不同。</li>
+<li>新工厂上线时，物料需要**扩展（Extend）**到新工厂，即为新工厂维护对应视图。</li>
+</ul>
+<h3 id="h-物料类型-material-type">物料类型（Material Type）</h3>
+<p>物料类型决定：编号是内部给号还是外部给号、允许哪些视图、默认价格控制、允许哪些移动类型。</p>
+<table>
+<thead>
+<tr>
+<th>物料类型</th>
+<th>说明</th>
+<th>典型价格控制</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ROH（原材料）</td>
+<td>采购入库、生产领用</td>
+<td>移动平均价（V）</td>
+</tr>
+<tr>
+<td>HALB（半成品）</td>
+<td>自制+外购均可</td>
+<td>标准价（S）或移动平均价</td>
+</tr>
+<tr>
+<td>FERT（产成品）</td>
+<td>销售给客户</td>
+<td>标准价（S）</td>
+</tr>
+<tr>
+<td>HAWA（贸易商品）</td>
+<td>买来直接卖</td>
+<td>移动平均价（V）</td>
+</tr>
+<tr>
+<td>DIEN（服务）</td>
+<td>无实物、无库存管理</td>
+<td>—</td>
+</tr>
+<tr>
+<td>NLAG（非库存物料）</td>
+<td>低值易耗品等</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<div class="admonition warning"><div class="admonition-title">注意</div><div class="admonition-body"><p>常见坑：<strong>物料类型的价格控制一旦有库存移动就很难改</strong>。项目初期物料类型和价格控制（V/S）的设计要和财务对齐：原材料用移动平均价、产成品用标准价是常见做法，但必须在蓝图阶段定死，上线后改等于推倒重来。</p>
+</div><h2 id="h-关键字段说明">关键字段说明</h2>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>视图</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>基本计量单位（Base UoM）</td>
+<td>基本</td>
+<td>库存数量的基准单位，创建后极难修改</td>
+</tr>
+<tr>
+<td>物料组（Material Group）</td>
+<td>基本</td>
+<td>报表、采购分组的维度，设计要稳定</td>
+</tr>
+<tr>
+<td>采购组（Purchasing Group）</td>
+<td>采购</td>
+<td>负责该物料的采购员/组</td>
+</tr>
+<tr>
+<td>计划交货时间</td>
+<td>采购/MRP</td>
+<td>供应商交货提前期，影响 MRP 和 PO 交货日期</td>
+</tr>
+<tr>
+<td>MRP 类型</td>
+<td>MRP</td>
+<td>如 PD（MRP）、ND（不参与计划）、VB（手工重订货点）</td>
+</tr>
+<tr>
+<td>批量大小</td>
+<td>MRP</td>
+<td>如 EX（按需批量）、FX（固定批量）</td>
+</tr>
+<tr>
+<td>价格控制</td>
+<td>会计</td>
+<td>V=移动平均价，S=标准价</td>
+</tr>
+<tr>
+<td>批次管理标识</td>
+<td>仓储</td>
+<td>启用后收发货必须指定批次</td>
+</tr>
+</tbody></table>
+<h2 id="h-实战操作要点">实战操作要点</h2>
+<p><strong>MM01 创建</strong>：输入物料编码（或内部给号时留空）→ 选择物料类型 → 选择视图 → 选择组织级别（工厂/库存地点）→ 逐视图维护字段 → 保存。</p>
+<p><strong>MM02 修改</strong>：注意字段的&quot;可修改性&quot;受物料状态控制——已有库存/采购订单的物料，很多字段会被锁。</p>
+<p><strong>MM03 显示</strong>：排错时的第一站，先看主数据再看单据。</p>
+<ul class="checklist"><li><label><input type="checkbox"> <span>物料类型与价格控制是否符合财务要求</span></label></li><li><label><input type="checkbox"> <span>基本计量单位是否正确（创建后几乎无法改）</span></label></li><li><label><input type="checkbox"> <span>需要的工厂是否都已扩展视图</span></label></li><li><label><input type="checkbox"> <span>采购视图的采购组是否维护</span></label></li><li><label><input type="checkbox"> <span>MRP 视图是否按计划员要求维护</span></label></li><li><label><input type="checkbox"> <span>会计视图价格控制与物料类型一致</span></label></li></ul>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：批量创建/修改物料用 <code>MM17</code>（批量维护）或 LSMW/BAPI，<strong>不要手工一个个敲</strong>。上线前主数据收集模板里，组织级别列（工厂清单）一定要和蓝图冻结的企业结构一致。</p>
+</div><h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-物料建错了组织级别怎么办">Q：物料建错了组织级别怎么办？</h3>
+<p>A：用 MM01 以&quot;扩展&quot;方式补建缺失的组织级别视图即可，不需要删了重建。但如果基本计量单位、物料类型错了，那就麻烦得多——基本计量单位有业务数据后几乎无法改，只能新建物料并做替代。</p>
+<h3 id="h-q-为什么-mm02-里有些字段是灰的改不了">Q：为什么 MM02 里有些字段是灰的改不了？</h3>
+<p>A：通常两个原因：① 字段状态组配置为&quot;显示&quot;；② 物料已有库存、未清采购订单或会计凭证，系统为保护数据一致性锁定。先查单据，再找配置。</p>
+<h3 id="h-q-s-4hana-里物料主数据有什么变化">Q：S/4HANA 里物料主数据有什么变化？</h3>
+<p>A：核心概念不变。变化主要在：① 必须启用物料分类账（影响会计视图）；② 长物料号（40 字符）成为可选项；③ Fiori 的&quot;管理产品主数据&quot;应用逐步替代部分 GUI 操作。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>主数据质量 = 项目质量。<strong>脏主数据是上线后 80% 异常的根因</strong>：重复物料、计量单位混乱、价格控制混用，每一个都会在业务中爆发。</li>
+<li>给业务部门的主数据收集模板，字段说明要用业务语言写（&quot;计划交货时间：供应商从接单到送货要几天&quot;），不要直接贴 SAP 字段名，否则收回来全是空的。</li>
+<li>物料描述建议定命名规范（如&quot;品牌+规格+型号&quot;），方便搜索和去重。没有规范的物料库，三年后就是垃圾场。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/mm/mm-enterprise-structure/">Enterprise Structure（企业结构）</a></li>
+<li><a href="/mm/supplier-bp/">Supplier / Business Partner（供应商主数据）</a></li>
+<li><a href="/mm/purchase-requisition/">Purchase Requisition（采购申请）</a></li>
+</ul>
+</div>
+<div class="tcode-row"><span>相关 T-code：</span><a class="tcode-chip" href="/tools/#tcode">MM01</a><a class="tcode-chip" href="/tools/#tcode">MM02</a><a class="tcode-chip" href="/tools/#tcode">MM03</a></div>
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-核心概念">核心概念</a></li><li class="toc-l3"><a href="#h-视图-view">视图（View）</a></li><li class="toc-l3"><a href="#h-组织级别">组织级别</a></li><li class="toc-l3"><a href="#h-物料类型-material-type">物料类型（Material Type）</a></li><li class="toc-l2"><a href="#h-关键字段说明">关键字段说明</a></li><li class="toc-l2"><a href="#h-实战操作要点">实战操作要点</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-物料建错了组织级别怎么办">Q：物料建错了组织级别怎么办？</a></li><li class="toc-l3"><a href="#h-q-为什么-mm02-里有些字段是灰的改不了">Q：为什么 MM02 里有些字段是灰的改不了？</a></li><li class="toc-l3"><a href="#h-q-s-4hana-里物料主数据有什么变化">Q：S/4HANA 里物料主数据有什么变化？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/supplier-bp/">Supplier / Business Partner（供应商主数据）</a></h3>
+<p class="post-excerpt">ECC 的供应商主数据与 S/4HANA 的 Business Partner 到底什么关系？讲清 BP 角色、组织级别视图与 XK01/BP 实战要点。</p>
+<div class="post-meta-bottom"><span>📖 约 5 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/goods-receipt/">Goods Receipt（收货）</a></h3>
+<p class="post-excerpt">MIGO 收货是库存增加的起点：移动类型 101/102/103/105 一次讲清，收货自动记账逻辑，以及收货冲销的实战处理。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E5%BA%93%E5%AD%98/">#库存</a><a class="mini-tag" href="/tag/P2P/">#P2P</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/invoice-verification/">Invoice Verification（发票校验）</a></h3>
+<p class="post-excerpt">MIRO 发票校验是 P2P 的收官环节：三单匹配逻辑、价格/数量容差、差异处理，以及发票校验与 FI 自动付款的衔接。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/P2P/">#P2P</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#0e7490" href="/kb/mm/">SAP MM</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/mm/mm-enterprise-structure/">Enterprise Structure（企业结构）</a></h3>
+<p class="post-excerpt">公司代码、工厂、库存地点、采购组织、采购组到底是什么关系？本文讲清 MM 企业结构的核心组织单元、层级关系与实战配置要点。</p>
+<div class="post-meta-bottom"><span>📖 约 5 分钟</span>
+<a class="mini-tag" href="/tag/MM/">#MM</a><a class="mini-tag" href="/tag/%E9%85%8D%E7%BD%AE/">#配置</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>

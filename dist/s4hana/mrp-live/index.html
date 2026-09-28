@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MRP Live - SAP 实战知识库</title>
+<meta name="description" content="MRP Live 是 S/4HANA 基于 HANA 的新一代 MRP（MD01N）。讲清它与经典 MRP 的区别、提速原理、适用边界，以及结果不对时的排错思路。">
+<link rel="canonical" href="https://sap.haice.top/s4hana/mrp-live/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MRP Live - SAP 实战知识库">
+<meta property="og:description" content="MRP Live 是 S/4HANA 基于 HANA 的新一代 MRP（MD01N）。讲清它与经典 MRP 的区别、提速原理、适用边界，以及结果不对时的排错思路。">
+<meta property="og:url" content="https://sap.haice.top/s4hana/mrp-live/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MRP Live","description":"MRP Live 是 S/4HANA 基于 HANA 的新一代 MRP（MD01N）。讲清它与经典 MRP 的区别、提速原理、适用边界，以及结果不对时的排错思路。","datePublished":"2026-09-27","inLanguage":"zh-CN","author":{"@type":"Organization","name":"SAP 实战知识库"}}</script>
+<meta property="og:type" content="article"><meta property="article:published_time" content="2026-09-27">
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="active">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/kb/">知识库</a></li><li><a href="/kb/s4hana/">S/4HANA</a></li><li aria-current="page">MRP Live</li></ol></nav>
+<div class="wrap article-layout">
+<article class="article">
+<header class="article-head">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a><span class="example-badge">示例内容</span></div>
+<h1>MRP Live</h1>
+<p class="article-desc">MRP Live 是 S/4HANA 基于 HANA 的新一代 MRP（MD01N）。讲清它与经典 MRP 的区别、提速原理、适用边界，以及结果不对时的排错思路。</p>
+<div class="article-meta"><span>🕒 2026年9月27日</span><span>📖 约 3 分钟</span>
+<span class="tag-row"><a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/MRP/">#MRP</a><a class="mini-tag" href="/tag/PP/">#PP</a></span></div>
+</header>
+<details class="toc-mobile"><summary>📑 目录</summary><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-经典-mrp-vs-mrp-live">经典 MRP vs MRP Live</a></li><li class="toc-l2"><a href="#h-为什么能这么快">为什么能这么快</a></li><li class="toc-l2"><a href="#h-适用边界-不是所有场景都用-mrp-live">适用边界：不是所有场景都用 MRP Live</a></li><li class="toc-l2"><a href="#h-排错思路-mrp-结果不对先查什么">排错思路：MRP 结果不对先查什么</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-mrp-live-的计划结果和经典-mrp-一样吗">Q：MRP Live 的计划结果和经典 MRP 一样吗？</a></li><li class="toc-l3"><a href="#h-q-md04-在-s-4hana-里还有吗">Q：MD04 在 S/4HANA 里还有吗？</a></li><li class="toc-l3"><a href="#h-q-mrp-能跑多次-会不会打乱生产">Q：MRP 能跑多次，会不会打乱生产？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></details>
+
+<div class="article-body"><h2 id="h-一句话理解">一句话理解</h2>
+<p>MRP Live 是 S/4HANA 里<strong>基于 HANA 内存计算重写的 MRP</strong>，事务代码 <code>MD01N</code>。它和经典 MRP 的计划逻辑（净需求计算、批量规则）基本一致，区别是<strong>快了一个数量级</strong>，并且把&quot;读取数据&quot;和&quot;计划计算&quot;都在 HANA 里完成。</p>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>实战提示：跟计划员解释 MRP Live 别谈技术，谈体感——&quot;以前 MRP 跑一夜，现在喝杯咖啡的功夫就出结果，一天可以跑好几次。&quot;计划员立刻有动力学。</p>
+</div><h2 id="h-经典-mrp-vs-mrp-live">经典 MRP vs MRP Live</h2>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>经典 MRP（MD01/MD02）</th>
+<th>MRP Live（MD01N）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>计算位置</td>
+<td>应用服务器逐行算</td>
+<td>HANA 数据库内并行算</td>
+</tr>
+<tr>
+<td>速度</td>
+<td>大数据量跑批以小时计</td>
+<td>分钟级</td>
+</tr>
+<tr>
+<td>运行频率</td>
+<td>多为每天/每周一次</td>
+<td>可一天多次，甚至按需</td>
+</tr>
+<tr>
+<td>数据读取</td>
+<td>读应用层表</td>
+<td>直接读 HANA 视图</td>
+</tr>
+<tr>
+<td>结果查看</td>
+<td>MD04/MD05</td>
+<td>同样用 <code>MD04</code> 看（界面延续）</td>
+</tr>
+</tbody></table>
+<h2 id="h-为什么能这么快">为什么能这么快</h2>
+<ol>
+<li><strong>列式存储</strong> —— MRP 要扫海量物料需求数据，列存只读需要的列，IO 大减。</li>
+<li><strong>计算下沉</strong> —— 净需求、批量计算在数据库内并行跑，不用来回搬数据。</li>
+<li><strong>简化数据模型</strong> —— 中间汇总环节减少，读数路径更短。</li>
+</ol>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>MD01N 启动</strong><span>选择工厂、计划模式</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>HANA 内计算</strong><span>净需求</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>批量</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>计划订单/采购申请</strong></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">5</span><div class="flow-text"><strong>结果</strong><span>MD04 查看，计划订单转生产订单/采购订单</span></div></div></div>
+<h2 id="h-适用边界-不是所有场景都用-mrp-live">适用边界：不是所有场景都用 MRP Live</h2>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>常规 MPS/MRP 计划</td>
+<td>MRP Live</td>
+</tr>
+<tr>
+<td>依赖经典 MRP 特有功能的场景</td>
+<td>经典 MRP 仍可运行，先验证</td>
+</tr>
+<tr>
+<td>长期模拟计划</td>
+<td>看版本支持情况，先验证</td>
+</tr>
+</tbody></table>
+<div class="admonition note"><div class="admonition-title">说明</div><div class="admonition-body"><p>注意：MRP Live 有功能边界清单，项目蓝图阶段要对照检查计划员在用的特殊功能是否被支持。别等上线了才发现某个用了十年的计划技巧跑不了。</p>
+</div><h2 id="h-排错思路-mrp-结果不对先查什么">排错思路：MRP 结果不对先查什么</h2>
+<ul class="checklist"><li><label><input type="checkbox"> <span>物料主数据的 MRP 视图：MRP 类型、批量、计划策略对不对</span></label></li><li><label><input type="checkbox"> <span>需求有没有真正进来（销售订单/预测）</span></label></li><li><label><input type="checkbox"> <span>库存、已分配量（MD04 先看）</span></label></li><li><label><input type="checkbox"> <span>计划日历、工厂日历</span></label></li><li><label><input type="checkbox"> <span>MD01N 的计划模式：重排还是增量</span></label></li></ul>
+<h2 id="h-常见问题">常见问题</h2>
+<h3 id="h-q-mrp-live-的计划结果和经典-mrp-一样吗">Q：MRP Live 的计划结果和经典 MRP 一样吗？</h3>
+<p>A：标准逻辑下结果一致。差异通常来自主数据或参数，不是算法变了。并行测试阶段建议两个都跑一遍对结果。</p>
+<h3 id="h-q-md04-在-s-4hana-里还有吗">Q：MD04 在 S/4HANA 里还有吗？</h3>
+<p>A：有。<code>MD04</code> 库存/需求清单继续可用，也是排错的第一入口。另外 Fiori 有对应的库存分析 App。</p>
+<h3 id="h-q-mrp-能跑多次-会不会打乱生产">Q：MRP 能跑多次，会不会打乱生产？</h3>
+<p>A：计划订单只是建议，不会自动变成生产订单/采购订单（除非配了自动转换）。多跑几次只影响建议，不影响执行，放心跑。</p>
+<h2 id="h-实战经验">实战经验</h2>
+<ul>
+<li>上线前做 <strong>MRP 并行测试</strong>：同一份数据跑经典 MRP 和 MRP Live，对比计划订单差异，差异清单逐条解释，这是计划员信任新系统的关键。</li>
+<li>MD01N 的后台作业调度要和 Basis 确认好，HANA 内存不足时 MRP Live 会慢甚至报错，先谈 sizing。</li>
+<li>计划员培训重点放&quot;结果怎么看、建议怎么转&quot;，而不是&quot;MRP 原理&quot;——他们比你懂原理，缺的是新事务代码的手感。</li>
+</ul>
+<h2 id="h-相关阅读">相关阅读</h2>
+<ul>
+<li><a href="/s4hana/s4hana-architecture/">S/4HANA 架构概览</a></li>
+<li><a href="/s4hana/what-is-s4hana/">S/4HANA 是什么</a></li>
+<li><a href="/mm/material-master/">物料主数据（Material Master）</a></li>
+<li><a href="/mm/p2p-process/">P2P 完整流程</a></li>
+</ul>
+</div>
+<div class="tcode-row"><span>相关 T-code：</span><a class="tcode-chip" href="/tools/#tcode">MD01N</a><a class="tcode-chip" href="/tools/#tcode">MD04</a></div>
+</article>
+<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4><ul class="toc"><li class="toc-l2"><a href="#h-一句话理解">一句话理解</a></li><li class="toc-l2"><a href="#h-经典-mrp-vs-mrp-live">经典 MRP vs MRP Live</a></li><li class="toc-l2"><a href="#h-为什么能这么快">为什么能这么快</a></li><li class="toc-l2"><a href="#h-适用边界-不是所有场景都用-mrp-live">适用边界：不是所有场景都用 MRP Live</a></li><li class="toc-l2"><a href="#h-排错思路-mrp-结果不对先查什么">排错思路：MRP 结果不对先查什么</a></li><li class="toc-l2"><a href="#h-常见问题">常见问题</a></li><li class="toc-l3"><a href="#h-q-mrp-live-的计划结果和经典-mrp-一样吗">Q：MRP Live 的计划结果和经典 MRP 一样吗？</a></li><li class="toc-l3"><a href="#h-q-md04-在-s-4hana-里还有吗">Q：MD04 在 S/4HANA 里还有吗？</a></li><li class="toc-l3"><a href="#h-q-mrp-能跑多次-会不会打乱生产">Q：MRP 能跑多次，会不会打乱生产？</a></li><li class="toc-l2"><a href="#h-实战经验">实战经验</a></li><li class="toc-l2"><a href="#h-相关阅读">相关阅读</a></li></ul></div></aside>
+</div>
+<section class="section soft"><div class="wrap"><div class="sec-head"><h2>相关文章</h2></div><div class="grid4"><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/business-partner/">Business Partner（业务伙伴）</a></h3>
+<p class="post-excerpt">S/4HANA 用 Business Partner 统一供应商和客户主数据。讲清 BP 概念、角色、分类，以及 MM 顾问必须掌握的 CVI 同步与实操要点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/%E4%B8%BB%E6%95%B0%E6%8D%AE/">#主数据</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/ecc-vs-s4hana/">ECC 与 S/4HANA 的主要区别</a></h3>
+<p class="post-excerpt">从数据库、数据模型、主数据、财务、用户界面五个维度，对比 ECC 与 S/4HANA 的本质区别，帮 ECC 顾问快速定位需要补齐的差异点。</p>
+<div class="post-meta-bottom"><span>📖 约 4 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/ECC/">#ECC</a><a class="mini-tag" href="/tag/%E9%80%89%E5%9E%8B/">#选型</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/fiori-intro/">Fiori 简介：新一代用户体验</a></h3>
+<p class="post-excerpt">Fiori 是 S/4HANA 的主操作界面：Launchpad 统一入口、三种 App 类型、角色导向设计。讲清 Fiori 与 SAP GUI 的关系和 MM 常用 App。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/Fiori/">#Fiori</a></div>
+</article><article class="card post-card">
+<div class="post-meta-top"><a class="cat-tag" style="--cat:#1d4ed8" href="/kb/s4hana/">S/4HANA</a>
+<span class="example-badge">示例</span>
+<span class="post-date">2026年9月27日</span></div>
+<h3><a href="/s4hana/material-ledger/">Material Ledger（物料分类账）</a></h3>
+<p class="post-excerpt">物料分类账在 S/4HANA 中强制启用，带来实际成本核算与多币种评估。讲清 ML 对 MM 和财务的真实影响，以及项目上线的关键点。</p>
+<div class="post-meta-bottom"><span>📖 约 3 分钟</span>
+<a class="mini-tag" href="/tag/S%2F4HANA/">#S/4HANA</a><a class="mini-tag" href="/tag/FI%E9%9B%86%E6%88%90/">#FI集成</a><a class="mini-tag" href="/tag/MM/">#MM</a></div>
+</article></div></div></section></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
