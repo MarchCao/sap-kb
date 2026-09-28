@@ -35,17 +35,44 @@
 <div><p class="hero-kicker">物料管理 · 报表</p>
 <h1 class="tcode-title"><code>MMBE</code></h1>
 <p class="tcode-sub">库存总览（物料）<br><span class="en">Stock Overview</span></p></div>
-<div class="tcode-badges"><span class="lc-badge lc-unknown">? 状态待验证</span><span class="dq-badge dq-review">待审核</span></div>
+<div class="tcode-badges"><span class="lc-badge lc-active">Active</span><span class="dq-badge dq-partial">部分验证</span></div>
 </div>
 
 <h2 class="h2">版本时间轴</h2>
-<div class="empty-box"><span class="lc-badge lc-unknown">? 状态待验证</span><p>该 T-Code 暂无 SAP 官方生命周期证据，状态待验证。<br>如果你在 SAP Help Portal / Simplification List 中找到依据，欢迎通过审核页补充。</p></div>
+<ul class="timeline"><li class="tl-item">
+<div class="tl-ver">S/4HANA 1511</div>
+<div class="tl-badges"><span class="lc-badge lc-active">Active</span>
+<span class="mini-badge">可用性：可用</span>
+<span class="mini-badge">推荐：未知</span></div>
+<div class="tiny">SAP 原文状态词：<code>still available but will be not available midterm</code></div>
+<div class="tl-ev"><a href="https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf" target="_blank" rel="noopener" class="ev-link">Simplification List for SAP S/4HANA, on-premise edition 1511 – FPS01</a>
+<span class="ev-meta">Simplification List · S/4HANA 1511 · 验证于 2026-09-28</span>
+<blockquote class="ev-excerpt">The transactions MMBE_OLD …, MMBE …, MB51 …, MB52 … and MB5B … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).</blockquote></div></li><li class="tl-item">
+<div class="tl-ver">S/4HANA 2023</div>
+<div class="tl-badges"><span class="lc-badge lc-active">Active</span>
+<span class="mini-badge">可用性：可用</span>
+<span class="mini-badge">推荐：未知</span></div>
+
+<div class="tl-ev"><a href="https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf" target="_blank" rel="noopener" class="ev-link">Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3</a>
+<span class="ev-meta">Simplification List · S/4HANA 2023 · 验证于 2026-09-28</span>
+<blockquote class="ev-excerpt">The transaction MMBE_OLD has been replaced by transaction MMBE. Alternatively there is also the Fiori App Stock Overview. Solution: Use transaction MIGO or MMBE in dialog.</blockquote></div></li><li class="tl-item">
+<div class="tl-ver">S/4HANA 2025</div>
+<div class="tl-badges"><span class="lc-badge lc-active">Active</span>
+<span class="mini-badge">可用性：可用</span>
+<span class="mini-badge">推荐：未知</span></div>
+
+<div class="tl-ev"><a href="https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf" target="_blank" rel="noopener" class="ev-link">Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1</a>
+<span class="ev-meta">Simplification List · S/4HANA 2025 · 验证于 2026-09-28</span>
+<blockquote class="ev-excerpt">The transaction MMBE_OLD has been replaced by transaction MMBE. Alternatively there is also the Fiori App Stock Overview.</blockquote></div></li></ul><p class="tiny">仅列出有 SAP 官方证据的版本；没有资料的版本不填猜测结果。</p>
 
 <h2 class="h2">迁移参考</h2>
-<div class="empty-box"><p>暂无官方迁移信息。实际项目迁移请以目标系统版本 + 事务 <code>SYCM</code>（Simplification Database）验证为准，详见知识库文章《在 S/4HANA 系统中验证 Simplification》。</p></div>
+<div class="migration"><div class="mig-step"><strong>S/4HANA</strong><span>S/4HANA 2025</span><span class="lc-badge lc-active">Active</span></div><div class="mig-arrow">↓</div><div class="mig-step"><strong>Fiori</strong><span>Stock – Single Material</span></div></div>
+<p class="tiny">Successor 仅在 SAP 官方资料明确声明（successor / replaced by / replacement）时建立；仅存在 Fiori App 而无官方替代声明的，记为关联 Fiori，不记为替代。</p>
 
 <h2 class="h2">Successor</h2>
-<p class="tiny">暂无官方 Successor 记录。</p>
+<div class="table-wrap"><table class="dict-table"><thead><tr><th>Successor</th><th>类型</th><th>关系</th><th>证据</th></tr></thead><tbody><tr><td><code>Stock – Single Material</code></td><td>Fiori App</td>
+<td><span class="mini-badge">关联 Fiori</span></td>
+<td class="tiny"><a href="https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf" target="_blank" rel="noopener">官方依据</a></td></tr></tbody></table></div>
 
 
 

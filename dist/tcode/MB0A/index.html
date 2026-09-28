@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MIGO 收货/发货/转移过账 - SAP 实战知识库</title>
-<meta name="description" content="MIGO（收货/发货/转移过账 / Goods Movement）在 S/4HANA 各版本的生命周期状态与 SAP 官方证据。">
-<link rel="canonical" href="https://sap.haice.top/tcode/MIGO/">
+<title>MB0A 物料移动事务（已被 MIGO 替代） - SAP 实战知识库</title>
+<meta name="description" content="MB0A（物料移动事务（已被 MIGO 替代） / Goods movement transaction (replaced by MIGO)）在 S/4HANA 各版本的生命周期状态与 SAP 官方证据。">
+<link rel="canonical" href="https://sap.haice.top/tcode/MB0A/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="MIGO 收货/发货/转移过账 - SAP 实战知识库">
-<meta property="og:description" content="MIGO（收货/发货/转移过账 / Goods Movement）在 S/4HANA 各版本的生命周期状态与 SAP 官方证据。">
-<meta property="og:url" content="https://sap.haice.top/tcode/MIGO/">
+<meta property="og:title" content="MB0A 物料移动事务（已被 MIGO 替代） - SAP 实战知识库">
+<meta property="og:description" content="MB0A（物料移动事务（已被 MIGO 替代） / Goods movement transaction (replaced by MIGO)）在 S/4HANA 各版本的生命周期状态与 SAP 官方证据。">
+<meta property="og:url" content="https://sap.haice.top/tcode/MB0A/">
 <meta property="og:site_name" content="SAP 实战知识库">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/styles.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"MIGO 收货/发货/转移过账","inLanguage":"zh-CN","about":{"@type":"ComputerLanguage","name":"SAP Transaction Code"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"MB0A 物料移动事务（已被 MIGO 替代）","inLanguage":"zh-CN","about":{"@type":"ComputerLanguage","name":"SAP Transaction Code"}}</script>
 
 </head>
 <body>
@@ -29,48 +29,42 @@
 <a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
 <button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
 </div></div></header>
-<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/tcode/">T-Code 知识库</a></li><li aria-current="page">MIGO</li></ol></nav>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li><a href="/tcode/">T-Code 知识库</a></li><li aria-current="page">MB0A</li></ol></nav>
 <section class="section"><div class="wrap narrow">
 <div class="tcode-head">
 <div><p class="hero-kicker">物料管理 · 单据</p>
-<h1 class="tcode-title"><code>MIGO</code></h1>
-<p class="tcode-sub">收货/发货/转移过账<br><span class="en">Goods Movement</span></p></div>
-<div class="tcode-badges"><span class="lc-badge lc-active">Active</span><span class="dq-badge dq-partial">部分验证</span></div>
+<h1 class="tcode-title"><code>MB0A</code></h1>
+<p class="tcode-sub">物料移动事务（已被 MIGO 替代）<br><span class="en">Goods movement transaction (replaced by MIGO)</span></p></div>
+<div class="tcode-badges"><span class="lc-badge lc-replaced">Replaced</span><span class="dq-badge dq-verified">已验证</span></div>
 </div>
 
 <h2 class="h2">版本时间轴</h2>
 <ul class="timeline"><li class="tl-item">
-<div class="tl-ver">S/4HANA 1511</div>
-<div class="tl-badges"><span class="lc-badge lc-active">Active</span>
-<span class="mini-badge">可用性：可用</span>
-<span class="mini-badge">推荐：未知</span></div>
-<div class="tiny">SAP 原文状态词：<code>is available</code></div>
-<div class="tl-ev"><a href="https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf" target="_blank" rel="noopener" class="ev-link">Simplification List for SAP S/4HANA, on-premise edition 1511 – FPS01</a>
-<span class="ev-meta">Simplification List · S/4HANA 1511 · 验证于 2026-09-28</span>
-<blockquote class="ev-excerpt">In SAP S/4HANA the singlescreen generalized transaction MIGO is available.</blockquote></div></li><li class="tl-item">
 <div class="tl-ver">S/4HANA 2023</div>
-<div class="tl-badges"><span class="lc-badge lc-active">Active</span>
-<span class="mini-badge">可用性：可用</span>
+<div class="tl-badges"><span class="lc-badge lc-replaced">Replaced</span>
+<span class="mini-badge">可用性：未知</span>
 <span class="mini-badge">推荐：未知</span></div>
-
+<div class="tiny">SAP 原文状态词：<code>have been replaced by the singlescreen generalized transaction MIGO</code></div>
 <div class="tl-ev"><a href="https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf" target="_blank" rel="noopener" class="ev-link">Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3</a>
 <span class="ev-meta">Simplification List · S/4HANA 2023 · 验证于 2026-09-28</span>
-<blockquote class="ev-excerpt">The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL. Solution: Use transaction MIGO or MMBE in dialog.</blockquote></div></li><li class="tl-item">
+<blockquote class="ev-excerpt">The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.</blockquote></div></li><li class="tl-item">
 <div class="tl-ver">S/4HANA 2025</div>
-<div class="tl-badges"><span class="lc-badge lc-active">Active</span>
-<span class="mini-badge">可用性：可用</span>
+<div class="tl-badges"><span class="lc-badge lc-replaced">Replaced</span>
+<span class="mini-badge">可用性：未知</span>
 <span class="mini-badge">推荐：未知</span></div>
-
+<div class="tiny">SAP 原文状态词：<code>have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future</code></div>
 <div class="tl-ev"><a href="https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf" target="_blank" rel="noopener" class="ev-link">Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1</a>
 <span class="ev-meta">Simplification List · S/4HANA 2025 · 验证于 2026-09-28</span>
-<blockquote class="ev-excerpt">The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL. Solution: Use transaction MIGO or MMBE in dialog.</blockquote></div></li></ul><p class="tiny">仅列出有 SAP 官方证据的版本；没有资料的版本不填猜测结果。</p>
+<blockquote class="ev-excerpt">The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.</blockquote></div></li></ul><p class="tiny">仅列出有 SAP 官方证据的版本；没有资料的版本不填猜测结果。</p>
 
 <h2 class="h2">迁移参考</h2>
-<div class="migration"><div class="mig-step"><strong>S/4HANA</strong><span>S/4HANA 2025</span><span class="lc-badge lc-active">Active</span></div></div>
+<div class="migration"><div class="mig-step"><strong>S/4HANA</strong><span>S/4HANA 2025</span><span class="lc-badge lc-replaced">Replaced</span></div><div class="mig-arrow">↓</div><div class="mig-step"><strong>Successor（官方）</strong><span><a href="/tcode/MIGO/"><code>MIGO</code></a></span></div></div>
 <p class="tiny">Successor 仅在 SAP 官方资料明确声明（successor / replaced by / replacement）时建立；仅存在 Fiori App 而无官方替代声明的，记为关联 Fiori，不记为替代。</p>
 
 <h2 class="h2">Successor</h2>
-<p class="tiny">暂无官方 Successor 记录。</p>
+<div class="table-wrap"><table class="dict-table"><thead><tr><th>Successor</th><th>类型</th><th>关系</th><th>证据</th></tr></thead><tbody><tr><td><code>MIGO</code></td><td>T-Code</td>
+<td><span class="lc-badge lc-obsolete">官方替代</span></td>
+<td class="tiny"><a href="https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf" target="_blank" rel="noopener">官方依据</a></td></tr></tbody></table></div>
 
 
 

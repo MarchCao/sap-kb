@@ -1450,14 +1450,564 @@
     "notes": ""
   },
   {
+    "code": "MB01",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB02",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB03",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB04",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB05",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB0A",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB11",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB1A",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB1B",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
     "code": "MB1C",
     "module": "MM",
     "en": "Other Goods Receipt",
     "zh": "其他收货",
     "category": "单据",
-    "versions": [],
-    "successors": [],
-    "data_quality": "NEEDS_REVIEW",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MB31",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
     "notes": ""
   },
   {
@@ -1466,9 +2016,34 @@
     "en": "Material Document List",
     "zh": "物料凭证清单",
     "category": "报表",
-    "versions": [],
-    "successors": [],
-    "data_quality": "NEEDS_REVIEW",
+    "versions": [
+      {
+        "version": "S/4HANA 1511",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "still available but will be not available midterm",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+          "source_title": "Simplification List for SAP S/4HANA, on-premise edition 1511 – FPS01",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 1511",
+          "source_excerpt": "The transactions … MB51 … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "Material Documents Overview",
+        "kind": "FIORI",
+        "relationship": "RELATED_FIORI_APP",
+        "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+        "source_excerpt": "The transactions … MB51 … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "PARTIALLY_VERIFIED",
     "notes": ""
   },
   {
@@ -1477,9 +2052,34 @@
     "en": "Warehouse Stocks",
     "zh": "仓库库存总览",
     "category": "报表",
-    "versions": [],
-    "successors": [],
-    "data_quality": "NEEDS_REVIEW",
+    "versions": [
+      {
+        "version": "S/4HANA 1511",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "still available but will be not available midterm",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+          "source_title": "Simplification List for SAP S/4HANA, on-premise edition 1511 – FPS01",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 1511",
+          "source_excerpt": "The transactions … MB52 … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "Stock – Multiple Materials",
+        "kind": "FIORI",
+        "relationship": "RELATED_FIORI_APP",
+        "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+        "source_excerpt": "The transactions … MB52 … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "PARTIALLY_VERIFIED",
     "notes": ""
   },
   {
@@ -1488,9 +2088,391 @@
     "en": "Stock on Posting Date",
     "zh": "期初/期末库存",
     "category": "报表",
-    "versions": [],
-    "successors": [],
-    "data_quality": "NEEDS_REVIEW",
+    "versions": [
+      {
+        "version": "S/4HANA 1511",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "still available but will be not available midterm",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+          "source_title": "Simplification List for SAP S/4HANA, on-premise edition 1511 – FPS01",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 1511",
+          "source_excerpt": "The transactions … MB5B … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "Stock – Multiple Materials",
+        "kind": "FIORI",
+        "relationship": "RELATED_FIORI_APP",
+        "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+        "source_excerpt": "The transactions … MB5B … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MBBM",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MBNL",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MBRL",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MBSF",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MBSL",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MBST",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MBSU",
+    "module": "MM",
+    "en": "Goods movement transaction (replaced by MIGO)",
+    "zh": "物料移动事务（已被 MIGO 替代）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the singlescreen generalized transaction MIGO",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "have been replaced by the single-screen generalized transaction MIGO; will be deprecated in the near future",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM. The transaction codes will be deprecated in the near future.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MIGO",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL: MB01, MB02, MB03, MB04, MB05, MB0A, MB11, MB1A, MB1B, MB1C, MB31, MBNL, MBRL, MBSF, MBSL, MBST, MBSU and MBBM.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
     "notes": ""
   },
   {
@@ -1653,9 +2635,25 @@
     "en": "Maintain SA Delivery Schedule",
     "zh": "维护计划协议交货计划",
     "category": "单据",
-    "versions": [],
+    "versions": [
+      {
+        "version": "S/4HANA 2021",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/69dd0f1ef0034261ab6e617e0b2beb21/2022.001/en-US/MigrationObjects_OP_EN.pdf",
+          "source_title": "Migration Objects for SAP S/4HANA",
+          "source_type": "SAP Help",
+          "source_version": "S/4HANA 2021",
+          "source_excerpt": "You also have the option of validating your data in the back end using the following transaction: Transaction ME38 Maintain Sched. Agreement Schedule … in SAP S/4HANA.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
     "successors": [],
-    "data_quality": "NEEDS_REVIEW",
+    "data_quality": "PARTIALLY_VERIFIED",
     "notes": ""
   },
   {
@@ -1752,9 +2750,55 @@
     "en": "Goods Movement",
     "zh": "收货/发货/转移过账",
     "category": "单据",
-    "versions": [],
+    "versions": [
+      {
+        "version": "S/4HANA 1511",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "is available",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+          "source_title": "Simplification List for SAP S/4HANA, on-premise edition 1511 – FPS01",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 1511",
+          "source_excerpt": "In SAP S/4HANA the singlescreen generalized transaction MIGO is available.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The following transactions … have been replaced by the singlescreen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL. Solution: Use transaction MIGO or MMBE in dialog.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The following transactions for entering and displaying goods movements (material documents) - called 'MB transactions' - … have been replaced by the single-screen generalized transaction MIGO or the BAPI's BAPI_GOODSMVT_CREATE and BAPI_GOODSMVT_CANCEL. Solution: Use transaction MIGO or MMBE in dialog.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
     "successors": [],
-    "data_quality": "NEEDS_REVIEW",
+    "data_quality": "PARTIALLY_VERIFIED",
     "notes": ""
   },
   {
@@ -1818,9 +2862,115 @@
     "en": "Stock Overview",
     "zh": "库存总览（物料）",
     "category": "报表",
-    "versions": [],
-    "successors": [],
-    "data_quality": "NEEDS_REVIEW",
+    "versions": [
+      {
+        "version": "S/4HANA 1511",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "still available but will be not available midterm",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+          "source_title": "Simplification List for SAP S/4HANA, on-premise edition 1511 – FPS01",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 1511",
+          "source_excerpt": "The transactions MMBE_OLD …, MMBE …, MB51 …, MB52 … and MB5B … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The transaction MMBE_OLD has been replaced by transaction MMBE. Alternatively there is also the Fiori App Stock Overview. Solution: Use transaction MIGO or MMBE in dialog.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The transaction MMBE_OLD has been replaced by transaction MMBE. Alternatively there is also the Fiori App Stock Overview.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "Stock – Single Material",
+        "kind": "FIORI",
+        "relationship": "RELATED_FIORI_APP",
+        "source_url": "https://help.sap.com/doc/pdfa4322f56824ae221e10000000a4450e5/1511%20001/en-US/SIMPL_OP1511_FPS01.pdf",
+        "source_excerpt": "The transactions MMBE_OLD …, MMBE …, MB51 …, MB52 … and MB5B … are still available but will be not available midterm. Successor functionalities are already available as Fiori applications and/or as Virtual Data Model (VDM).",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MMBE_OLD",
+    "module": "MM",
+    "en": "Inventory Overview (replaced by MMBE)",
+    "zh": "库存总览（已被 MMBE 替代）",
+    "category": "报表",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "has been replaced by transaction MMBE",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2023 – Feature Pack Stack 3",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The transaction MMBE_OLD has been replaced by transaction MMBE.",
+          "verified_at": "2026-09-28"
+        }
+      },
+      {
+        "version": "S/4HANA 2025",
+        "availability": "UNKNOWN",
+        "lifecycle": "REPLACED",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "has been replaced by transaction MMBE",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "The transaction MMBE_OLD has been replaced by transaction MMBE.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [
+      {
+        "to": "MMBE",
+        "kind": "TCODE",
+        "relationship": "REPLACED_BY",
+        "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+        "source_excerpt": "The transaction MMBE_OLD has been replaced by transaction MMBE.",
+        "verified_at": "2026-09-28"
+      }
+    ],
+    "data_quality": "VERIFIED",
     "notes": ""
   },
   {
