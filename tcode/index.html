@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T-Code 知识库 - SAP 实战知识库</title>
+<meta name="description" content="SAP ECC / S/4HANA T-Code 版本状态库：每条生命周期结论均可追溯 SAP 官方依据。">
+<link rel="canonical" href="https://sap.haice.top/tcode/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="T-Code 知识库 - SAP 实战知识库">
+<meta property="og:description" content="SAP ECC / S/4HANA T-Code 版本状态库：每条生命周期结论均可追溯 SAP 官方依据。">
+<meta property="og:url" content="https://sap.haice.top/tcode/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+
+
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tcode/" class="active">T-code库</a><a href="/tools/" class="">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li aria-current="page">T-Code 知识库</li></ol></nav>
+<section class="section"><div class="wrap">
+<h1 class="page-title">T-Code 知识库</h1>
+<p class="sec-sub">SAP ECC / S/4HANA 事务代码版本状态库。铁律：每条生命周期结论必须可追溯到 SAP 官方依据（Help Portal / Simplification List / 官方 Note），无证据的一律标「? 状态待验证」，绝不猜测。</p>
+<div class="stat-cards">
+<div class="stat-card"><strong>233</strong><span>收录 T-Code</span></div>
+<div class="stat-card"><strong>2</strong><span>官方证据已验证</span></div>
+<div class="stat-card"><strong>198</strong><span>待审核</span></div>
+<div class="stat-card"><strong>0</strong><span>有官方 Successor</span></div>
+</div>
+<div class="search-box"><input id="kbInput" type="search" placeholder="搜索 T-code / 中文 / 英文…" aria-label="搜索T-code库"><span class="search-icon">🔍</span></div>
+<div class="mod-chips"><button class="mod-chip on" data-mod="">全部模块</button><button class="mod-chip" data-mod="FI">FI · 财务会计</button><button class="mod-chip" data-mod="CO">CO · 管理会计</button><button class="mod-chip" data-mod="MM">MM · 物料管理</button><button class="mod-chip" data-mod="SD">SD · 销售分销</button><button class="mod-chip" data-mod="PP">PP · 生产计划</button><button class="mod-chip" data-mod="PM">PM · 设备维护</button><button class="mod-chip" data-mod="QM">QM · 质量管理</button><button class="mod-chip" data-mod="PS">PS · 项目系统</button><button class="mod-chip" data-mod="WM">WM · 仓储管理</button><button class="mod-chip" data-mod="EWM">EWM · 扩展仓储管理</button><button class="mod-chip" data-mod="HCM">HCM · 人力资本管理</button><button class="mod-chip" data-mod="Basis">Basis · Basis / 系统管理</button><button class="mod-chip" data-mod="CrossApp">CrossApp · 跨应用</button></div>
+<div class="table-wrap"><table class="dict-table" id="kbTable">
+<thead><tr><th>T-code</th><th>中文</th><th>English</th><th>模块</th><th>S/4HANA 状态</th><th>数据质量</th></tr></thead>
+<tbody><tr data-code="PFCG" data-mod="Basis" data-q="pfcg 角色维护 role maintenance">
+<td><a href="/tcode/PFCG/"><code>PFCG</code></a></td>
+<td>角色维护</td><td class="en">Role Maintenance</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SE01" data-mod="Basis" data-q="se01 传输管理 transport organizer">
+<td><a href="/tcode/SE01/"><code>SE01</code></a></td>
+<td>传输管理</td><td class="en">Transport Organizer</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SE03" data-mod="Basis" data-q="se03 传输管理工具 transport organizer tools">
+<td><a href="/tcode/SE03/"><code>SE03</code></a></td>
+<td>传输管理工具</td><td class="en">Transport Organizer Tools</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SE06" data-mod="Basis" data-q="se06 系统安装后配置 post-installation configuration">
+<td><a href="/tcode/SE06/"><code>SE06</code></a></td>
+<td>系统安装后配置</td><td class="en">Post-Installation Configuration</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SE09" data-mod="Basis" data-q="se09 传输请求管理 transport requests">
+<td><a href="/tcode/SE09/"><code>SE09</code></a></td>
+<td>传输请求管理</td><td class="en">Transport Requests</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SE10" data-mod="Basis" data-q="se10 传输请求管理（扩展） transport organizer (extended)">
+<td><a href="/tcode/SE10/"><code>SE10</code></a></td>
+<td>传输请求管理（扩展）</td><td class="en">Transport Organizer (Extended)</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SE11" data-mod="Basis" data-q="se11 abap 数据字典 abap dictionary">
+<td><a href="/tcode/SE11/"><code>SE11</code></a></td>
+<td>ABAP 数据字典</td><td class="en">ABAP Dictionary</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SE16" data-mod="Basis" data-q="se16 数据浏览器 data browser">
+<td><a href="/tcode/SE16/"><code>SE16</code></a></td>
+<td>数据浏览器</td><td class="en">Data Browser</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SE16N" data-mod="Basis" data-q="se16n 通用表显示 general table display">
+<td><a href="/tcode/SE16N/"><code>SE16N</code></a></td>
+<td>通用表显示</td><td class="en">General Table Display</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SE18" data-mod="Basis" data-q="se18 badi 定义 badi definitions">
+<td><a href="/tcode/SE18/"><code>SE18</code></a></td>
+<td>BAdI 定义</td><td class="en">BAdI Definitions</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SE19" data-mod="Basis" data-q="se19 badi 实施 badi implementations">
+<td><a href="/tcode/SE19/"><code>SE19</code></a></td>
+<td>BAdI 实施</td><td class="en">BAdI Implementations</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SE24" data-mod="Basis" data-q="se24 abap 类生成器 class builder">
+<td><a href="/tcode/SE24/"><code>SE24</code></a></td>
+<td>ABAP 类生成器</td><td class="en">Class Builder</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SE37" data-mod="Basis" data-q="se37 函数生成器 function builder">
+<td><a href="/tcode/SE37/"><code>SE37</code></a></td>
+<td>函数生成器</td><td class="en">Function Builder</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SE38" data-mod="Basis" data-q="se38 abap 编辑器 abap editor">
+<td><a href="/tcode/SE38/"><code>SE38</code></a></td>
+<td>ABAP 编辑器</td><td class="en">ABAP Editor</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SE80" data-mod="Basis" data-q="se80 对象导航器 object navigator">
+<td><a href="/tcode/SE80/"><code>SE80</code></a></td>
+<td>对象导航器</td><td class="en">Object Navigator</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SE93" data-mod="Basis" data-q="se93 维护事务代码 maintain transaction codes">
+<td><a href="/tcode/SE93/"><code>SE93</code></a></td>
+<td>维护事务代码</td><td class="en">Maintain Transaction Codes</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SICF" data-mod="Basis" data-q="sicf http 服务层次维护 http service hierarchy">
+<td><a href="/tcode/SICF/"><code>SICF</code></a></td>
+<td>HTTP 服务层次维护</td><td class="en">HTTP Service Hierarchy</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SM30" data-mod="Basis" data-q="sm30 表维护视图 table maintenance">
+<td><a href="/tcode/SM30/"><code>SM30</code></a></td>
+<td>表维护视图</td><td class="en">Table Maintenance</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SM36" data-mod="Basis" data-q="sm36 定义后台作业 define background job">
+<td><a href="/tcode/SM36/"><code>SM36</code></a></td>
+<td>定义后台作业</td><td class="en">Define Background Job</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SM37" data-mod="Basis" data-q="sm37 后台作业管理 background job management">
+<td><a href="/tcode/SM37/"><code>SM37</code></a></td>
+<td>后台作业管理</td><td class="en">Background Job Management</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SM50" data-mod="Basis" data-q="sm50 进程总览 process overview">
+<td><a href="/tcode/SM50/"><code>SM50</code></a></td>
+<td>进程总览</td><td class="en">Process Overview</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SM51" data-mod="Basis" data-q="sm51 应用服务器列表 application servers">
+<td><a href="/tcode/SM51/"><code>SM51</code></a></td>
+<td>应用服务器列表</td><td class="en">Application Servers</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SM58" data-mod="Basis" data-q="sm58 异步 rfc 错误日志 trfc monitor">
+<td><a href="/tcode/SM58/"><code>SM58</code></a></td>
+<td>异步 RFC 错误日志</td><td class="en">tRFC Monitor</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SM59" data-mod="Basis" data-q="sm59 rfc 目标配置 rfc destinations">
+<td><a href="/tcode/SM59/"><code>SM59</code></a></td>
+<td>RFC 目标配置</td><td class="en">RFC Destinations</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SM66" data-mod="Basis" data-q="sm66 系统进程总览 global process overview">
+<td><a href="/tcode/SM66/"><code>SM66</code></a></td>
+<td>系统进程总览</td><td class="en">Global Process Overview</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SPRO" data-mod="Basis" data-q="spro 后台配置 customizing (img)">
+<td><a href="/tcode/SPRO/"><code>SPRO</code></a></td>
+<td>后台配置</td><td class="en">Customizing (IMG)</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="ST05" data-mod="Basis" data-q="st05 sql 跟踪 sql trace">
+<td><a href="/tcode/ST05/"><code>ST05</code></a></td>
+<td>SQL 跟踪</td><td class="en">SQL Trace</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ST22" data-mod="Basis" data-q="st22 abap 运行时错误分析 abap dump analysis">
+<td><a href="/tcode/ST22/"><code>ST22</code></a></td>
+<td>ABAP 运行时错误分析</td><td class="en">ABAP Dump Analysis</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="STAD" data-mod="Basis" data-q="stad 统计记录显示 workload statistics display">
+<td><a href="/tcode/STAD/"><code>STAD</code></a></td>
+<td>统计记录显示</td><td class="en">Workload Statistics Display</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="STRUST" data-mod="Basis" data-q="strust 信任管理器 trust manager">
+<td><a href="/tcode/STRUST/"><code>STRUST</code></a></td>
+<td>信任管理器</td><td class="en">Trust Manager</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SU01" data-mod="Basis" data-q="su01 用户主数据维护 user maintenance">
+<td><a href="/tcode/SU01/"><code>SU01</code></a></td>
+<td>用户主数据维护</td><td class="en">User Maintenance</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2025</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="SU53" data-mod="Basis" data-q="su53 权限检查失败分析 authorization check analysis">
+<td><a href="/tcode/SU53/"><code>SU53</code></a></td>
+<td>权限检查失败分析</td><td class="en">Authorization Check Analysis</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SYCM" data-mod="Basis" data-q="sycm 简化数据库查看 simplification database">
+<td><a href="/tcode/SYCM/"><code>SYCM</code></a></td>
+<td>简化数据库查看</td><td class="en">Simplification Database</td>
+<td><span class="scene">Basis</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KE30" data-mod="CO" data-q="ke30 获利能力分析报表 profitability analysis report">
+<td><a href="/tcode/KE30/"><code>KE30</code></a></td>
+<td>获利能力分析报表</td><td class="en">Profitability Analysis Report</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KL01" data-mod="CO" data-q="kl01 创建作业类型 create activity type">
+<td><a href="/tcode/KL01/"><code>KL01</code></a></td>
+<td>创建作业类型</td><td class="en">Create Activity Type</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KO01" data-mod="CO" data-q="ko01 创建内部订单 create internal order">
+<td><a href="/tcode/KO01/"><code>KO01</code></a></td>
+<td>创建内部订单</td><td class="en">Create Internal Order</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KO02" data-mod="CO" data-q="ko02 修改内部订单 change internal order">
+<td><a href="/tcode/KO02/"><code>KO02</code></a></td>
+<td>修改内部订单</td><td class="en">Change Internal Order</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KO88" data-mod="CO" data-q="ko88 结算内部订单 settle internal order">
+<td><a href="/tcode/KO88/"><code>KO88</code></a></td>
+<td>结算内部订单</td><td class="en">Settle Internal Order</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KOB1" data-mod="CO" data-q="kob1 内部订单实际行项目 internal orders: actual line items">
+<td><a href="/tcode/KOB1/"><code>KOB1</code></a></td>
+<td>内部订单实际行项目</td><td class="en">Internal Orders: Actual Line Items</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KP06" data-mod="CO" data-q="kp06 修改成本中心计划数据 change plan data for cost centers">
+<td><a href="/tcode/KP06/"><code>KP06</code></a></td>
+<td>修改成本中心计划数据</td><td class="en">Change Plan Data for Cost Centers</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KS01" data-mod="CO" data-q="ks01 创建成本中心 create cost center">
+<td><a href="/tcode/KS01/"><code>KS01</code></a></td>
+<td>创建成本中心</td><td class="en">Create Cost Center</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KS02" data-mod="CO" data-q="ks02 修改成本中心 change cost center">
+<td><a href="/tcode/KS02/"><code>KS02</code></a></td>
+<td>修改成本中心</td><td class="en">Change Cost Center</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KS03" data-mod="CO" data-q="ks03 显示成本中心 display cost center">
+<td><a href="/tcode/KS03/"><code>KS03</code></a></td>
+<td>显示成本中心</td><td class="en">Display Cost Center</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KSB1" data-mod="CO" data-q="ksb1 成本中心实际行项目 cost centers: actual line items">
+<td><a href="/tcode/KSB1/"><code>KSB1</code></a></td>
+<td>成本中心实际行项目</td><td class="en">Cost Centers: Actual Line Items</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KSU5" data-mod="CO" data-q="ksu5 执行实际分配 execute actual assessment">
+<td><a href="/tcode/KSU5/"><code>KSU5</code></a></td>
+<td>执行实际分配</td><td class="en">Execute Actual Assessment</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="KSV5" data-mod="CO" data-q="ksv5 执行实际分摊 execute actual distribution">
+<td><a href="/tcode/KSV5/"><code>KSV5</code></a></td>
+<td>执行实际分摊</td><td class="en">Execute Actual Distribution</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="OKB9" data-mod="CO" data-q="okb9 定义自动科目分配 define automatic account assignment">
+<td><a href="/tcode/OKB9/"><code>OKB9</code></a></td>
+<td>定义自动科目分配</td><td class="en">Define Automatic Account Assignment</td>
+<td><span class="scene">CO</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="BD87" data-mod="CrossApp" data-q="bd87 重处理 idoc reprocess idoc">
+<td><a href="/tcode/BD87/"><code>BD87</code></a></td>
+<td>重处理 IDoc</td><td class="en">Reprocess IDoc</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="BP" data-mod="CrossApp" data-q="bp 业务伙伴维护 business partner">
+<td><a href="/tcode/BP/"><code>BP</code></a></td>
+<td>业务伙伴维护</td><td class="en">Business Partner</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CL02" data-mod="CrossApp" data-q="cl02 修改类 change class">
+<td><a href="/tcode/CL02/"><code>CL02</code></a></td>
+<td>修改类</td><td class="en">Change Class</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CT04" data-mod="CrossApp" data-q="ct04 创建特性 create characteristic">
+<td><a href="/tcode/CT04/"><code>CT04</code></a></td>
+<td>创建特性</td><td class="en">Create Characteristic</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CV01N" data-mod="CrossApp" data-q="cv01n 创建文档（文档管理） create document (dms)">
+<td><a href="/tcode/CV01N/"><code>CV01N</code></a></td>
+<td>创建文档（文档管理）</td><td class="en">Create Document (DMS)</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="GRR1" data-mod="CrossApp" data-q="grr1 执行 report painter 报表 execute report painter report">
+<td><a href="/tcode/GRR1/"><code>GRR1</code></a></td>
+<td>执行 Report Painter 报表</td><td class="en">Execute Report Painter Report</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LSMW" data-mod="CrossApp" data-q="lsmw 旧系统迁移工作台 legacy system migration workbench">
+<td><a href="/tcode/LSMW/"><code>LSMW</code></a></td>
+<td>旧系统迁移工作台</td><td class="en">Legacy System Migration Workbench</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MASS" data-mod="CrossApp" data-q="mass 批量数据维护 mass maintenance">
+<td><a href="/tcode/MASS/"><code>MASS</code></a></td>
+<td>批量数据维护</td><td class="en">Mass Maintenance</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="NACE" data-mod="CrossApp" data-q="nace 输出条件维护 output condition maintenance">
+<td><a href="/tcode/NACE/"><code>NACE</code></a></td>
+<td>输出条件维护</td><td class="en">Output Condition Maintenance</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SBWP" data-mod="CrossApp" data-q="sbwp sap 业务工作台 sap business workplace">
+<td><a href="/tcode/SBWP/"><code>SBWP</code></a></td>
+<td>SAP 业务工作台</td><td class="en">SAP Business Workplace</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SECATT" data-mod="CrossApp" data-q="secatt 扩展计算机辅助测试工具 extended computer aided test tool">
+<td><a href="/tcode/SECATT/"><code>SECATT</code></a></td>
+<td>扩展计算机辅助测试工具</td><td class="en">Extended Computer Aided Test Tool</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SHDB" data-mod="CrossApp" data-q="shdb 批输入录制 batch input recording">
+<td><a href="/tcode/SHDB/"><code>SHDB</code></a></td>
+<td>批输入录制</td><td class="en">Batch Input Recording</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SLG1" data-mod="CrossApp" data-q="slg1 显示应用日志 display application log">
+<td><a href="/tcode/SLG1/"><code>SLG1</code></a></td>
+<td>显示应用日志</td><td class="en">Display Application Log</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SNRO" data-mod="CrossApp" data-q="snro 号码段对象 number range objects">
+<td><a href="/tcode/SNRO/"><code>SNRO</code></a></td>
+<td>号码段对象</td><td class="en">Number Range Objects</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SO10" data-mod="CrossApp" data-q="so10 维护标准文本 maintain standard text">
+<td><a href="/tcode/SO10/"><code>SO10</code></a></td>
+<td>维护标准文本</td><td class="en">Maintain Standard Text</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SQ01" data-mod="CrossApp" data-q="sq01 维护 sap query maintain sap query">
+<td><a href="/tcode/SQ01/"><code>SQ01</code></a></td>
+<td>维护 SAP Query</td><td class="en">Maintain SAP Query</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SQ02" data-mod="CrossApp" data-q="sq02 维护信息集 maintain infoset">
+<td><a href="/tcode/SQ02/"><code>SQ02</code></a></td>
+<td>维护信息集</td><td class="en">Maintain InfoSet</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SUIM" data-mod="CrossApp" data-q="suim 用户信息系统 user information system">
+<td><a href="/tcode/SUIM/"><code>SUIM</code></a></td>
+<td>用户信息系统</td><td class="en">User Information System</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="SXMB_MONI" data-mod="CrossApp" data-q="sxmb_moni pi 消息监控 pi message monitor">
+<td><a href="/tcode/SXMB_MONI/"><code>SXMB_MONI</code></a></td>
+<td>PI 消息监控</td><td class="en">PI Message Monitor</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="WE02" data-mod="CrossApp" data-q="we02 idoc 查看 idoc display">
+<td><a href="/tcode/WE02/"><code>WE02</code></a></td>
+<td>IDoc 查看</td><td class="en">IDoc Display</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="WE05" data-mod="CrossApp" data-q="we05 idoc 清单 idoc list">
+<td><a href="/tcode/WE05/"><code>WE05</code></a></td>
+<td>IDoc 清单</td><td class="en">IDoc List</td>
+<td><span class="scene">CrossApp</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/ADPROD" data-mod="EWM" data-q="/scwm/adprod 维护仓库产品主数据 maintain warehouse product">
+<td><a href="/tcode/-SCWM-ADPROD/"><code>/SCWM/ADPROD</code></a></td>
+<td>维护仓库产品主数据</td><td class="en">Maintain Warehouse Product</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/COUNT" data-mod="EWM" data-q="/scwm/count 录入盘点计数结果 enter count results">
+<td><a href="/tcode/-SCWM-COUNT/"><code>/SCWM/COUNT</code></a></td>
+<td>录入盘点计数结果</td><td class="en">Enter Count Results</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/LOAD" data-mod="EWM" data-q="/scwm/load 装车 loading">
+<td><a href="/tcode/-SCWM-LOAD/"><code>/SCWM/LOAD</code></a></td>
+<td>装车</td><td class="en">Loading</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/MON" data-mod="EWM" data-q="/scwm/mon 仓库管理监视器 warehouse management monitor">
+<td><a href="/tcode/-SCWM-MON/"><code>/SCWM/MON</code></a></td>
+<td>仓库管理监视器</td><td class="en">Warehouse Management Monitor</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/PACK" data-mod="EWM" data-q="/scwm/pack 包装 packing">
+<td><a href="/tcode/-SCWM-PACK/"><code>/SCWM/PACK</code></a></td>
+<td>包装</td><td class="en">Packing</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/PI_CREATE" data-mod="EWM" data-q="/scwm/pi_create 创建盘点凭证 create physical inventory document">
+<td><a href="/tcode/-SCWM-PI_CREATE/"><code>/SCWM/PI_CREATE</code></a></td>
+<td>创建盘点凭证</td><td class="en">Create Physical Inventory Document</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/PRDI" data-mod="EWM" data-q="/scwm/prdi 维护入库交货 maintain inbound delivery">
+<td><a href="/tcode/-SCWM-PRDI/"><code>/SCWM/PRDI</code></a></td>
+<td>维护入库交货</td><td class="en">Maintain Inbound Delivery</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/PRDO" data-mod="EWM" data-q="/scwm/prdo 维护出库交货单 maintain outbound delivery order">
+<td><a href="/tcode/-SCWM-PRDO/"><code>/SCWM/PRDO</code></a></td>
+<td>维护出库交货单</td><td class="en">Maintain Outbound Delivery Order</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/QINSP" data-mod="EWM" data-q="/scwm/qinsp 质检工作清单 quality inspection worklist">
+<td><a href="/tcode/-SCWM-QINSP/"><code>/SCWM/QINSP</code></a></td>
+<td>质检工作清单</td><td class="en">Quality Inspection Worklist</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/RFUI" data-mod="EWM" data-q="/scwm/rfui 射频终端用户菜单 rf user menu">
+<td><a href="/tcode/-SCWM-RFUI/"><code>/SCWM/RFUI</code></a></td>
+<td>射频终端用户菜单</td><td class="en">RF User Menu</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/RSRC" data-mod="EWM" data-q="/scwm/rsrc 资源管理 resource management">
+<td><a href="/tcode/-SCWM-RSRC/"><code>/SCWM/RSRC</code></a></td>
+<td>资源管理</td><td class="en">Resource Management</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="/SCWM/TO" data-mod="EWM" data-q="/scwm/to 创建仓库任务 create warehouse task">
+<td><a href="/tcode/-SCWM-TO/"><code>/SCWM/TO</code></a></td>
+<td>创建仓库任务</td><td class="en">Create Warehouse Task</td>
+<td><span class="scene">EWM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="F-02" data-mod="FI" data-q="f-02 录入总账凭证 enter g/l account document">
+<td><a href="/tcode/F-02/"><code>F-02</code></a></td>
+<td>录入总账凭证</td><td class="en">Enter G/L Account Document</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="F-28" data-mod="FI" data-q="f-28 收款过账 post incoming payments">
+<td><a href="/tcode/F-28/"><code>F-28</code></a></td>
+<td>收款过账</td><td class="en">Post Incoming Payments</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="F-32" data-mod="FI" data-q="f-32 客户清账 clear customer">
+<td><a href="/tcode/F-32/"><code>F-32</code></a></td>
+<td>客户清账</td><td class="en">Clear Customer</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="F-44" data-mod="FI" data-q="f-44 供应商清账 clear vendor">
+<td><a href="/tcode/F-44/"><code>F-44</code></a></td>
+<td>供应商清账</td><td class="en">Clear Vendor</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="F-53" data-mod="FI" data-q="f-53 付款过账 post outgoing payments">
+<td><a href="/tcode/F-53/"><code>F-53</code></a></td>
+<td>付款过账</td><td class="en">Post Outgoing Payments</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="F110" data-mod="FI" data-q="f110 自动付款 automatic payment transactions">
+<td><a href="/tcode/F110/"><code>F110</code></a></td>
+<td>自动付款</td><td class="en">Automatic Payment Transactions</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FAGLL03" data-mod="FI" data-q="fagll03 显示总账行项目（新总账） display g/l line items (new g/l)">
+<td><a href="/tcode/FAGLL03/"><code>FAGLL03</code></a></td>
+<td>显示总账行项目（新总账）</td><td class="en">Display G/L Line Items (New G/L)</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FB01" data-mod="FI" data-q="fb01 过账会计凭证 post document">
+<td><a href="/tcode/FB01/"><code>FB01</code></a></td>
+<td>过账会计凭证</td><td class="en">Post Document</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FB02" data-mod="FI" data-q="fb02 修改会计凭证 change document">
+<td><a href="/tcode/FB02/"><code>FB02</code></a></td>
+<td>修改会计凭证</td><td class="en">Change Document</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FB03" data-mod="FI" data-q="fb03 显示会计凭证 display document">
+<td><a href="/tcode/FB03/"><code>FB03</code></a></td>
+<td>显示会计凭证</td><td class="en">Display Document</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FB60" data-mod="FI" data-q="fb60 录入供应商发票 enter vendor invoice">
+<td><a href="/tcode/FB60/"><code>FB60</code></a></td>
+<td>录入供应商发票</td><td class="en">Enter Vendor Invoice</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FB70" data-mod="FI" data-q="fb70 录入客户发票 enter customer invoice">
+<td><a href="/tcode/FB70/"><code>FB70</code></a></td>
+<td>录入客户发票</td><td class="en">Enter Customer Invoice</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FBL1N" data-mod="FI" data-q="fbl1n 显示供应商行项目 display vendor line items">
+<td><a href="/tcode/FBL1N/"><code>FBL1N</code></a></td>
+<td>显示供应商行项目</td><td class="en">Display Vendor Line Items</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FBL3N" data-mod="FI" data-q="fbl3n 显示总账科目行项目 display g/l account line items">
+<td><a href="/tcode/FBL3N/"><code>FBL3N</code></a></td>
+<td>显示总账科目行项目</td><td class="en">Display G/L Account Line Items</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FBL5N" data-mod="FI" data-q="fbl5n 显示客户行项目 display customer line items">
+<td><a href="/tcode/FBL5N/"><code>FBL5N</code></a></td>
+<td>显示客户行项目</td><td class="en">Display Customer Line Items</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="FS00" data-mod="FI" data-q="fs00 总账科目主数据 g/l account master record">
+<td><a href="/tcode/FS00/"><code>FS00</code></a></td>
+<td>总账科目主数据</td><td class="en">G/L Account Master Record</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="OB52" data-mod="FI" data-q="ob52 开关过账期间 open and close posting periods">
+<td><a href="/tcode/OB52/"><code>OB52</code></a></td>
+<td>开关过账期间</td><td class="en">Open and Close Posting Periods</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="OBYC" data-mod="FI" data-q="obyc 自动记账配置 automatic postings configuration">
+<td><a href="/tcode/OBYC/"><code>OBYC</code></a></td>
+<td>自动记账配置</td><td class="en">Automatic Postings Configuration</td>
+<td><span class="scene">FI</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CAT2" data-mod="HCM" data-q="cat2 维护工时表 maintain time sheet">
+<td><a href="/tcode/CAT2/"><code>CAT2</code></a></td>
+<td>维护工时表</td><td class="en">Maintain Time Sheet</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PA03" data-mod="HCM" data-q="pa03 维护工资核算控制记录 maintain payroll control record">
+<td><a href="/tcode/PA03/"><code>PA03</code></a></td>
+<td>维护工资核算控制记录</td><td class="en">Maintain Payroll Control Record</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PA20" data-mod="HCM" data-q="pa20 显示人事主数据 display hr master data">
+<td><a href="/tcode/PA20/"><code>PA20</code></a></td>
+<td>显示人事主数据</td><td class="en">Display HR Master Data</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PA30" data-mod="HCM" data-q="pa30 维护人事主数据 maintain hr master data">
+<td><a href="/tcode/PA30/"><code>PA30</code></a></td>
+<td>维护人事主数据</td><td class="en">Maintain HR Master Data</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PA40" data-mod="HCM" data-q="pa40 人事事件 personnel actions">
+<td><a href="/tcode/PA40/"><code>PA40</code></a></td>
+<td>人事事件</td><td class="en">Personnel Actions</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PA51" data-mod="HCM" data-q="pa51 显示时间数据 display time data">
+<td><a href="/tcode/PA51/"><code>PA51</code></a></td>
+<td>显示时间数据</td><td class="en">Display Time Data</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PA61" data-mod="HCM" data-q="pa61 维护时间数据 maintain time data">
+<td><a href="/tcode/PA61/"><code>PA61</code></a></td>
+<td>维护时间数据</td><td class="en">Maintain Time Data</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PC00_M99_CALC" data-mod="HCM" data-q="pc00_m99_calc 工资核算驱动（国际） payroll driver (international)">
+<td><a href="/tcode/PC00_M99_CALC/"><code>PC00_M99_CALC</code></a></td>
+<td>工资核算驱动（国际）</td><td class="en">Payroll Driver (International)</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PE02" data-mod="HCM" data-q="pe02 维护评估路径 maintain evaluation path">
+<td><a href="/tcode/PE02/"><code>PE02</code></a></td>
+<td>维护评估路径</td><td class="en">Maintain Evaluation Path</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PPOCE" data-mod="HCM" data-q="ppoce 维护组织结构 maintain organization structure">
+<td><a href="/tcode/PPOCE/"><code>PPOCE</code></a></td>
+<td>维护组织结构</td><td class="en">Maintain Organization Structure</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PPOME" data-mod="HCM" data-q="ppome 维护组织与编制 maintain organization and staffing">
+<td><a href="/tcode/PPOME/"><code>PPOME</code></a></td>
+<td>维护组织与编制</td><td class="en">Maintain Organization and Staffing</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="PTMW" data-mod="HCM" data-q="ptmw 时间管理员工作台 time manager's workplace">
+<td><a href="/tcode/PTMW/"><code>PTMW</code></a></td>
+<td>时间管理员工作台</td><td class="en">Time Manager's Workplace</td>
+<td><span class="scene">HCM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MB1C" data-mod="MM" data-q="mb1c 其他收货 other goods receipt">
+<td><a href="/tcode/MB1C/"><code>MB1C</code></a></td>
+<td>其他收货</td><td class="en">Other Goods Receipt</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MB51" data-mod="MM" data-q="mb51 物料凭证清单 material document list">
+<td><a href="/tcode/MB51/"><code>MB51</code></a></td>
+<td>物料凭证清单</td><td class="en">Material Document List</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MB52" data-mod="MM" data-q="mb52 仓库库存总览 warehouse stocks">
+<td><a href="/tcode/MB52/"><code>MB52</code></a></td>
+<td>仓库库存总览</td><td class="en">Warehouse Stocks</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MB5B" data-mod="MM" data-q="mb5b 期初/期末库存 stock on posting date">
+<td><a href="/tcode/MB5B/"><code>MB5B</code></a></td>
+<td>期初/期末库存</td><td class="en">Stock on Posting Date</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME11" data-mod="MM" data-q="me11 创建采购信息记录 create info record">
+<td><a href="/tcode/ME11/"><code>ME11</code></a></td>
+<td>创建采购信息记录</td><td class="en">Create Info Record</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME21N" data-mod="MM" data-q="me21n 创建采购订单 create purchase order">
+<td><a href="/tcode/ME21N/"><code>ME21N</code></a></td>
+<td>创建采购订单</td><td class="en">Create Purchase Order</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME22N" data-mod="MM" data-q="me22n 修改采购订单 change purchase order">
+<td><a href="/tcode/ME22N/"><code>ME22N</code></a></td>
+<td>修改采购订单</td><td class="en">Change Purchase Order</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME23N" data-mod="MM" data-q="me23n 显示采购订单 display purchase order">
+<td><a href="/tcode/ME23N/"><code>ME23N</code></a></td>
+<td>显示采购订单</td><td class="en">Display Purchase Order</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME28" data-mod="MM" data-q="me28 审批采购订单 release purchase order">
+<td><a href="/tcode/ME28/"><code>ME28</code></a></td>
+<td>审批采购订单</td><td class="en">Release Purchase Order</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME2L" data-mod="MM" data-q="me2l 按供应商查采购订单 po by vendor">
+<td><a href="/tcode/ME2L/"><code>ME2L</code></a></td>
+<td>按供应商查采购订单</td><td class="en">PO by Vendor</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME2M" data-mod="MM" data-q="me2m 按物料查采购订单 po by material">
+<td><a href="/tcode/ME2M/"><code>ME2M</code></a></td>
+<td>按物料查采购订单</td><td class="en">PO by Material</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME2N" data-mod="MM" data-q="me2n 按采购订单号查询 po by po number">
+<td><a href="/tcode/ME2N/"><code>ME2N</code></a></td>
+<td>按采购订单号查询</td><td class="en">PO by PO Number</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME31K" data-mod="MM" data-q="me31k 创建框架协议（合同） create contract">
+<td><a href="/tcode/ME31K/"><code>ME31K</code></a></td>
+<td>创建框架协议（合同）</td><td class="en">Create Contract</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME31L" data-mod="MM" data-q="me31l 创建计划协议 create scheduling agreement">
+<td><a href="/tcode/ME31L/"><code>ME31L</code></a></td>
+<td>创建计划协议</td><td class="en">Create Scheduling Agreement</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME32K" data-mod="MM" data-q="me32k 修改框架协议（合同） change contract">
+<td><a href="/tcode/ME32K/"><code>ME32K</code></a></td>
+<td>修改框架协议（合同）</td><td class="en">Change Contract</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME32L" data-mod="MM" data-q="me32l 修改计划协议 change scheduling agreement">
+<td><a href="/tcode/ME32L/"><code>ME32L</code></a></td>
+<td>修改计划协议</td><td class="en">Change Scheduling Agreement</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME33K" data-mod="MM" data-q="me33k 显示框架协议（合同） display contract">
+<td><a href="/tcode/ME33K/"><code>ME33K</code></a></td>
+<td>显示框架协议（合同）</td><td class="en">Display Contract</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME33L" data-mod="MM" data-q="me33l 显示计划协议 display scheduling agreement">
+<td><a href="/tcode/ME33L/"><code>ME33L</code></a></td>
+<td>显示计划协议</td><td class="en">Display Scheduling Agreement</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME38" data-mod="MM" data-q="me38 维护计划协议交货计划 maintain sa delivery schedule">
+<td><a href="/tcode/ME38/"><code>ME38</code></a></td>
+<td>维护计划协议交货计划</td><td class="en">Maintain SA Delivery Schedule</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME51N" data-mod="MM" data-q="me51n 创建采购申请 create purchase requisition">
+<td><a href="/tcode/ME51N/"><code>ME51N</code></a></td>
+<td>创建采购申请</td><td class="en">Create Purchase Requisition</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME52N" data-mod="MM" data-q="me52n 修改采购申请 change purchase requisition">
+<td><a href="/tcode/ME52N/"><code>ME52N</code></a></td>
+<td>修改采购申请</td><td class="en">Change Purchase Requisition</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME53N" data-mod="MM" data-q="me53n 显示采购申请 display purchase requisition">
+<td><a href="/tcode/ME53N/"><code>ME53N</code></a></td>
+<td>显示采购申请</td><td class="en">Display Purchase Requisition</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME54" data-mod="MM" data-q="me54 审批采购申请 release purchase requisition">
+<td><a href="/tcode/ME54/"><code>ME54</code></a></td>
+<td>审批采购申请</td><td class="en">Release Purchase Requisition</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="ME57" data-mod="MM" data-q="me57 为采购申请分配货源 assign source to pr">
+<td><a href="/tcode/ME57/"><code>ME57</code></a></td>
+<td>为采购申请分配货源</td><td class="en">Assign Source to PR</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MEQ1" data-mod="MM" data-q="meq1 创建配额安排 create quota arrangement">
+<td><a href="/tcode/MEQ1/"><code>MEQ1</code></a></td>
+<td>创建配额安排</td><td class="en">Create Quota Arrangement</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MI01" data-mod="MM" data-q="mi01 创建盘点凭证 create physical inventory doc">
+<td><a href="/tcode/MI01/"><code>MI01</code></a></td>
+<td>创建盘点凭证</td><td class="en">Create Physical Inventory Doc</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MI04" data-mod="MM" data-q="mi04 录入盘点数量 enter inventory count">
+<td><a href="/tcode/MI04/"><code>MI04</code></a></td>
+<td>录入盘点数量</td><td class="en">Enter Inventory Count</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MIGO" data-mod="MM" data-q="migo 收货/发货/转移过账 goods movement">
+<td><a href="/tcode/MIGO/"><code>MIGO</code></a></td>
+<td>收货/发货/转移过账</td><td class="en">Goods Movement</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MIR4" data-mod="MM" data-q="mir4 显示发票凭证 display invoice document">
+<td><a href="/tcode/MIR4/"><code>MIR4</code></a></td>
+<td>显示发票凭证</td><td class="en">Display Invoice Document</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MIRO" data-mod="MM" data-q="miro 发票校验 enter incoming invoice">
+<td><a href="/tcode/MIRO/"><code>MIRO</code></a></td>
+<td>发票校验</td><td class="en">Enter Incoming Invoice</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MM01" data-mod="MM" data-q="mm01 创建物料主数据 create material master">
+<td><a href="/tcode/MM01/"><code>MM01</code></a></td>
+<td>创建物料主数据</td><td class="en">Create Material Master</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MM02" data-mod="MM" data-q="mm02 修改物料主数据 change material master">
+<td><a href="/tcode/MM02/"><code>MM02</code></a></td>
+<td>修改物料主数据</td><td class="en">Change Material Master</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MM03" data-mod="MM" data-q="mm03 显示物料主数据 display material master">
+<td><a href="/tcode/MM03/"><code>MM03</code></a></td>
+<td>显示物料主数据</td><td class="en">Display Material Master</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MMBE" data-mod="MM" data-q="mmbe 库存总览（物料） stock overview">
+<td><a href="/tcode/MMBE/"><code>MMBE</code></a></td>
+<td>库存总览（物料）</td><td class="en">Stock Overview</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="XK01" data-mod="MM" data-q="xk01 创建供应商（ecc） create vendor (ecc)">
+<td><a href="/tcode/XK01/"><code>XK01</code></a></td>
+<td>创建供应商（ECC）</td><td class="en">Create Vendor (ECC)</td>
+<td><span class="scene">MM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IE01" data-mod="PM" data-q="ie01 创建设备主数据 create equipment">
+<td><a href="/tcode/IE01/"><code>IE01</code></a></td>
+<td>创建设备主数据</td><td class="en">Create Equipment</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IE02" data-mod="PM" data-q="ie02 修改设备主数据 change equipment">
+<td><a href="/tcode/IE02/"><code>IE02</code></a></td>
+<td>修改设备主数据</td><td class="en">Change Equipment</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IE03" data-mod="PM" data-q="ie03 显示设备主数据 display equipment">
+<td><a href="/tcode/IE03/"><code>IE03</code></a></td>
+<td>显示设备主数据</td><td class="en">Display Equipment</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IL01" data-mod="PM" data-q="il01 创建功能位置 create functional location">
+<td><a href="/tcode/IL01/"><code>IL01</code></a></td>
+<td>创建功能位置</td><td class="en">Create Functional Location</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IL02" data-mod="PM" data-q="il02 修改功能位置 change functional location">
+<td><a href="/tcode/IL02/"><code>IL02</code></a></td>
+<td>修改功能位置</td><td class="en">Change Functional Location</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IL03" data-mod="PM" data-q="il03 显示功能位置 display functional location">
+<td><a href="/tcode/IL03/"><code>IL03</code></a></td>
+<td>显示功能位置</td><td class="en">Display Functional Location</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IW21" data-mod="PM" data-q="iw21 创建维修通知 create pm notification">
+<td><a href="/tcode/IW21/"><code>IW21</code></a></td>
+<td>创建维修通知</td><td class="en">Create PM Notification</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IW22" data-mod="PM" data-q="iw22 修改维修通知 change pm notification">
+<td><a href="/tcode/IW22/"><code>IW22</code></a></td>
+<td>修改维修通知</td><td class="en">Change PM Notification</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IW23" data-mod="PM" data-q="iw23 显示维修通知 display pm notification">
+<td><a href="/tcode/IW23/"><code>IW23</code></a></td>
+<td>显示维修通知</td><td class="en">Display PM Notification</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IW31" data-mod="PM" data-q="iw31 创建维修订单 create pm order">
+<td><a href="/tcode/IW31/"><code>IW31</code></a></td>
+<td>创建维修订单</td><td class="en">Create PM Order</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IW32" data-mod="PM" data-q="iw32 修改维修订单 change pm order">
+<td><a href="/tcode/IW32/"><code>IW32</code></a></td>
+<td>修改维修订单</td><td class="en">Change PM Order</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IW33" data-mod="PM" data-q="iw33 显示维修订单 display pm order">
+<td><a href="/tcode/IW33/"><code>IW33</code></a></td>
+<td>显示维修订单</td><td class="en">Display PM Order</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IW38" data-mod="PM" data-q="iw38 修改维修订单清单 change pm orders (list)">
+<td><a href="/tcode/IW38/"><code>IW38</code></a></td>
+<td>修改维修订单清单</td><td class="en">Change PM Orders (List)</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="IW39" data-mod="PM" data-q="iw39 显示维修订单清单 display pm orders (list)">
+<td><a href="/tcode/IW39/"><code>IW39</code></a></td>
+<td>显示维修订单清单</td><td class="en">Display PM Orders (List)</td>
+<td><span class="scene">PM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CA01" data-mod="PP" data-q="ca01 创建工艺路线 create routing">
+<td><a href="/tcode/CA01/"><code>CA01</code></a></td>
+<td>创建工艺路线</td><td class="en">Create Routing</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CA02" data-mod="PP" data-q="ca02 修改工艺路线 change routing">
+<td><a href="/tcode/CA02/"><code>CA02</code></a></td>
+<td>修改工艺路线</td><td class="en">Change Routing</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CA03" data-mod="PP" data-q="ca03 显示工艺路线 display routing">
+<td><a href="/tcode/CA03/"><code>CA03</code></a></td>
+<td>显示工艺路线</td><td class="en">Display Routing</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CO01" data-mod="PP" data-q="co01 创建生产订单 create production order">
+<td><a href="/tcode/CO01/"><code>CO01</code></a></td>
+<td>创建生产订单</td><td class="en">Create Production Order</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="CO02" data-mod="PP" data-q="co02 修改生产订单 change production order">
+<td><a href="/tcode/CO02/"><code>CO02</code></a></td>
+<td>修改生产订单</td><td class="en">Change Production Order</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="CO03" data-mod="PP" data-q="co03 显示生产订单 display production order">
+<td><a href="/tcode/CO03/"><code>CO03</code></a></td>
+<td>显示生产订单</td><td class="en">Display Production Order</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="CR01" data-mod="PP" data-q="cr01 创建工作中心 create work center">
+<td><a href="/tcode/CR01/"><code>CR01</code></a></td>
+<td>创建工作中心</td><td class="en">Create Work Center</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CR02" data-mod="PP" data-q="cr02 修改工作中心 change work center">
+<td><a href="/tcode/CR02/"><code>CR02</code></a></td>
+<td>修改工作中心</td><td class="en">Change Work Center</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CR03" data-mod="PP" data-q="cr03 显示工作中心 display work center">
+<td><a href="/tcode/CR03/"><code>CR03</code></a></td>
+<td>显示工作中心</td><td class="en">Display Work Center</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CS01" data-mod="PP" data-q="cs01 创建 bom create bom">
+<td><a href="/tcode/CS01/"><code>CS01</code></a></td>
+<td>创建 BOM</td><td class="en">Create BOM</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="CS02" data-mod="PP" data-q="cs02 修改 bom change bom">
+<td><a href="/tcode/CS02/"><code>CS02</code></a></td>
+<td>修改 BOM</td><td class="en">Change BOM</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="CS03" data-mod="PP" data-q="cs03 显示 bom display bom">
+<td><a href="/tcode/CS03/"><code>CS03</code></a></td>
+<td>显示 BOM</td><td class="en">Display BOM</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MD01" data-mod="PP" data-q="md01 mrp 运行（总计划） mrp run (total planning)">
+<td><a href="/tcode/MD01/"><code>MD01</code></a></td>
+<td>MRP 运行（总计划）</td><td class="en">MRP Run (Total Planning)</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-verified">已验证</span></td></tr><tr data-code="MD01N" data-mod="PP" data-q="md01n mrp 运算（s/4hana） mrp live">
+<td><a href="/tcode/MD01N/"><code>MD01N</code></a></td>
+<td>MRP 运算（S/4HANA）</td><td class="en">MRP Live</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="MD02" data-mod="PP" data-q="md02 mrp 运行（单项多层） mrp run (single-item, multilevel)">
+<td><a href="/tcode/MD02/"><code>MD02</code></a></td>
+<td>MRP 运行（单项多层）</td><td class="en">MRP Run (Single-item, Multilevel)</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-verified">已验证</span></td></tr><tr data-code="MD04" data-mod="PP" data-q="md04 库存/需求清单 stock/requirements list">
+<td><a href="/tcode/MD04/"><code>MD04</code></a></td>
+<td>库存/需求清单</td><td class="en">Stock/Requirements List</td>
+<td><span class="scene">PP</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="CJ01" data-mod="PS" data-q="cj01 创建 wbs 元素 create wbs element">
+<td><a href="/tcode/CJ01/"><code>CJ01</code></a></td>
+<td>创建 WBS 元素</td><td class="en">Create WBS Element</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CJ02" data-mod="PS" data-q="cj02 修改 wbs 元素 change wbs element">
+<td><a href="/tcode/CJ02/"><code>CJ02</code></a></td>
+<td>修改 WBS 元素</td><td class="en">Change WBS Element</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CJ03" data-mod="PS" data-q="cj03 显示 wbs 元素 display wbs element">
+<td><a href="/tcode/CJ03/"><code>CJ03</code></a></td>
+<td>显示 WBS 元素</td><td class="en">Display WBS Element</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CJ20N" data-mod="PS" data-q="cj20n 项目构造器 project builder">
+<td><a href="/tcode/CJ20N/"><code>CJ20N</code></a></td>
+<td>项目构造器</td><td class="en">Project Builder</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CJ40" data-mod="PS" data-q="cj40 修改项目计划 change project plan">
+<td><a href="/tcode/CJ40/"><code>CJ40</code></a></td>
+<td>修改项目计划</td><td class="en">Change Project Plan</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CJ88" data-mod="PS" data-q="cj88 项目结算 settle project">
+<td><a href="/tcode/CJ88/"><code>CJ88</code></a></td>
+<td>项目结算</td><td class="en">Settle Project</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CJ8G" data-mod="PS" data-q="cj8g 项目成果分析 results analysis for project">
+<td><a href="/tcode/CJ8G/"><code>CJ8G</code></a></td>
+<td>项目成果分析</td><td class="en">Results Analysis for Project</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CJI3" data-mod="PS" data-q="cji3 项目实际行项目 project actual line items">
+<td><a href="/tcode/CJI3/"><code>CJI3</code></a></td>
+<td>项目实际行项目</td><td class="en">Project Actual Line Items</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CJI5" data-mod="PS" data-q="cji5 项目计划行项目 project plan line items">
+<td><a href="/tcode/CJI5/"><code>CJI5</code></a></td>
+<td>项目计划行项目</td><td class="en">Project Plan Line Items</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CN21" data-mod="PS" data-q="cn21 创建网络 create network">
+<td><a href="/tcode/CN21/"><code>CN21</code></a></td>
+<td>创建网络</td><td class="en">Create Network</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="CN22" data-mod="PS" data-q="cn22 修改网络 change network">
+<td><a href="/tcode/CN22/"><code>CN22</code></a></td>
+<td>修改网络</td><td class="en">Change Network</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="OPSA" data-mod="PS" data-q="opsa 维护项目参数文件 maintain project profile">
+<td><a href="/tcode/OPSA/"><code>OPSA</code></a></td>
+<td>维护项目参数文件</td><td class="en">Maintain Project Profile</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="S_ALR_87013558" data-mod="PS" data-q="s_alr_87013558 项目实际成本报表 project actual costs report">
+<td><a href="/tcode/S_ALR_87013558/"><code>S_ALR_87013558</code></a></td>
+<td>项目实际成本报表</td><td class="en">Project Actual Costs Report</td>
+<td><span class="scene">PS</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QA01" data-mod="QM" data-q="qa01 创建检验批 create inspection lot">
+<td><a href="/tcode/QA01/"><code>QA01</code></a></td>
+<td>创建检验批</td><td class="en">Create Inspection Lot</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QA02" data-mod="QM" data-q="qa02 修改检验批 change inspection lot">
+<td><a href="/tcode/QA02/"><code>QA02</code></a></td>
+<td>修改检验批</td><td class="en">Change Inspection Lot</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QA11" data-mod="QM" data-q="qa11 做出使用决策 make usage decision">
+<td><a href="/tcode/QA11/"><code>QA11</code></a></td>
+<td>做出使用决策</td><td class="en">Make Usage Decision</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QA32" data-mod="QM" data-q="qa32 检验批结果处理清单 inspection lot results worklist">
+<td><a href="/tcode/QA32/"><code>QA32</code></a></td>
+<td>检验批结果处理清单</td><td class="en">Inspection Lot Results Worklist</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QC01" data-mod="QM" data-q="qc01 创建质量证书 create quality certificate">
+<td><a href="/tcode/QC01/"><code>QC01</code></a></td>
+<td>创建质量证书</td><td class="en">Create Quality Certificate</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QE01" data-mod="QM" data-q="qe01 记录检验批结果 record results for inspection lot">
+<td><a href="/tcode/QE01/"><code>QE01</code></a></td>
+<td>记录检验批结果</td><td class="en">Record Results for Inspection Lot</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QI01" data-mod="QM" data-q="qi01 创建质量信息记录 create quality info record">
+<td><a href="/tcode/QI01/"><code>QI01</code></a></td>
+<td>创建质量信息记录</td><td class="en">Create Quality Info Record</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QN01" data-mod="QM" data-q="qn01 创建质量通知单 create quality notification">
+<td><a href="/tcode/QN01/"><code>QN01</code></a></td>
+<td>创建质量通知单</td><td class="en">Create Quality Notification</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QN02" data-mod="QM" data-q="qn02 修改质量通知单 change quality notification">
+<td><a href="/tcode/QN02/"><code>QN02</code></a></td>
+<td>修改质量通知单</td><td class="en">Change Quality Notification</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QP01" data-mod="QM" data-q="qp01 创建检验计划 create inspection plan">
+<td><a href="/tcode/QP01/"><code>QP01</code></a></td>
+<td>创建检验计划</td><td class="en">Create Inspection Plan</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QP02" data-mod="QM" data-q="qp02 修改检验计划 change inspection plan">
+<td><a href="/tcode/QP02/"><code>QP02</code></a></td>
+<td>修改检验计划</td><td class="en">Change Inspection Plan</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="QS21" data-mod="QM" data-q="qs21 创建主检验特性 create master inspection characteristic">
+<td><a href="/tcode/QS21/"><code>QS21</code></a></td>
+<td>创建主检验特性</td><td class="en">Create Master Inspection Characteristic</td>
+<td><span class="scene">QM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="VA01" data-mod="SD" data-q="va01 创建销售订单 create sales order">
+<td><a href="/tcode/VA01/"><code>VA01</code></a></td>
+<td>创建销售订单</td><td class="en">Create Sales Order</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA02" data-mod="SD" data-q="va02 修改销售订单 change sales order">
+<td><a href="/tcode/VA02/"><code>VA02</code></a></td>
+<td>修改销售订单</td><td class="en">Change Sales Order</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA03" data-mod="SD" data-q="va03 显示销售订单 display sales order">
+<td><a href="/tcode/VA03/"><code>VA03</code></a></td>
+<td>显示销售订单</td><td class="en">Display Sales Order</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA11" data-mod="SD" data-q="va11 创建询价 create inquiry">
+<td><a href="/tcode/VA11/"><code>VA11</code></a></td>
+<td>创建询价</td><td class="en">Create Inquiry</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA12" data-mod="SD" data-q="va12 修改询价 change inquiry">
+<td><a href="/tcode/VA12/"><code>VA12</code></a></td>
+<td>修改询价</td><td class="en">Change Inquiry</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA13" data-mod="SD" data-q="va13 显示询价 display inquiry">
+<td><a href="/tcode/VA13/"><code>VA13</code></a></td>
+<td>显示询价</td><td class="en">Display Inquiry</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA21" data-mod="SD" data-q="va21 创建报价 create quotation">
+<td><a href="/tcode/VA21/"><code>VA21</code></a></td>
+<td>创建报价</td><td class="en">Create Quotation</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA22" data-mod="SD" data-q="va22 修改报价 change quotation">
+<td><a href="/tcode/VA22/"><code>VA22</code></a></td>
+<td>修改报价</td><td class="en">Change Quotation</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA23" data-mod="SD" data-q="va23 显示报价 display quotation">
+<td><a href="/tcode/VA23/"><code>VA23</code></a></td>
+<td>显示报价</td><td class="en">Display Quotation</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA41" data-mod="SD" data-q="va41 创建销售合同 create contract">
+<td><a href="/tcode/VA41/"><code>VA41</code></a></td>
+<td>创建销售合同</td><td class="en">Create Contract</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA42" data-mod="SD" data-q="va42 修改销售合同 change contract">
+<td><a href="/tcode/VA42/"><code>VA42</code></a></td>
+<td>修改销售合同</td><td class="en">Change Contract</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VA43" data-mod="SD" data-q="va43 显示销售合同 display contract">
+<td><a href="/tcode/VA43/"><code>VA43</code></a></td>
+<td>显示销售合同</td><td class="en">Display Contract</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-active">Active</span><div class="tiny">S/4HANA 2023</div></td>
+<td><span class="dq-badge dq-partial">部分验证</span></td></tr><tr data-code="VF01" data-mod="SD" data-q="vf01 创建开票凭证 create billing document">
+<td><a href="/tcode/VF01/"><code>VF01</code></a></td>
+<td>创建开票凭证</td><td class="en">Create Billing Document</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="VF02" data-mod="SD" data-q="vf02 修改开票凭证 change billing document">
+<td><a href="/tcode/VF02/"><code>VF02</code></a></td>
+<td>修改开票凭证</td><td class="en">Change Billing Document</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="VF03" data-mod="SD" data-q="vf03 显示开票凭证 display billing document">
+<td><a href="/tcode/VF03/"><code>VF03</code></a></td>
+<td>显示开票凭证</td><td class="en">Display Billing Document</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="VF05" data-mod="SD" data-q="vf05 开票凭证清单 billing document list">
+<td><a href="/tcode/VF05/"><code>VF05</code></a></td>
+<td>开票凭证清单</td><td class="en">Billing Document List</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="VL01N" data-mod="SD" data-q="vl01n 创建交货单 create delivery">
+<td><a href="/tcode/VL01N/"><code>VL01N</code></a></td>
+<td>创建交货单</td><td class="en">Create Delivery</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="VL02N" data-mod="SD" data-q="vl02n 修改交货单 change delivery">
+<td><a href="/tcode/VL02N/"><code>VL02N</code></a></td>
+<td>修改交货单</td><td class="en">Change Delivery</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="VL03N" data-mod="SD" data-q="vl03n 显示交货单 display delivery">
+<td><a href="/tcode/VL03N/"><code>VL03N</code></a></td>
+<td>显示交货单</td><td class="en">Display Delivery</td>
+<td><span class="scene">SD</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LI01N" data-mod="WM" data-q="li01n 创建盘点凭证 create physical inventory document">
+<td><a href="/tcode/LI01N/"><code>LI01N</code></a></td>
+<td>创建盘点凭证</td><td class="en">Create Physical Inventory Document</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LI11N" data-mod="WM" data-q="li11n 录入盘点结果 enter count results">
+<td><a href="/tcode/LI11N/"><code>LI11N</code></a></td>
+<td>录入盘点结果</td><td class="en">Enter Count Results</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LI20" data-mod="WM" data-q="li20 清除库存差异 clear inventory differences">
+<td><a href="/tcode/LI20/"><code>LI20</code></a></td>
+<td>清除库存差异</td><td class="en">Clear Inventory Differences</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LS01N" data-mod="WM" data-q="ls01n 创建仓位 create storage bin">
+<td><a href="/tcode/LS01N/"><code>LS01N</code></a></td>
+<td>创建仓位</td><td class="en">Create Storage Bin</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LS02N" data-mod="WM" data-q="ls02n 修改仓位 change storage bin">
+<td><a href="/tcode/LS02N/"><code>LS02N</code></a></td>
+<td>修改仓位</td><td class="en">Change Storage Bin</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LS03N" data-mod="WM" data-q="ls03n 显示仓位 display storage bin">
+<td><a href="/tcode/LS03N/"><code>LS03N</code></a></td>
+<td>显示仓位</td><td class="en">Display Storage Bin</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LS24" data-mod="WM" data-q="ls24 按物料的仓库库存 warehouse stocks per material">
+<td><a href="/tcode/LS24/"><code>LS24</code></a></td>
+<td>按物料的仓库库存</td><td class="en">Warehouse Stocks per Material</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LT01" data-mod="WM" data-q="lt01 创建转储单 create transfer order">
+<td><a href="/tcode/LT01/"><code>LT01</code></a></td>
+<td>创建转储单</td><td class="en">Create Transfer Order</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LT10" data-mod="WM" data-q="lt10 按交货单创建转储单 create transfer order from delivery">
+<td><a href="/tcode/LT10/"><code>LT10</code></a></td>
+<td>按交货单创建转储单</td><td class="en">Create Transfer Order from Delivery</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LT12" data-mod="WM" data-q="lt12 确认转储单 confirm transfer order">
+<td><a href="/tcode/LT12/"><code>LT12</code></a></td>
+<td>确认转储单</td><td class="en">Confirm Transfer Order</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LT21" data-mod="WM" data-q="lt21 显示转储单 display transfer order">
+<td><a href="/tcode/LT21/"><code>LT21</code></a></td>
+<td>显示转储单</td><td class="en">Display Transfer Order</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LT24" data-mod="WM" data-q="lt24 按物料显示转储单 display transfer orders for material">
+<td><a href="/tcode/LT24/"><code>LT24</code></a></td>
+<td>按物料显示转储单</td><td class="en">Display Transfer Orders for Material</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LX02" data-mod="WM" data-q="lx02 仓位库存总览 bin stock overview">
+<td><a href="/tcode/LX02/"><code>LX02</code></a></td>
+<td>仓位库存总览</td><td class="en">Bin Stock Overview</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr><tr data-code="LX03" data-mod="WM" data-q="lx03 仓位状态报表 bin status report">
+<td><a href="/tcode/LX03/"><code>LX03</code></a></td>
+<td>仓位状态报表</td><td class="en">Bin Status Report</td>
+<td><span class="scene">WM</span></td>
+<td><span class="lc-badge lc-unknown">? 状态待验证</span></td>
+<td><span class="dq-badge dq-review">待审核</span></td></tr></tbody></table></div>
+<p class="tiny">状态说明：Active / Deprecated / Obsolete 严格采用 SAP 官方原文用词；Deprecated（不再开发但可能仍可用）与 Obsolete（已废止）是不同状态。点击 T-code 查看版本时间轴、迁移参考与官方证据链。</p>
+<div class="center" style="margin-top:1.5rem"><a class="btn" href="/tcode/report/">📊 数据统计报告</a> <a class="btn" href="/tcode/review/">🛠️ 数据审核</a></div>
+</div></section>
+<script>(function(){
+const input=document.getElementById('kbInput');let mod='';
+function apply(){const q=input.value.trim().toLowerCase();
+document.querySelectorAll('#kbTable tbody tr').forEach(tr=>{
+const okMod=!mod||tr.dataset.mod===mod;const okQ=!q||tr.dataset.q.includes(q);
+tr.style.display=(okMod&&okQ)?'':'none';});}
+input.addEventListener('input',apply);
+document.querySelectorAll('.mod-chip').forEach(b=>b.addEventListener('click',()=>{
+document.querySelectorAll('.mod-chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');mod=b.dataset.mod;apply();}));
+})();</script></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tcode/">T-code 知识库</a></li>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
