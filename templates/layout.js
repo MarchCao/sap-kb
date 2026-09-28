@@ -40,7 +40,7 @@ function footer() {
 <div class="f-col"><h4>知识库</h4><ul>${cats}<li><a href="/kb/">全部分类</a></li></ul></div>
 <div class="f-col"><h4>工具</h4><ul>
 <li><a href="/tcode/">T-code 知识库</a></li>
-<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/tools/">SAP 工具</a></li>
 <li><a href="/dictionary/">SAP 日语词典</a></li>
 <li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
 <li><a href="/roadmaps/">学习路径</a></li></ul></div>

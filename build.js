@@ -176,7 +176,6 @@ function buildIndex(articles) {
 
   const tools = [
     { href: '/tcode/', icon: '🗄️', name: 'T-code 知识库', desc: '版本状态与官方证据' },
-    { href: '/tools/', icon: '⌨️', name: 'T-code 查询', desc: '常用事务代码速查' },
     { href: '/dictionary/', icon: '📖', name: 'SAP 日语词典', desc: '中日英三语 SAP 术语' },
     { href: '/tools/#checklist', icon: '✅', name: 'MM 配置 Checklist', desc: '实施配置不漏项' },
     { href: '/tools/#p2p', icon: '🔗', name: 'P2P 流程图', desc: '采购到付款可视化' },
@@ -386,9 +385,6 @@ tr.style.display = !q || tr.textContent.toLowerCase().includes(q) ? '' : 'none';
 
 /* ============ 工具 ============ */
 function buildTools(articles) {
-  const tcodes = loadJson('data/tcode-kb.json');
-  const tcodeRows = tcodes.map(t => `<tr><td><a href="/tcode/${codeSlug(escapeHtml(t.code))}/"><code>${escapeHtml(t.code)}</code></a></td><td>${escapeHtml(t.zh)}</td><td class="en">${escapeHtml(t.en)}</td><td><span class="scene">${escapeHtml(t.module)}</span></td></tr>`).join('');
-
   const checklistMd = [
     '- [ ] 定义 Company Code / Plant / Storage Location',
     '- [ ] 配置 Purchasing Organization 与 Purchasing Group',
@@ -420,12 +416,12 @@ function buildTools(articles) {
 <h1 class="page-title">SAP 工具</h1>
 <p class="sec-sub">顾问日常高频小工具：查询、清单、流程图。未来将逐步加入 AI 工具。</p>
 
-<h2 class="h2" id="tcode">⌨️ Transaction Code 查询</h2>
-<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>已上线 <a href="/tcode/">T-Code 知识库</a>：按 S/4HANA 版本查看每个 T-code 的生命周期状态（Active / Deprecated / Obsolete）、版本时间轴、官方 Successor 与 SAP 官方证据链。</p></div></div>
-<div class="search-box"><input id="tcodeInput" type="search" placeholder="搜索 T-code / 中文 / 英文…" aria-label="搜索T-code"><span class="search-icon">🔍</span></div>
-<div class="table-wrap"><table class="dict-table" id="tcodeTable">
-<thead><tr><th>T-code</th><th>中文</th><th>English</th><th>模块</th></tr></thead>
-<tbody>${tcodeRows}</tbody></table></div>
+<h2 class="h2" id="tcode">🗄️ T-Code 知识库</h2>
+<div class="grid3">
+<a class="tool-card" href="/tcode/"><span class="tool-icon">🗄️</span><span class="tool-name">T-Code 知识库</span><span class="tool-desc">251 个 T-Code：搜索、版本状态、官方证据链</span></a>
+<a class="tool-card" href="/tcode/report/"><span class="tool-icon">📊</span><span class="tool-name">数据报告</span><span class="tool-desc">覆盖统计与无法验证清单</span></a>
+<a class="tool-card" href="/tcode/review/"><span class="tool-icon">🛡️</span><span class="tool-name">审核工作台</span><span class="tool-desc">逐条审核 T-Code 状态</span></a>
+</div>
 
 <h2 class="h2" id="checklist" style="margin-top:2.5rem">✅ MM 配置 Checklist</h2>
 <p class="sec-sub">MM 实施核心配置项自查清单（示例）。</p>
@@ -441,12 +437,7 @@ ${p2pFlow}
 <a class="tool-card" href="/roadmaps/"><span class="tool-icon">🗺️</span><span class="tool-name">学习路径</span><span class="tool-desc">顾问成长路线图</span></a>
 <a class="tool-card" href="/ai-lab/"><span class="tool-icon">🤖</span><span class="tool-name">AI × SAP Lab</span><span class="tool-desc">即将上线</span></a>
 </div>
-</div></section>
-<script>document.getElementById('tcodeInput').addEventListener('input', function(){
-const q = this.value.trim().toLowerCase();
-document.querySelectorAll('#tcodeTable tbody tr').forEach(tr => {
-tr.style.display = !q || tr.textContent.toLowerCase().includes(q) ? '' : 'none';});
-});<\/script>`;
+</div></section>`;
   writeFile('tools/index.html', layout({ title: 'SAP 工具', desc: 'SAP 顾问工具：T-code 查询、MM 配置 Checklist、P2P 流程图、日语词典。', canonical: '/tools/', active: '/tools/', body }));
 }
 
