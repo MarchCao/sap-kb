@@ -11,6 +11,7 @@ const NAV = [
   { href: '/', label: '首页' },
   { href: '/kb/', label: '知识库' },
   { href: '/roadmaps/', label: '学习路径' },
+  { href: '/tcode/', label: 'T-code库' },
   { href: '/tools/', label: '工具' },
   { href: '/dictionary/', label: '日语词典' },
   { href: '/kb/cases/', label: '案例' },
@@ -38,6 +39,7 @@ function footer() {
 <p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
 <div class="f-col"><h4>知识库</h4><ul>${cats}<li><a href="/kb/">全部分类</a></li></ul></div>
 <div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tcode/">T-code 知识库</a></li>
 <li><a href="/tools/">T-code 查询</a></li>
 <li><a href="/dictionary/">SAP 日语词典</a></li>
 <li><a href="/tools/#checklist">MM 配置 Checklist</a></li>

@@ -1,0 +1,3125 @@
+[
+  {
+    "code": "PFCG",
+    "module": "Basis",
+    "en": "Role Maintenance",
+    "zh": "角色维护",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "e.g. in transaction PFCG",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Check role SAP_BC_BMT_WFM_SERV_USER_PLV01 e.g. in transaction PFCG.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SE01",
+    "module": "Basis",
+    "en": "Transport Organizer",
+    "zh": "传输管理",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SE03",
+    "module": "Basis",
+    "en": "Transport Organizer Tools",
+    "zh": "传输管理工具",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SE06",
+    "module": "Basis",
+    "en": "Post-Installation Configuration",
+    "zh": "系统安装后配置",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "You define changeability of SAP system by transaction SE06",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "You define changeability of SAP system by transaction SE06. You reach this setting by the button \"System Change Option\" in the toolbar of transaction SE06.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SE09",
+    "module": "Basis",
+    "en": "Transport Requests",
+    "zh": "传输请求管理",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SE10",
+    "module": "Basis",
+    "en": "Transport Organizer (Extended)",
+    "zh": "传输请求管理（扩展）",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SE11",
+    "module": "Basis",
+    "en": "ABAP Dictionary",
+    "zh": "ABAP 数据字典",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "transaction SE11 ... to find locations which SE11 cannot handle",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Determine object list of references to table pools and table clusters ... transaction SE11 and considering other techniques like transaction CODE_SCANNER to find locations which SE11 cannot handle.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SE16",
+    "module": "Basis",
+    "en": "Data Browser",
+    "zh": "数据浏览器",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Display the table content of table TADIR with transaction SE16",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Display the table content of table TADIR with transaction SE16 and select all SQLT object names with the selection \"program id\" = R3TR; \"object type\" = SQLT.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SE16N",
+    "module": "Basis",
+    "en": "General Table Display",
+    "zh": "通用表显示",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Go to transaction SE16N",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Go to transaction SE16N and type \"T881\" into the table field. Enter \"FI\" into the selection field Application and \"SL\" into the selection field Subapplication.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SE18",
+    "module": "Basis",
+    "en": "BAdI Definitions",
+    "zh": "BAdI 定义",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SE19",
+    "module": "Basis",
+    "en": "BAdI Implementations",
+    "zh": "BAdI 实施",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SE24",
+    "module": "Basis",
+    "en": "Class Builder",
+    "zh": "ABAP 类生成器",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "via the standard transactions SFP and SE24",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Develop and adapt your SAP Interactive Forms by Adobe via the standard transactions SFP and SE24.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SE37",
+    "module": "Basis",
+    "en": "Function Builder",
+    "zh": "函数生成器",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SE38",
+    "module": "Basis",
+    "en": "ABAP Editor",
+    "zh": "ABAP 编辑器",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Use transaction SE38 to create the program",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Use transaction SE38 to create the program ZCOPY_ENTRIES_FOR_GL_PLANNING (in a valid customer package) with the title \"Copying of Entries for GL Planning\", type 1 (\"Executable Program\").",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SE80",
+    "module": "Basis",
+    "en": "Object Navigator",
+    "zh": "对象导航器",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "create customer-owned job definitions via transaction SE80",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "It is possible for customers to create customer-owned job definitions via transaction SE80.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SE93",
+    "module": "Basis",
+    "en": "Maintain Transaction Codes",
+    "zh": "维护事务代码",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "you can easily recreate them with transaction maintenance SE93",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "If you are missing plan/actual reporting transactions like S_E38_98000088 or S_PL0_86000031, you can easily recreate them with transaction maintenance SE93.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SICF",
+    "module": "Basis",
+    "en": "HTTP Service Hierarchy",
+    "zh": "HTTP 服务层次维护",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Check if the services are used via transaction SICF",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Check if the services are used via transaction SICF. Hierarchy Type = \"Service\", Service Name e.g. \"QC40\" and execute.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SM30",
+    "module": "Basis",
+    "en": "Table Maintenance",
+    "zh": "表维护视图",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Call up transaction SM30",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Call up transaction SM30, enter view V_BPCONSTANTS and click Display.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SM36",
+    "module": "Basis",
+    "en": "Define Background Job",
+    "zh": "定义后台作业",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Choosing Standard Jobs in transaction SM36",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Choosing Standard Jobs in transaction SM36 displayed a table of standard job templates which the customer could choose to schedule.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SM37",
+    "module": "Basis",
+    "en": "Background Job Management",
+    "zh": "后台作业管理",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Deleting or modifying such jobs manually (via transaction SM37)",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Deleting or modifying such jobs manually (via transaction SM37) will not have a lasting effect since the automation mechanism will reschedule them.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SM50",
+    "module": "Basis",
+    "en": "Process Overview",
+    "zh": "进程总览",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SM51",
+    "module": "Basis",
+    "en": "Application Servers",
+    "zh": "应用服务器列表",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SM58",
+    "module": "Basis",
+    "en": "tRFC Monitor",
+    "zh": "异步 RFC 错误日志",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SM59",
+    "module": "Basis",
+    "en": "RFC Destinations",
+    "zh": "RFC 目标配置",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SM66",
+    "module": "Basis",
+    "en": "Global Process Overview",
+    "zh": "系统进程总览",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SPRO",
+    "module": "Basis",
+    "en": "Customizing (IMG)",
+    "zh": "后台配置",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Mandatory application configuration steps related in the IMG (transaction SPRO)",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Mandatory application configuration steps related in the IMG (transaction SPRO): Folder Preparations and Migration of Customizing.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "ST05",
+    "module": "Basis",
+    "en": "SQL Trace",
+    "zh": "SQL 跟踪",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ST22",
+    "module": "Basis",
+    "en": "ABAP Dump Analysis",
+    "zh": "ABAP 运行时错误分析",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "STAD",
+    "module": "Basis",
+    "en": "Workload Statistics Display",
+    "zh": "统计记录显示",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "STRUST",
+    "module": "Basis",
+    "en": "Trust Manager",
+    "zh": "信任管理器",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SU01",
+    "module": "Basis",
+    "en": "User Maintenance",
+    "zh": "用户主数据维护",
+    "category": "系统管理",
+    "versions": [
+      {
+        "version": "S/4HANA 2025",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "Business users can still be managed using transaction SU01",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/0df2ffddebab40cf9338488b2f18dc41/2025.latest/en-US/SIMPL_OP2025.pdf",
+          "source_title": "Simplification List for SAP S/4HANA 2025 – Feature Pack Stack 1",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2025",
+          "source_excerpt": "Business users can still be managed using transaction SU01, Central User Administration or identity management systems.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "SU53",
+    "module": "Basis",
+    "en": "Authorization Check Analysis",
+    "zh": "权限检查失败分析",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SYCM",
+    "module": "Basis",
+    "en": "Simplification Database",
+    "zh": "简化数据库查看",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KE30",
+    "module": "CO",
+    "en": "Profitability Analysis Report",
+    "zh": "获利能力分析报表",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KL01",
+    "module": "CO",
+    "en": "Create Activity Type",
+    "zh": "创建作业类型",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KO01",
+    "module": "CO",
+    "en": "Create Internal Order",
+    "zh": "创建内部订单",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KO02",
+    "module": "CO",
+    "en": "Change Internal Order",
+    "zh": "修改内部订单",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KO88",
+    "module": "CO",
+    "en": "Settle Internal Order",
+    "zh": "结算内部订单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KOB1",
+    "module": "CO",
+    "en": "Internal Orders: Actual Line Items",
+    "zh": "内部订单实际行项目",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KP06",
+    "module": "CO",
+    "en": "Change Plan Data for Cost Centers",
+    "zh": "修改成本中心计划数据",
+    "category": "计划",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KS01",
+    "module": "CO",
+    "en": "Create Cost Center",
+    "zh": "创建成本中心",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KS02",
+    "module": "CO",
+    "en": "Change Cost Center",
+    "zh": "修改成本中心",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KS03",
+    "module": "CO",
+    "en": "Display Cost Center",
+    "zh": "显示成本中心",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KSB1",
+    "module": "CO",
+    "en": "Cost Centers: Actual Line Items",
+    "zh": "成本中心实际行项目",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KSU5",
+    "module": "CO",
+    "en": "Execute Actual Assessment",
+    "zh": "执行实际分配",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "KSV5",
+    "module": "CO",
+    "en": "Execute Actual Distribution",
+    "zh": "执行实际分摊",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "OKB9",
+    "module": "CO",
+    "en": "Define Automatic Account Assignment",
+    "zh": "定义自动科目分配",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "BD87",
+    "module": "CrossApp",
+    "en": "Reprocess IDoc",
+    "zh": "重处理 IDoc",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "BP",
+    "module": "CrossApp",
+    "en": "Business Partner",
+    "zh": "业务伙伴维护",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CL02",
+    "module": "CrossApp",
+    "en": "Change Class",
+    "zh": "修改类",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CT04",
+    "module": "CrossApp",
+    "en": "Create Characteristic",
+    "zh": "创建特性",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CV01N",
+    "module": "CrossApp",
+    "en": "Create Document (DMS)",
+    "zh": "创建文档（文档管理）",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "GRR1",
+    "module": "CrossApp",
+    "en": "Execute Report Painter Report",
+    "zh": "执行 Report Painter 报表",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LSMW",
+    "module": "CrossApp",
+    "en": "Legacy System Migration Workbench",
+    "zh": "旧系统迁移工作台",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MASS",
+    "module": "CrossApp",
+    "en": "Mass Maintenance",
+    "zh": "批量数据维护",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "NACE",
+    "module": "CrossApp",
+    "en": "Output Condition Maintenance",
+    "zh": "输出条件维护",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SBWP",
+    "module": "CrossApp",
+    "en": "SAP Business Workplace",
+    "zh": "SAP 业务工作台",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SECATT",
+    "module": "CrossApp",
+    "en": "Extended Computer Aided Test Tool",
+    "zh": "扩展计算机辅助测试工具",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SHDB",
+    "module": "CrossApp",
+    "en": "Batch Input Recording",
+    "zh": "批输入录制",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SLG1",
+    "module": "CrossApp",
+    "en": "Display Application Log",
+    "zh": "显示应用日志",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SNRO",
+    "module": "CrossApp",
+    "en": "Number Range Objects",
+    "zh": "号码段对象",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SO10",
+    "module": "CrossApp",
+    "en": "Maintain Standard Text",
+    "zh": "维护标准文本",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SQ01",
+    "module": "CrossApp",
+    "en": "Maintain SAP Query",
+    "zh": "维护 SAP Query",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SQ02",
+    "module": "CrossApp",
+    "en": "Maintain InfoSet",
+    "zh": "维护信息集",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SUIM",
+    "module": "CrossApp",
+    "en": "User Information System",
+    "zh": "用户信息系统",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "SXMB_MONI",
+    "module": "CrossApp",
+    "en": "PI Message Monitor",
+    "zh": "PI 消息监控",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "WE02",
+    "module": "CrossApp",
+    "en": "IDoc Display",
+    "zh": "IDoc 查看",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "WE05",
+    "module": "CrossApp",
+    "en": "IDoc List",
+    "zh": "IDoc 清单",
+    "category": "系统管理",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/ADPROD",
+    "module": "EWM",
+    "en": "Maintain Warehouse Product",
+    "zh": "维护仓库产品主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/COUNT",
+    "module": "EWM",
+    "en": "Enter Count Results",
+    "zh": "录入盘点计数结果",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/LOAD",
+    "module": "EWM",
+    "en": "Loading",
+    "zh": "装车",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/MON",
+    "module": "EWM",
+    "en": "Warehouse Management Monitor",
+    "zh": "仓库管理监视器",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/PACK",
+    "module": "EWM",
+    "en": "Packing",
+    "zh": "包装",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/PI_CREATE",
+    "module": "EWM",
+    "en": "Create Physical Inventory Document",
+    "zh": "创建盘点凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/PRDI",
+    "module": "EWM",
+    "en": "Maintain Inbound Delivery",
+    "zh": "维护入库交货",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/PRDO",
+    "module": "EWM",
+    "en": "Maintain Outbound Delivery Order",
+    "zh": "维护出库交货单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/QINSP",
+    "module": "EWM",
+    "en": "Quality Inspection Worklist",
+    "zh": "质检工作清单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/RFUI",
+    "module": "EWM",
+    "en": "RF User Menu",
+    "zh": "射频终端用户菜单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/RSRC",
+    "module": "EWM",
+    "en": "Resource Management",
+    "zh": "资源管理",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "/SCWM/TO",
+    "module": "EWM",
+    "en": "Create Warehouse Task",
+    "zh": "创建仓库任务",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "F-02",
+    "module": "FI",
+    "en": "Enter G/L Account Document",
+    "zh": "录入总账凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "F-28",
+    "module": "FI",
+    "en": "Post Incoming Payments",
+    "zh": "收款过账",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "F-32",
+    "module": "FI",
+    "en": "Clear Customer",
+    "zh": "客户清账",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "F-44",
+    "module": "FI",
+    "en": "Clear Vendor",
+    "zh": "供应商清账",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "F-53",
+    "module": "FI",
+    "en": "Post Outgoing Payments",
+    "zh": "付款过账",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "F110",
+    "module": "FI",
+    "en": "Automatic Payment Transactions",
+    "zh": "自动付款",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FAGLL03",
+    "module": "FI",
+    "en": "Display G/L Line Items (New G/L)",
+    "zh": "显示总账行项目（新总账）",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FB01",
+    "module": "FI",
+    "en": "Post Document",
+    "zh": "过账会计凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FB02",
+    "module": "FI",
+    "en": "Change Document",
+    "zh": "修改会计凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FB03",
+    "module": "FI",
+    "en": "Display Document",
+    "zh": "显示会计凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FB60",
+    "module": "FI",
+    "en": "Enter Vendor Invoice",
+    "zh": "录入供应商发票",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FB70",
+    "module": "FI",
+    "en": "Enter Customer Invoice",
+    "zh": "录入客户发票",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FBL1N",
+    "module": "FI",
+    "en": "Display Vendor Line Items",
+    "zh": "显示供应商行项目",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FBL3N",
+    "module": "FI",
+    "en": "Display G/L Account Line Items",
+    "zh": "显示总账科目行项目",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FBL5N",
+    "module": "FI",
+    "en": "Display Customer Line Items",
+    "zh": "显示客户行项目",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "FS00",
+    "module": "FI",
+    "en": "G/L Account Master Record",
+    "zh": "总账科目主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "OB52",
+    "module": "FI",
+    "en": "Open and Close Posting Periods",
+    "zh": "开关过账期间",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "OBYC",
+    "module": "FI",
+    "en": "Automatic Postings Configuration",
+    "zh": "自动记账配置",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CAT2",
+    "module": "HCM",
+    "en": "Maintain Time Sheet",
+    "zh": "维护工时表",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PA03",
+    "module": "HCM",
+    "en": "Maintain Payroll Control Record",
+    "zh": "维护工资核算控制记录",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PA20",
+    "module": "HCM",
+    "en": "Display HR Master Data",
+    "zh": "显示人事主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PA30",
+    "module": "HCM",
+    "en": "Maintain HR Master Data",
+    "zh": "维护人事主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PA40",
+    "module": "HCM",
+    "en": "Personnel Actions",
+    "zh": "人事事件",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PA51",
+    "module": "HCM",
+    "en": "Display Time Data",
+    "zh": "显示时间数据",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PA61",
+    "module": "HCM",
+    "en": "Maintain Time Data",
+    "zh": "维护时间数据",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PC00_M99_CALC",
+    "module": "HCM",
+    "en": "Payroll Driver (International)",
+    "zh": "工资核算驱动（国际）",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PE02",
+    "module": "HCM",
+    "en": "Maintain Evaluation Path",
+    "zh": "维护评估路径",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PPOCE",
+    "module": "HCM",
+    "en": "Maintain Organization Structure",
+    "zh": "维护组织结构",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PPOME",
+    "module": "HCM",
+    "en": "Maintain Organization and Staffing",
+    "zh": "维护组织与编制",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "PTMW",
+    "module": "HCM",
+    "en": "Time Manager's Workplace",
+    "zh": "时间管理员工作台",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MB1C",
+    "module": "MM",
+    "en": "Other Goods Receipt",
+    "zh": "其他收货",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MB51",
+    "module": "MM",
+    "en": "Material Document List",
+    "zh": "物料凭证清单",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MB52",
+    "module": "MM",
+    "en": "Warehouse Stocks",
+    "zh": "仓库库存总览",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MB5B",
+    "module": "MM",
+    "en": "Stock on Posting Date",
+    "zh": "期初/期末库存",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME11",
+    "module": "MM",
+    "en": "Create Info Record",
+    "zh": "创建采购信息记录",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME21N",
+    "module": "MM",
+    "en": "Create Purchase Order",
+    "zh": "创建采购订单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME22N",
+    "module": "MM",
+    "en": "Change Purchase Order",
+    "zh": "修改采购订单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME23N",
+    "module": "MM",
+    "en": "Display Purchase Order",
+    "zh": "显示采购订单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME28",
+    "module": "MM",
+    "en": "Release Purchase Order",
+    "zh": "审批采购订单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME2L",
+    "module": "MM",
+    "en": "PO by Vendor",
+    "zh": "按供应商查采购订单",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME2M",
+    "module": "MM",
+    "en": "PO by Material",
+    "zh": "按物料查采购订单",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME2N",
+    "module": "MM",
+    "en": "PO by PO Number",
+    "zh": "按采购订单号查询",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME31K",
+    "module": "MM",
+    "en": "Create Contract",
+    "zh": "创建框架协议（合同）",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME31L",
+    "module": "MM",
+    "en": "Create Scheduling Agreement",
+    "zh": "创建计划协议",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME32K",
+    "module": "MM",
+    "en": "Change Contract",
+    "zh": "修改框架协议（合同）",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME32L",
+    "module": "MM",
+    "en": "Change Scheduling Agreement",
+    "zh": "修改计划协议",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME33K",
+    "module": "MM",
+    "en": "Display Contract",
+    "zh": "显示框架协议（合同）",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME33L",
+    "module": "MM",
+    "en": "Display Scheduling Agreement",
+    "zh": "显示计划协议",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME38",
+    "module": "MM",
+    "en": "Maintain SA Delivery Schedule",
+    "zh": "维护计划协议交货计划",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME51N",
+    "module": "MM",
+    "en": "Create Purchase Requisition",
+    "zh": "创建采购申请",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME52N",
+    "module": "MM",
+    "en": "Change Purchase Requisition",
+    "zh": "修改采购申请",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME53N",
+    "module": "MM",
+    "en": "Display Purchase Requisition",
+    "zh": "显示采购申请",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME54",
+    "module": "MM",
+    "en": "Release Purchase Requisition",
+    "zh": "审批采购申请",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "ME57",
+    "module": "MM",
+    "en": "Assign Source to PR",
+    "zh": "为采购申请分配货源",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MEQ1",
+    "module": "MM",
+    "en": "Create Quota Arrangement",
+    "zh": "创建配额安排",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MI01",
+    "module": "MM",
+    "en": "Create Physical Inventory Doc",
+    "zh": "创建盘点凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MI04",
+    "module": "MM",
+    "en": "Enter Inventory Count",
+    "zh": "录入盘点数量",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MIGO",
+    "module": "MM",
+    "en": "Goods Movement",
+    "zh": "收货/发货/转移过账",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MIR4",
+    "module": "MM",
+    "en": "Display Invoice Document",
+    "zh": "显示发票凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MIRO",
+    "module": "MM",
+    "en": "Enter Incoming Invoice",
+    "zh": "发票校验",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MM01",
+    "module": "MM",
+    "en": "Create Material Master",
+    "zh": "创建物料主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MM02",
+    "module": "MM",
+    "en": "Change Material Master",
+    "zh": "修改物料主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MM03",
+    "module": "MM",
+    "en": "Display Material Master",
+    "zh": "显示物料主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MMBE",
+    "module": "MM",
+    "en": "Stock Overview",
+    "zh": "库存总览（物料）",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "XK01",
+    "module": "MM",
+    "en": "Create Vendor (ECC)",
+    "zh": "创建供应商（ECC）",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IE01",
+    "module": "PM",
+    "en": "Create Equipment",
+    "zh": "创建设备主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IE02",
+    "module": "PM",
+    "en": "Change Equipment",
+    "zh": "修改设备主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IE03",
+    "module": "PM",
+    "en": "Display Equipment",
+    "zh": "显示设备主数据",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IL01",
+    "module": "PM",
+    "en": "Create Functional Location",
+    "zh": "创建功能位置",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IL02",
+    "module": "PM",
+    "en": "Change Functional Location",
+    "zh": "修改功能位置",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IL03",
+    "module": "PM",
+    "en": "Display Functional Location",
+    "zh": "显示功能位置",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IW21",
+    "module": "PM",
+    "en": "Create PM Notification",
+    "zh": "创建维修通知",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IW22",
+    "module": "PM",
+    "en": "Change PM Notification",
+    "zh": "修改维修通知",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IW23",
+    "module": "PM",
+    "en": "Display PM Notification",
+    "zh": "显示维修通知",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IW31",
+    "module": "PM",
+    "en": "Create PM Order",
+    "zh": "创建维修订单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IW32",
+    "module": "PM",
+    "en": "Change PM Order",
+    "zh": "修改维修订单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IW33",
+    "module": "PM",
+    "en": "Display PM Order",
+    "zh": "显示维修订单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IW38",
+    "module": "PM",
+    "en": "Change PM Orders (List)",
+    "zh": "修改维修订单清单",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "IW39",
+    "module": "PM",
+    "en": "Display PM Orders (List)",
+    "zh": "显示维修订单清单",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CA01",
+    "module": "PP",
+    "en": "Create Routing",
+    "zh": "创建工艺路线",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CA02",
+    "module": "PP",
+    "en": "Change Routing",
+    "zh": "修改工艺路线",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CA03",
+    "module": "PP",
+    "en": "Display Routing",
+    "zh": "显示工艺路线",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CO01",
+    "module": "PP",
+    "en": "Create Production Order",
+    "zh": "创建生产订单",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "8.9 S4TWL - Report Writer / Report Painter in Finance and Controlling（SAP Note 2997574）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "Please ensure that the transactions such as CK11N (create standard cost estimate), CO01-CO03 (create/change/display production order) ... are calling ABAP List Views rather than the old Report Writer reports.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "CO02",
+    "module": "PP",
+    "en": "Change Production Order",
+    "zh": "修改生产订单",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "8.9 S4TWL - Report Writer / Report Painter in Finance and Controlling（SAP Note 2997574）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "Please ensure that the transactions such as CK11N (create standard cost estimate), CO01-CO03 (create/change/display production order) ... are calling ABAP List Views rather than the old Report Writer reports.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "CO03",
+    "module": "PP",
+    "en": "Display Production Order",
+    "zh": "显示生产订单",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "8.9 S4TWL - Report Writer / Report Painter in Finance and Controlling（SAP Note 2997574）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "Please ensure that the transactions such as CK11N (create standard cost estimate), CO01-CO03 (create/change/display production order) ... are calling ABAP List Views rather than the old Report Writer reports.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "CR01",
+    "module": "PP",
+    "en": "Create Work Center",
+    "zh": "创建工作中心",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CR02",
+    "module": "PP",
+    "en": "Change Work Center",
+    "zh": "修改工作中心",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CR03",
+    "module": "PP",
+    "en": "Display Work Center",
+    "zh": "显示工作中心",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CS01",
+    "module": "PP",
+    "en": "Create BOM",
+    "zh": "创建 BOM",
+    "category": "主数据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "28.4 S4TWL - Variant Configuration（SAP Note 2267873）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "It's not possible to maintain 'Classification as Selection Condition' in Material BOM items anymore (e.g. transactions CS01, CS02).",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "CS02",
+    "module": "PP",
+    "en": "Change BOM",
+    "zh": "修改 BOM",
+    "category": "主数据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "28.4 S4TWL - Variant Configuration（SAP Note 2267873）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "It's not possible to maintain 'Classification as Selection Condition' in Material BOM items anymore (e.g. transactions CS01, CS02).",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "CS03",
+    "module": "PP",
+    "en": "Display BOM",
+    "zh": "显示 BOM",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MD01",
+    "module": "PP",
+    "en": "MRP Run (Total Planning)",
+    "zh": "MRP 运行（总计划）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "still available",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "30.2 S4TWL - MRP in HANA（SAP Note 2268085）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "Classic MRP is still available in SAP S/4HANA.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MD01N",
+    "module": "PP",
+    "en": "MRP Live",
+    "zh": "MRP 运算（S/4HANA）",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "MD02",
+    "module": "PP",
+    "en": "MRP Run (Single-item, Multilevel)",
+    "zh": "MRP 运行（单项多层）",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "still available",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "30.2 S4TWL - MRP in HANA（SAP Note 2268085）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "Classic MRP is still available in SAP S/4HANA. Even the classic MRP reads material receipts and requirements using an ABAP managed database procedure (AMDP)... like MD01, MD02, MD03.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "MD04",
+    "module": "PP",
+    "en": "Stock/Requirements List",
+    "zh": "库存/需求清单",
+    "category": "报表",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "30.30 S4TWL - Graphical display of available quantity in MRP evaluations（SAP Note 3018123）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "In SAP ERP, within the Stock and Requirements List (MD04), a graphical display of available quantity was available. With the advancement of webbased applications, old chart technology like used here is no longer supported.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "CJ01",
+    "module": "PS",
+    "en": "Create WBS Element",
+    "zh": "创建 WBS 元素",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CJ02",
+    "module": "PS",
+    "en": "Change WBS Element",
+    "zh": "修改 WBS 元素",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CJ03",
+    "module": "PS",
+    "en": "Display WBS Element",
+    "zh": "显示 WBS 元素",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CJ20N",
+    "module": "PS",
+    "en": "Project Builder",
+    "zh": "项目构造器",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CJ40",
+    "module": "PS",
+    "en": "Change Project Plan",
+    "zh": "修改项目计划",
+    "category": "计划",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CJ88",
+    "module": "PS",
+    "en": "Settle Project",
+    "zh": "项目结算",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CJ8G",
+    "module": "PS",
+    "en": "Results Analysis for Project",
+    "zh": "项目成果分析",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CJI3",
+    "module": "PS",
+    "en": "Project Actual Line Items",
+    "zh": "项目实际行项目",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CJI5",
+    "module": "PS",
+    "en": "Project Plan Line Items",
+    "zh": "项目计划行项目",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CN21",
+    "module": "PS",
+    "en": "Create Network",
+    "zh": "创建网络",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "CN22",
+    "module": "PS",
+    "en": "Change Network",
+    "zh": "修改网络",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "OPSA",
+    "module": "PS",
+    "en": "Maintain Project Profile",
+    "zh": "维护项目参数文件",
+    "category": "配置",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "S_ALR_87013558",
+    "module": "PS",
+    "en": "Project Actual Costs Report",
+    "zh": "项目实际成本报表",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QA01",
+    "module": "QM",
+    "en": "Create Inspection Lot",
+    "zh": "创建检验批",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QA02",
+    "module": "QM",
+    "en": "Change Inspection Lot",
+    "zh": "修改检验批",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QA11",
+    "module": "QM",
+    "en": "Make Usage Decision",
+    "zh": "做出使用决策",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QA32",
+    "module": "QM",
+    "en": "Inspection Lot Results Worklist",
+    "zh": "检验批结果处理清单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QC01",
+    "module": "QM",
+    "en": "Create Quality Certificate",
+    "zh": "创建质量证书",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QE01",
+    "module": "QM",
+    "en": "Record Results for Inspection Lot",
+    "zh": "记录检验批结果",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QI01",
+    "module": "QM",
+    "en": "Create Quality Info Record",
+    "zh": "创建质量信息记录",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QN01",
+    "module": "QM",
+    "en": "Create Quality Notification",
+    "zh": "创建质量通知单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QN02",
+    "module": "QM",
+    "en": "Change Quality Notification",
+    "zh": "修改质量通知单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QP01",
+    "module": "QM",
+    "en": "Create Inspection Plan",
+    "zh": "创建检验计划",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QP02",
+    "module": "QM",
+    "en": "Change Inspection Plan",
+    "zh": "修改检验计划",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "QS21",
+    "module": "QM",
+    "en": "Create Master Inspection Characteristic",
+    "zh": "创建主检验特性",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "VA01",
+    "module": "SD",
+    "en": "Create Sales Order",
+    "zh": "创建销售订单",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "As of SAP S/4HANA 1610, the fast entry of characteristic values functionality from tab page 'Fast data entry' is merged into tab page 'Configuration' in sales document transactions like VA01, VA02, and VA03.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA02",
+    "module": "SD",
+    "en": "Change Sales Order",
+    "zh": "修改销售订单",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The fast entry of characteristic values functionality from tab page 'Fast data entry' is merged into tab page 'Configuration' in sales document transactions like VA01, VA02, and VA03.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA03",
+    "module": "SD",
+    "en": "Display Sales Order",
+    "zh": "显示销售订单",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The fast entry of characteristic values functionality from tab page 'Fast data entry' is merged into tab page 'Configuration' in sales document transactions like VA01, VA02, and VA03.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA11",
+    "module": "SD",
+    "en": "Create Inquiry",
+    "zh": "创建询价",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA12",
+    "module": "SD",
+    "en": "Change Inquiry",
+    "zh": "修改询价",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA13",
+    "module": "SD",
+    "en": "Display Inquiry",
+    "zh": "显示询价",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA21",
+    "module": "SD",
+    "en": "Create Quotation",
+    "zh": "创建报价",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA22",
+    "module": "SD",
+    "en": "Change Quotation",
+    "zh": "修改报价",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA23",
+    "module": "SD",
+    "en": "Display Quotation",
+    "zh": "显示报价",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA41",
+    "module": "SD",
+    "en": "Create Contract",
+    "zh": "创建销售合同",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA42",
+    "module": "SD",
+    "en": "Change Contract",
+    "zh": "修改销售合同",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VA43",
+    "module": "SD",
+    "en": "Display Contract",
+    "zh": "显示销售合同",
+    "category": "单据",
+    "versions": [
+      {
+        "version": "S/4HANA 2023",
+        "availability": "AVAILABLE",
+        "lifecycle": "ACTIVE",
+        "recommendation": "UNKNOWN",
+        "sap_status_original": "",
+        "evidence": {
+          "source_url": "https://help.sap.com/doc/c34b5ef72430484cb4d8895d5edd12af/2023/en-US/SIMPL_OP2023.pdf",
+          "source_title": "52.7 S4TWL - Fast entry of characteristic values in sales document（SAP Note 2381843）",
+          "source_type": "Simplification List",
+          "source_version": "S/4HANA 2023",
+          "source_excerpt": "The simplification item is relevant if you are using 'Fast data entry' tab page in one or more of the transactions VA01, VA02, VA03, VA11, VA12, VA13, VA21, VA22, VA23, VA41, VA42, VA43.",
+          "verified_at": "2026-09-28"
+        }
+      }
+    ],
+    "successors": [],
+    "data_quality": "PARTIALLY_VERIFIED",
+    "notes": ""
+  },
+  {
+    "code": "VF01",
+    "module": "SD",
+    "en": "Create Billing Document",
+    "zh": "创建开票凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "VF02",
+    "module": "SD",
+    "en": "Change Billing Document",
+    "zh": "修改开票凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "VF03",
+    "module": "SD",
+    "en": "Display Billing Document",
+    "zh": "显示开票凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "VF05",
+    "module": "SD",
+    "en": "Billing Document List",
+    "zh": "开票凭证清单",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "VL01N",
+    "module": "SD",
+    "en": "Create Delivery",
+    "zh": "创建交货单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "VL02N",
+    "module": "SD",
+    "en": "Change Delivery",
+    "zh": "修改交货单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "VL03N",
+    "module": "SD",
+    "en": "Display Delivery",
+    "zh": "显示交货单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LI01N",
+    "module": "WM",
+    "en": "Create Physical Inventory Document",
+    "zh": "创建盘点凭证",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LI11N",
+    "module": "WM",
+    "en": "Enter Count Results",
+    "zh": "录入盘点结果",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LI20",
+    "module": "WM",
+    "en": "Clear Inventory Differences",
+    "zh": "清除库存差异",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LS01N",
+    "module": "WM",
+    "en": "Create Storage Bin",
+    "zh": "创建仓位",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LS02N",
+    "module": "WM",
+    "en": "Change Storage Bin",
+    "zh": "修改仓位",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LS03N",
+    "module": "WM",
+    "en": "Display Storage Bin",
+    "zh": "显示仓位",
+    "category": "主数据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LS24",
+    "module": "WM",
+    "en": "Warehouse Stocks per Material",
+    "zh": "按物料的仓库库存",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LT01",
+    "module": "WM",
+    "en": "Create Transfer Order",
+    "zh": "创建转储单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LT10",
+    "module": "WM",
+    "en": "Create Transfer Order from Delivery",
+    "zh": "按交货单创建转储单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LT12",
+    "module": "WM",
+    "en": "Confirm Transfer Order",
+    "zh": "确认转储单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LT21",
+    "module": "WM",
+    "en": "Display Transfer Order",
+    "zh": "显示转储单",
+    "category": "单据",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LT24",
+    "module": "WM",
+    "en": "Display Transfer Orders for Material",
+    "zh": "按物料显示转储单",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LX02",
+    "module": "WM",
+    "en": "Bin Stock Overview",
+    "zh": "仓位库存总览",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  },
+  {
+    "code": "LX03",
+    "module": "WM",
+    "en": "Bin Status Report",
+    "zh": "仓位状态报表",
+    "category": "报表",
+    "versions": [],
+    "successors": [],
+    "data_quality": "NEEDS_REVIEW",
+    "notes": ""
+  }
+]

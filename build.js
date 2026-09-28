@@ -9,6 +9,7 @@ const path = require('path');
 const { marked } = require('marked');
 const { SITE, CATEGORIES, escapeHtml, stripTags, slugify, fmtDate, readingTime, excerptOf } = require('./lib/common.js');
 const { layout, articleCard, breadcrumb } = require('./templates/layout.js');
+const { buildTcodeKB, codeSlug } = require('./lib/tcode-kb.js');
 
 const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
@@ -174,6 +175,7 @@ function buildIndex(articles) {
   const caseArticles = articles.filter(a => a.category === 'cases').slice(0, 3).map(articleCard).join('');
 
   const tools = [
+    { href: '/tcode/', icon: '🗄️', name: 'T-code 知识库', desc: '版本状态与官方证据' },
     { href: '/tools/', icon: '⌨️', name: 'T-code 查询', desc: '常用事务代码速查' },
     { href: '/dictionary/', icon: '📖', name: 'SAP 日语词典', desc: '中日英三语 SAP 术语' },
     { href: '/tools/#checklist', icon: '✅', name: 'MM 配置 Checklist', desc: '实施配置不漏项' },
@@ -291,13 +293,14 @@ function buildTagPages(articles) {
   }
 }
 
-function buildArticles(articles) {
+function buildArticles(articles, codeMap) {
   for (const a of articles) {
     const cat = CATEGORIES[a.category];
     const tocSide = a.toc.length ? `<aside class="toc-side"><div class="toc-sticky"><h4>目录</h4>${tocList(a.toc)}</div></aside>` : '';
     const tocMobile = a.toc.length ? `<details class="toc-mobile"><summary>📑 目录</summary>${tocList(a.toc)}</details>` : '';
-    const tcodeHtml = a.tcodes.length ? `<div class="tcode-row"><span>相关 T-code：</span>${a.tcodes.map(t =>
-      `<a class="tcode-chip" href="/tools/#tcode">${escapeHtml(t)}</a>`).join('')}</div>` : '';
+    const tcodeHtml = a.tcodes.length ? `<div class="tcode-row"><span>相关 T-code：</span>${a.tcodes.map(t => {
+      const href = codeMap && codeMap.has(t) ? `/tcode/${codeSlug(codeMap.get(t))}/` : '/tools/#tcode';
+      return `<a class="tcode-chip" href="${href}">${escapeHtml(t)}</a>`; }).join('')}</div>` : '';
     const caseNote = a.category === 'cases'
       ? `<div class="admonition warning"><div class="admonition-title">声明</div><div class="admonition-body"><p>以下案例经过脱敏 / 虚构处理，不包含真实客户名称、内部数据、账号、密钥或未公开项目资料。</p></div></div>` : '';
     const exampleNote = a.example
@@ -383,8 +386,8 @@ tr.style.display = !q || tr.textContent.toLowerCase().includes(q) ? '' : 'none';
 
 /* ============ 工具 ============ */
 function buildTools(articles) {
-  const tcodes = loadJson('data/tcodes.json');
-  const tcodeRows = tcodes.map(t => `<tr><td><code>${escapeHtml(t.code)}</code></td><td>${escapeHtml(t.zh)}</td><td class="en">${escapeHtml(t.en)}</td><td><span class="scene">${escapeHtml(t.module)}</span></td></tr>`).join('');
+  const tcodes = loadJson('data/tcode-kb.json');
+  const tcodeRows = tcodes.map(t => `<tr><td><a href="/tcode/${codeSlug(escapeHtml(t.code))}/"><code>${escapeHtml(t.code)}</code></a></td><td>${escapeHtml(t.zh)}</td><td class="en">${escapeHtml(t.en)}</td><td><span class="scene">${escapeHtml(t.module)}</span></td></tr>`).join('');
 
   const checklistMd = [
     '- [ ] 定义 Company Code / Plant / Storage Location',
@@ -418,6 +421,7 @@ function buildTools(articles) {
 <p class="sec-sub">顾问日常高频小工具：查询、清单、流程图。未来将逐步加入 AI 工具。</p>
 
 <h2 class="h2" id="tcode">⌨️ Transaction Code 查询</h2>
+<div class="admonition tip"><div class="admonition-title">实战提示</div><div class="admonition-body"><p>已上线 <a href="/tcode/">T-Code 知识库</a>：按 S/4HANA 版本查看每个 T-code 的生命周期状态（Active / Deprecated / Obsolete）、版本时间轴、官方 Successor 与 SAP 官方证据链。</p></div></div>
 <div class="search-box"><input id="tcodeInput" type="search" placeholder="搜索 T-code / 中文 / 英文…" aria-label="搜索T-code"><span class="search-icon">🔍</span></div>
 <div class="table-wrap"><table class="dict-table" id="tcodeTable">
 <thead><tr><th>T-code</th><th>中文</th><th>English</th><th>模块</th></tr></thead>
@@ -505,8 +509,9 @@ function buildAbout() {
 }
 
 /* ============ sitemap / robots / 404 ============ */
-function buildMeta(articles) {
-  const urls = ['', '/kb/', '/roadmaps/', '/tools/', '/dictionary/', '/ai-lab/', '/about/', '/search/'];
+function buildMeta(articles, extraUrls) {
+  const urls = ['', '/kb/', '/roadmaps/', '/tools/', '/tcode/', '/tcode/report/', '/tcode/review/', '/dictionary/', '/ai-lab/', '/about/', '/search/'];
+  (extraUrls || []).forEach(u => urls.push(u));
   Object.keys(CATEGORIES).forEach(k => urls.push(`/kb/${k}/`));
   articles.forEach(a => urls.push(a.url));
   const tagSet = new Set();
@@ -544,14 +549,16 @@ function main() {
   buildKB(articles);
   buildCategoryPages(articles);
   buildTagPages(articles);
-  buildArticles(articles);
+  const { codeMap, urls: tcodeUrls } = buildTcodeKB(ROOT, DIST);
+  console.log(`T-Code 知识库: ${codeMap.size} 条`);
+  buildArticles(articles, codeMap);
   buildSearch(articles);
   buildDictionary();
   buildTools(articles);
   buildRoadmaps();
   buildAiLab();
   buildAbout();
-  buildMeta(articles);
+  buildMeta(articles, tcodeUrls);
 
   const count = (function walk(d) {
     return fs.readdirSync(d, { withFileTypes: true })
