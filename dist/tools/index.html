@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAP 工具 - SAP 实战知识库</title>
+<meta name="description" content="SAP 顾问工具：T-code 查询、MM 配置 Checklist、P2P 流程图、日语词典。">
+<link rel="canonical" href="https://sap.haice.top/tools/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SAP 工具 - SAP 实战知识库">
+<meta property="og:description" content="SAP 顾问工具：T-code 查询、MM 配置 Checklist、P2P 流程图、日语词典。">
+<meta property="og:url" content="https://sap.haice.top/tools/">
+<meta property="og:site_name" content="SAP 实战知识库">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/styles.css">
+
+
+</head>
+<body>
+<header class="site-header"><div class="wrap header-in">
+<a class="brand" href="/" aria-label="SAP 实战知识库首页"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg>
+<span class="brand-text"><strong>SAP 实战知识库</strong><small>SAP Knowledge Base</small></span></a>
+<nav class="main-nav" id="mainNav"><a href="/" class="">首页</a><a href="/kb/" class="">知识库</a><a href="/roadmaps/" class="">学习路径</a><a href="/tools/" class="active">工具</a><a href="/dictionary/" class="">日语词典</a><a href="/kb/cases/" class="">案例</a><a href="/about/" class="">关于</a></nav>
+<div class="header-actions">
+<a class="search-btn" href="/search/" aria-label="搜索">🔍<span>搜索</span></a>
+<button class="nav-toggle" id="navToggle" aria-label="菜单" aria-expanded="false">☰</button>
+</div></div></header>
+<main><nav class="breadcrumb wrap" aria-label="面包屑"><ol><li><a href="/">首页</a></li><li aria-current="page">SAP 工具</li></ol></nav>
+<section class="section"><div class="wrap">
+<h1 class="page-title">SAP 工具</h1>
+<p class="sec-sub">顾问日常高频小工具：查询、清单、流程图。未来将逐步加入 AI 工具。</p>
+
+<h2 class="h2" id="tcode">⌨️ Transaction Code 查询</h2>
+<div class="search-box"><input id="tcodeInput" type="search" placeholder="搜索 T-code / 中文 / 英文…" aria-label="搜索T-code"><span class="search-icon">🔍</span></div>
+<div class="table-wrap"><table class="dict-table" id="tcodeTable">
+<thead><tr><th>T-code</th><th>中文</th><th>English</th><th>模块</th></tr></thead>
+<tbody><tr><td><code>ME51N</code></td><td>创建采购申请</td><td class="en">Create Purchase Requisition</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME52N</code></td><td>修改采购申请</td><td class="en">Change Purchase Requisition</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME53N</code></td><td>显示采购申请</td><td class="en">Display Purchase Requisition</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME54</code></td><td>审批采购申请</td><td class="en">Release Purchase Requisition</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME57</code></td><td>为采购申请分配货源</td><td class="en">Assign Source to PR</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME21N</code></td><td>创建采购订单</td><td class="en">Create Purchase Order</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME22N</code></td><td>修改采购订单</td><td class="en">Change Purchase Order</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME23N</code></td><td>显示采购订单</td><td class="en">Display Purchase Order</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME28</code></td><td>审批采购订单</td><td class="en">Release Purchase Order</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME2M</code></td><td>按物料查采购订单</td><td class="en">PO by Material</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME2L</code></td><td>按供应商查采购订单</td><td class="en">PO by Vendor</td><td><span class="scene">MM</span></td></tr><tr><td><code>MIGO</code></td><td>收货/发货/转移过账</td><td class="en">Goods Movement</td><td><span class="scene">MM</span></td></tr><tr><td><code>MB52</code></td><td>库存总览</td><td class="en">Stock Overview</td><td><span class="scene">MM</span></td></tr><tr><td><code>MB51</code></td><td>物料凭证清单</td><td class="en">Material Document List</td><td><span class="scene">MM</span></td></tr><tr><td><code>MB1C</code></td><td>其他收货</td><td class="en">Other Goods Receipt</td><td><span class="scene">MM</span></td></tr><tr><td><code>MIRO</code></td><td>发票校验</td><td class="en">Enter Incoming Invoice</td><td><span class="scene">MM</span></td></tr><tr><td><code>MIR4</code></td><td>显示发票凭证</td><td class="en">Display Invoice Document</td><td><span class="scene">MM</span></td></tr><tr><td><code>MM01</code></td><td>创建物料主数据</td><td class="en">Create Material Master</td><td><span class="scene">MM</span></td></tr><tr><td><code>MM02</code></td><td>修改物料主数据</td><td class="en">Change Material Master</td><td><span class="scene">MM</span></td></tr><tr><td><code>MM03</code></td><td>显示物料主数据</td><td class="en">Display Material Master</td><td><span class="scene">MM</span></td></tr><tr><td><code>MMBE</code></td><td>库存总览（物料）</td><td class="en">Stock Overview</td><td><span class="scene">MM</span></td></tr><tr><td><code>BP</code></td><td>业务伙伴维护</td><td class="en">Business Partner</td><td><span class="scene">主数据</span></td></tr><tr><td><code>XK01</code></td><td>创建供应商（ECC）</td><td class="en">Create Vendor (ECC)</td><td><span class="scene">MM</span></td></tr><tr><td><code>ME11</code></td><td>创建采购信息记录</td><td class="en">Create Info Record</td><td><span class="scene">MM</span></td></tr><tr><td><code>MEQ1</code></td><td>创建配额安排</td><td class="en">Create Quota Arrangement</td><td><span class="scene">MM</span></td></tr><tr><td><code>MI01</code></td><td>创建盘点凭证</td><td class="en">Create Physical Inventory Doc</td><td><span class="scene">MM</span></td></tr><tr><td><code>MI04</code></td><td>录入盘点数量</td><td class="en">Enter Inventory Count</td><td><span class="scene">MM</span></td></tr><tr><td><code>MD01N</code></td><td>MRP 运算（S/4）</td><td class="en">MRP Live</td><td><span class="scene">PP</span></td></tr><tr><td><code>MD04</code></td><td>库存/需求清单</td><td class="en">Stock/Requirements List</td><td><span class="scene">PP</span></td></tr><tr><td><code>CO01</code></td><td>创建生产订单</td><td class="en">Create Production Order</td><td><span class="scene">PP</span></td></tr><tr><td><code>CO02</code></td><td>修改生产订单</td><td class="en">Change Production Order</td><td><span class="scene">PP</span></td></tr><tr><td><code>VA01</code></td><td>创建销售订单</td><td class="en">Create Sales Order</td><td><span class="scene">SD</span></td></tr><tr><td><code>VL01N</code></td><td>创建交货单</td><td class="en">Create Delivery</td><td><span class="scene">SD</span></td></tr><tr><td><code>VF01</code></td><td>创建开票凭证</td><td class="en">Create Billing Document</td><td><span class="scene">SD</span></td></tr><tr><td><code>FB60</code></td><td>录入供应商发票</td><td class="en">Enter Vendor Invoice (FI)</td><td><span class="scene">FI</span></td></tr><tr><td><code>F110</code></td><td>自动付款</td><td class="en">Automatic Payment</td><td><span class="scene">FI</span></td></tr><tr><td><code>FS00</code></td><td>总账科目主数据</td><td class="en">G/L Account Master</td><td><span class="scene">FI</span></td></tr><tr><td><code>OBYC</code></td><td>自动记账配置</td><td class="en">Automatic Postings Config</td><td><span class="scene">FI</span></td></tr><tr><td><code>SE16N</code></td><td>表数据查看</td><td class="en">Table Display</td><td><span class="scene">Basis</span></td></tr><tr><td><code>SE38</code></td><td>ABAP 编辑器</td><td class="en">ABAP Editor</td><td><span class="scene">ABAP</span></td></tr><tr><td><code>SE80</code></td><td>对象导航器</td><td class="en">Object Navigator</td><td><span class="scene">ABAP</span></td></tr><tr><td><code>ST05</code></td><td>SQL 跟踪</td><td class="en">SQL Trace</td><td><span class="scene">ABAP</span></td></tr><tr><td><code>SM30</code></td><td>表维护视图</td><td class="en">Table Maintenance</td><td><span class="scene">Basis</span></td></tr><tr><td><code>SPRO</code></td><td>后台配置</td><td class="en">Customizing (IMG)</td><td><span class="scene">Basis</span></td></tr><tr><td><code>SU01</code></td><td>用户维护</td><td class="en">User Maintenance</td><td><span class="scene">Basis</span></td></tr><tr><td><code>WE02</code></td><td>IDoc 查看</td><td class="en">IDoc Display</td><td><span class="scene">集成</span></td></tr><tr><td><code>WE05</code></td><td>IDoc 清单</td><td class="en">IDoc List</td><td><span class="scene">集成</span></td></tr><tr><td><code>SXMB_MONI</code></td><td>PI 消息监控</td><td class="en">PI Message Monitor</td><td><span class="scene">集成</span></td></tr></tbody></table></div>
+
+<h2 class="h2" id="checklist" style="margin-top:2.5rem">✅ MM 配置 Checklist</h2>
+<p class="sec-sub">MM 实施核心配置项自查清单（示例）。</p>
+<ul class="checklist"><li><label><input type="checkbox"> <span>定义 Company Code / Plant / Storage Location</span></label></li><li><label><input type="checkbox"> <span>配置 Purchasing Organization 与 Purchasing Group</span></label></li><li><label><input type="checkbox"> <span>维护 Material Master 必填视图（Basic / Purchasing / MRP / Accounting）</span></label></li><li><label><input type="checkbox"> <span>创建 Business Partner（供应商）并分配角色</span></label></li><li><label><input type="checkbox"> <span>配置 Document Type（PR / PO）与编号范围</span></label></li><li><label><input type="checkbox"> <span>配置 Release Strategy（审批策略）</span></label></li><li><label><input type="checkbox"> <span>维护 Condition / Pricing Schema</span></label></li><li><label><input type="checkbox"> <span>配置 Movement Type 与库存记账</span></label></li><li><label><input type="checkbox"> <span>配置 Invoice Verification 容差（Tolerance）</span></label></li><li><label><input type="checkbox"> <span>配置 MM-FI 自动记账（OBYC）</span></label></li><li><label><input type="checkbox"> <span>单元测试：PR → PO → GR → IV 全流程</span></label></li><li><label><input type="checkbox"> <span>权限角色与审批流 UAT 确认</span></label></li></ul>
+
+<h2 class="h2" id="p2p" style="margin-top:2.5rem">🔗 P2P 流程图</h2>
+<p class="sec-sub">采购到付款标准流程。</p>
+<div class="flow"><div class="flow-step"><span class="flow-num">1</span><div class="flow-text"><strong>Purchase Requisition</strong><span>采购申请 ME51N</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">2</span><div class="flow-text"><strong>Source Determination</strong><span>货源确定 ME57</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">3</span><div class="flow-text"><strong>Purchase Order</strong><span>采购订单 ME21N</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">4</span><div class="flow-text"><strong>Goods Receipt</strong><span>收货 MIGO</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">5</span><div class="flow-text"><strong>Invoice Verification</strong><span>发票校验 MIRO</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">6</span><div class="flow-text"><strong>FI Posting</strong><span>财务过账</span></div></div><div class="flow-arrow" aria-hidden="true">↓</div><div class="flow-step"><span class="flow-num">7</span><div class="flow-text"><strong>Payment</strong><span>付款 F110</span></div></div></div>
+
+<h2 class="h2" style="margin-top:2.5rem">📖 更多工具</h2>
+<div class="grid3">
+<a class="tool-card" href="/dictionary/"><span class="tool-icon">📖</span><span class="tool-name">SAP 日语词典</span><span class="tool-desc">中日英三语术语</span></a>
+<a class="tool-card" href="/roadmaps/"><span class="tool-icon">🗺️</span><span class="tool-name">学习路径</span><span class="tool-desc">顾问成长路线图</span></a>
+<a class="tool-card" href="/ai-lab/"><span class="tool-icon">🤖</span><span class="tool-name">AI × SAP Lab</span><span class="tool-desc">即将上线</span></a>
+</div>
+</div></section>
+<script>document.getElementById('tcodeInput').addEventListener('input', function(){
+const q = this.value.trim().toLowerCase();
+document.querySelectorAll('#tcodeTable tbody tr').forEach(tr => {
+tr.style.display = !q || tr.textContent.toLowerCase().includes(q) ? '' : 'none';});
+});</script></main>
+<footer class="site-footer"><div class="wrap footer-grid">
+<div class="f-col"><div class="f-brand"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+<rect x="2" y="2" width="36" height="36" rx="8" fill="#16283f"/>
+<path d="M12 27V13h4.5v11.2H24V27H12z" fill="#fff"/>
+<path d="M26 27v-2.6l6.5-8.2h-6V13H33v2.6l-6.5 8.2h6.7V27H26z" fill="#5b9dff"/>
+</svg><strong>SAP 实战知识库</strong></div>
+<p>把 SAP 项目经验，变成可以真正学习和复用的知识。内容为示例版本，持续整理中。</p></div>
+<div class="f-col"><h4>知识库</h4><ul><li><a href="/kb/s4hana/">S/4HANA</a></li><li><a href="/kb/mm/">SAP MM</a></li><li><a href="/kb/japan/">日本 SAP</a></li><li><a href="/kb/cases/">实战案例</a></li><li><a href="/kb/">全部分类</a></li></ul></div>
+<div class="f-col"><h4>工具</h4><ul>
+<li><a href="/tools/">T-code 查询</a></li>
+<li><a href="/dictionary/">SAP 日语词典</a></li>
+<li><a href="/tools/#checklist">MM 配置 Checklist</a></li>
+<li><a href="/roadmaps/">学习路径</a></li></ul></div>
+<div class="f-col"><h4>更多</h4><ul>
+<li><a href="/about/">关于作者</a></li>
+<li><a href="/ai-lab/">AI × SAP Lab</a></li>
+<li><a href="/search/">全站搜索</a></li></ul></div>
+</div>
+<div class="wrap footer-bottom"><span>© 2026 SAP 实战知识库</span>
+<span>本站案例均为脱敏 / 虚构示例，不含任何真实客户机密信息</span></div></footer>
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
